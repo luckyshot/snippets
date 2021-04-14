@@ -24,8 +24,8 @@ This is a list of code snippets that I tend to use a lot while coding. I made it
 
 ### Media queries
 
-`@media only screen and (device-width: 768px) and (device-height: 1024px) {`
-Targets iPad 1
+Targets iPad 1: `@media only screen and (device-width: 768px) and (device-height: 1024px) {  }`
+
 
 
 
@@ -34,13 +34,13 @@ Targets iPad 1
 Common `<header>` tags:
 
 ```HTML
-  <link rel="icon" href="favicon.png">
-	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
-	<meta name="theme-color" content="#000000">
-	<meta name="apple-mobile-web-app-title" content="App name">
-	<meta name="apple-mobile-web-app-capable" content="yes">
-	<meta name="apple-mobile-web-app-status-bar-style" content="default">
-	<meta name="mobile-web-app-capable" content="yes">
+<link rel="icon" href="favicon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="theme-color" content="#000000">
+<meta name="apple-mobile-web-app-title" content="App name">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="mobile-web-app-capable" content="yes">
 ```
 
 
