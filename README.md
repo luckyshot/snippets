@@ -59,6 +59,14 @@ Common `<header>` tags:
 `date('D H:i')`
 Fri 23:59
 
+#### UTC date to local
+
+```PHP
+$utc_ts = strtotime($row['created_at']);
+$local_ts = $utc_ts + date("Z");
+$local_time = date('j F H:i', $local_ts);
+```
+
 
 ### HTTP codes
 
@@ -67,3 +75,25 @@ header('HTTP/1.0 401 Unauthorized');
 echo '<h1>Unauthorized</h1>';
 die();
 ```
+
+
+## SQLite
+
+```PHP
+$db = new SQLite3('database.db');
+$db->exec("CREATE TABLE IF NOT EXISTS logs (id INTEGER PRIMARY KEY, `action` VARCHAR(50), `value` VARCHAR(50), `created_at` DATETIME);");
+
+
+$db->exec("INSERT INTO logs VALUES (NULL, 'mode', 'on', datetime('now'));");
+
+
+$res = $db->query("SELECT * FROM (
+    SELECT * FROM logs WHERE `action` IN ('mode') AND datetime(created_at) >= datetime('now', '-48 Hour') ORDER BY created_at DESC, id DESC
+    ) ORDER BY created_at ASC, id ASC;");
+
+while ($row = $res->fetchArray()) {
+    echo $row['value'];
+}
+
+```
+
