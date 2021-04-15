@@ -67,13 +67,46 @@ $local_ts = $utc_ts + date("Z");
 $local_time = date('j F H:i', $local_ts);
 ```
 
-
 ### HTTP codes
 
 ```PHP
 header('HTTP/1.0 401 Unauthorized');
 echo '<h1>Unauthorized</h1>';
 die();
+```
+
+### Weekly schedule on/off
+
+```PHP
+$schedules = [
+    [
+        'weekdays' => [1, 2, 3, 4, 5],
+        'time' => [
+            [7,30],
+            [23,00],
+        ]
+    ],
+    [
+        'weekdays' => [6, 7],
+        'time' => [
+            [8,00],
+            [23,59],
+        ],
+    ],
+];
+$schedule_status = 'off';
+$date = time();
+foreach($schedules as $schedule){
+    if (in_array(date('N', $date), $schedule['weekdays'])){
+        if(
+            date('G', $date) * 60 + date('i', $date) >= $schedule['time'][0][0] * 60 + $schedule['time'][0][1]
+            &&
+            date('G', $date) * 60 + date('i', $date) < $schedule['time'][1][0] * 60 + $schedule['time'][1][1]
+        ){
+            $schedule_status = 'on';
+        }
+    }
+}
 ```
 
 
