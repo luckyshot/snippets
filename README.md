@@ -24,9 +24,11 @@ This is a list of code snippets that I tend to use a lot while coding. I made it
 
 ### Media queries
 
-Targets iPad 1: `@media only screen and (device-width: 768px) and (device-height: 1024px) {  }`
+`@media only screen and (min-width: 600px) { }`
 
+Targets iPad 1: 
 
+`@media only screen and (device-width: 768px) and (device-height: 1024px) { }`
 
 
 ## HTML
