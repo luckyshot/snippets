@@ -31,6 +31,21 @@ Targets iPad 1:
 `@media only screen and (device-width: 768px) and (device-height: 1024px) { }`
 
 
+## JavaScript
+
+### Bookmarklets
+
+`javascript:void( /* code here */ )`
+
+Go to another page
+
+`location.href='https://example.com/add?url='+encodeURIComponent(location.href)+'&text='+encodeURIComponent(document.title)`
+
+Open a popup window
+
+`var bWindow=window.open("https://example.com","Window title","height=300,width=600");setTimeout(function(){ bWindow.close() }, 5000)`
+
+
 ## HTML
 
 Common `<header>` tags:
