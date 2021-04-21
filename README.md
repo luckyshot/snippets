@@ -148,6 +148,16 @@ while ($row = $res->fetchArray()) {
 ```
 
 
+
+## Apache
+
+Hide server information from headers and error pages
+
+`sudo nano /etc/apache2/apache2.conf` (Ubuntu)
+
+`ServerSignature Off`
+
+
 ## Bash
 
 ```BASH
