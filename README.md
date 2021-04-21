@@ -151,11 +151,17 @@ while ($row = $res->fetchArray()) {
 
 ## Apache
 
+_These are the default paths, each server can (and usually should) be customized_
+
 Hide server information from headers and error pages
 
 `sudo nano /etc/apache2/apache2.conf` (Ubuntu)
 
 `ServerSignature Off`
+
+Configuration errors:
+
+`sudo nano /var/log/apacge2/error.log`
 
 
 ## Bash
