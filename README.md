@@ -6,6 +6,12 @@ This is a list of code snippets that I tend to use a lot while coding. I made it
 
 `filter:brightness(1.2);`
 
+```
+html {
+  --colorIndigo50: #EEF2FF;
+  color: var(--colorIndigo50);
+}
+```
 
 ### Animation
 
@@ -164,6 +170,42 @@ foreach($schedules as $schedule){
 ```
 
 
+
+## PHP Laravel
+
+### SQL query styles (Eloquent, Raw)
+
+```PHP
+// Eloquent
+
+$users = Users::select('count(*) as user_count, status')
+    ->where('status', '<>', 1)
+    ->groupBy('status')
+    ->get();
+
+
+// Raw Expression (careful with SQL injections)
+
+$users = DB::table('users')
+    ->select(DB::raw('count(*) as user_count, status'))
+    ->where('status', '<>', 1)
+    ->groupBy('status')
+    ->get();
+
+
+// Raw Statement (careful with SQL injections)
+
+DB::statement("UPDATE `users` SET `status` = 'paused';");
+```
+
+
+## MySQL
+
+create new mysql user
+
+`create user 'USERNAME'@'localhost' identified by 'PASSWORD';`
+
+
 ## SQLite
 
 ```PHP
@@ -189,6 +231,31 @@ while ($row = $res->fetchArray()) {
 ## Apache
 
 _These are the default paths, each server can (and usually should) be customized_
+
+### OSX / Linux
+
+`sudo apache2ctl -S`                              (tests config)
+`sudo apachectl -k restart`
+`sudo code /usr/local/etc/httpd/httpd.conf`
+`sudo code /usr/local/etc/httpd/extra/httpd-vhosts.conf`
+`sudo code /etc/hosts`
+`code /usr/local/etc/php/7.4/php.ini`
+
+ErrorLog "/usr/local/var/log/httpd/error_log"
+ServerRoot "/usr/local/opt/httpd"
+
+
+### Windows 10 (WSL)
+
+`sudo nano /etc/apache2/apache2.conf`
+`sudo nano /etc/apache2/sites-enabled/000-default.conf`
+
+#### Edit through Windows c:\Windows\System32\Drivers\etc\hosts
+
+`sudo service mysql start`
+`sudo service apache2 restart`
+
+
 
 Hide server information from headers and error pages
 
