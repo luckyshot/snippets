@@ -31,7 +31,23 @@ Targets iPad 1:
 `@media only screen and (device-width: 768px) and (device-height: 1024px) { }`
 
 
+
 ## JavaScript
+
+Fetch and insert data
+
+```JS
+fetch('/clickedMessage/')
+    .then(response => response.text())
+    .then(data => {
+        document.getElementById('fetch-target-1').innerHTML = data
+    })
+```
+
+Toggle CSS class
+
+`document.getElementById('toggle-target-1').classList.toggle('red-border')`
+
 
 ### Bookmarklets
 
