@@ -26,6 +26,8 @@ public function down()
 
 ## Models
 
+`php artisan make:model UserUnit`
+
 ```PHP
 protected $table = 'user_units';
 
@@ -43,6 +45,45 @@ public function getJob()
 {
     return BuildingJob::where('id', 'build'.$this->unit->id)->first();
 }
+```
+
+
+## Controllers
+
+`php artisan make:controller UserController`
+
+```PHP
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Http\Controllers\Controller;
+use App\Models\User;
+
+class UserController extends Controller
+{
+    /**
+     * Show the profile for a given user.
+     *
+     * @param  int  $id
+     * @return \Illuminate\View\View
+     */
+    public function show($id)
+    {
+        return view('user.profile', [
+            'user' => User::findOrFail($id)
+        ]);
+    }
+}
+```
+
+
+## Routes
+
+```PHP
+use App\Http\Controllers\UserController;
+
+Route::get('/user/{id}', [UserController::class, 'show']);
 ```
 
 
