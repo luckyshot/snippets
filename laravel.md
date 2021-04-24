@@ -45,7 +45,9 @@ public function unit()
 // Access intermediate table with "echo $order->pivot->created_at;"
 public function products()
 {
-    return $this->belongsToMany(Product::class, 'order_product');
+    return $this->belongsToMany(Product::class, 'order_product')
+        ->wherePivot('quantity', '>', 0)
+        ->withTimestamps();
 }
 ```
 
