@@ -89,6 +89,28 @@ public function down()
 ```
 
 
+## Models
+
+```PHP
+protected $table = 'user_units';
+
+public function user()
+{
+    return $this->belongsTo('App\User');
+}
+
+public function unit()
+{
+    return $this->hasOne('App\Unit', 'id', 'unit_id');
+}
+
+public function getJob()
+{
+    return BuildingJob::where('id', 'build'.$this->unit->id)->first();
+}
+```
+
+
 ## SQL query styles (Eloquent, Raw)
 
 ```PHP
