@@ -67,6 +67,28 @@ foreach($schedules as $schedule){
 
 # PHP Laravel
 
+## Migrations
+
+`php artisan migrate`
+
+```PHP
+public function up()
+{
+    Schema::create('flights', function (Blueprint $table) {
+        $table->id();
+        $table->string('name');
+        $table->string('airline');
+        $table->timestamps();
+    });
+}
+
+public function down()
+{
+    Schema::drop('flights');
+}
+```
+
+
 ## SQL query styles (Eloquent, Raw)
 
 ```PHP
