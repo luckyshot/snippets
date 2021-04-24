@@ -67,12 +67,6 @@ foreach($schedules as $schedule){
 
 
 
-# MySQL
-
-create new mysql user
-
-`create user 'USERNAME'@'localhost' identified by 'PASSWORD';`
-
 
 # SQLite
 
