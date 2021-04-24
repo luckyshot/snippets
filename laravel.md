@@ -41,9 +41,11 @@ public function unit()
     return $this->hasOne('App\Unit', 'id', 'unit_id');
 }
 
-public function getJob()
+// Many-to-Many
+// Access intermediate table with "echo $role->pivot->created_at;"
+public function products()
 {
-    return BuildingJob::where('id', 'build'.$this->unit->id)->first();
+    return $this->belongsToMany(Product::class, 'order_product');
 }
 ```
 
