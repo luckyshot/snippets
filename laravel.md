@@ -42,7 +42,7 @@ public function unit()
 }
 
 // Many-to-Many
-// Access intermediate table with "echo $role->pivot->created_at;"
+// Access intermediate table with "echo $order->pivot->created_at;"
 public function products()
 {
     return $this->belongsToMany(Product::class, 'order_product');
