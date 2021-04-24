@@ -84,7 +84,7 @@ public function up()
 
 public function down()
 {
-    Schema::drop('flights');
+    Schema::dropIfExists('flights');
 }
 ```
 
