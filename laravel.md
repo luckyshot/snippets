@@ -86,6 +86,15 @@ use App\Http\Controllers\UserController;
 Route::get('/user/{id}', [UserController::class, 'show']);
 ```
 
+## Views
+
+`return view('dashboard', ['name' => 'Victoria']);`
+
+```PHP
+echo $name;
+```
+
+
 
 ## SQL query styles (Eloquent, Raw)
 
