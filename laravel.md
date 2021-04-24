@@ -88,10 +88,40 @@ Route::get('/user/{id}', [UserController::class, 'show']);
 
 ## Views
 
-`return view('dashboard', ['name' => 'Victoria']);`
+```PHP
+return view('dashboard', ['name' => 'Victoria']);
+```
 
 ```PHP
 echo $name;
+```
+
+
+## Commands
+
+`app\Console\Kernel.php`
+
+```PHP
+use App\Console\Commands\EveryMinute;
+
+protected $commands = [
+    EveryMinute::class,
+];
+```
+
+Run it in the console: `php artisan EveryMinute`
+
+
+## Miscelaneous
+
+### Disable CSRF
+
+`app/Http/Middleware/VerifyCsrfToken.php`
+
+```PHP
+protected $except = [
+    '/user/my_function'
+];
 ```
 
 
