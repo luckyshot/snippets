@@ -37,7 +37,10 @@ nano /usr/local/etc/httpd/extra/httpd-vhosts.conf
 ## Windows 10 (WSL Ubuntu)
 
 `sudo nano /etc/apache2/apache2.conf`
+
 `sudo nano /etc/apache2/sites-enabled/000-default.conf`
+
+`sudo nano /etc/php/7.4/apache2/php.ini`
 
 ### Edit through Windows c:\Windows\System32\Drivers\etc\hosts
 
