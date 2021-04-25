@@ -154,9 +154,10 @@ $users = Users::select('count(*) as user_count, status')
 // Raw Expression (careful with SQL injections)
 
 $users = DB::table('users')
+    ->join('other', 'users.unit_id', '=', 'other.id')
     ->select(DB::raw('count(*) as user_count, status'))
     ->where('status', '<>', 1)
-    ->groupBy('status')
+    ->groupBy('user.status', 'other.id')
     ->get();
 
 
