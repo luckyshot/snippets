@@ -118,6 +118,16 @@ Run it in the console: `php artisan EveryMinute`
 
 ## Miscelaneous
 
+### Global variables
+
+```PHP
+use Config;
+
+Config::set('user', User::where('token', $token)->first());
+
+echo config('user');
+```
+
 ### Disable CSRF
 
 `app/Http/Middleware/VerifyCsrfToken.php`
