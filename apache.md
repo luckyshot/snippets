@@ -34,7 +34,7 @@ nano /usr/local/etc/httpd/extra/httpd-vhosts.conf
 ```
 
 
-## Windows 10 (WSL)
+## Windows 10 (WSL Ubuntu)
 
 `sudo nano /etc/apache2/apache2.conf`
 `sudo nano /etc/apache2/sites-enabled/000-default.conf`
@@ -54,4 +54,4 @@ Hide server information from headers and error pages
 
 Configuration errors:
 
-`sudo nano /var/log/apacge2/error.log`
+`sudo grc tail -f /var/log/apache2/error.log`
