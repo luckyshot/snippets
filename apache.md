@@ -27,7 +27,8 @@ sudo apachectl configtest
 
 nano /usr/local/etc/php/7.x/php.ini
 
-nano /usr/local/etc/httpd/httpd.conf 
+nano /usr/local/etc/httpd/httpd.conf
+nano /usr/local/etc/httpd/extra/httpd-vhosts.conf
 ```
 
 
