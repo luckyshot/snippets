@@ -58,3 +58,15 @@ Hide server information from headers and error pages
 Configuration errors:
 
 `sudo grc tail -f /var/log/apache2/error.log`
+
+
+### Installing Apache/PHP
+
+```BASH
+sudo add-apt-repository ppa:ondrej/apache2
+sudo add-apt-repository ppa:ondrej/php
+sudo apt install ca-certificates apt-transport-https software-properties-common
+sudo apt install php8.0 libapache2-mod-php8.0 php8.0-mysql
+sudo apt update
+php -v
+```
