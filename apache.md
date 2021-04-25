@@ -15,6 +15,22 @@ ErrorLog "/usr/local/var/log/httpd/error_log"
 ServerRoot "/usr/local/opt/httpd"
 
 
+## OSX / Linux (via brew)
+
+Following these instructions: https://gist.github.com/karlhillx/5cd68430aeb25e5e242a3e2c30f238d1
+
+```
+sudo apachectl start
+sudo apachectl stop
+sudo apachectl -k restart
+sudo apachectl configtest
+
+nano /usr/local/etc/php/7.x/php.ini
+
+nano /usr/local/etc/httpd/httpd.conf 
+```
+
+
 ## Windows 10 (WSL)
 
 `sudo nano /etc/apache2/apache2.conf`
