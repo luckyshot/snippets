@@ -19,6 +19,8 @@ ServerRoot "/usr/local/opt/httpd"
 
 Following these instructions: https://gist.github.com/karlhillx/5cd68430aeb25e5e242a3e2c30f238d1
 
+And add to your path `echo 'export PATH="/usr/local/opt/php@8.0/bin:$PATH"' >> ~/.zshrc`
+
 ```
 sudo apachectl start
 sudo apachectl stop
