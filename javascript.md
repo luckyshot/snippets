@@ -15,6 +15,45 @@ fetch('/clickedMessage/')
 `document.getElementById('toggle-target-1').classList.toggle('red-border')`
 
 
+
+## Vanilla template
+
+```JS
+var APP = APP || {};
+
+(function(d){ 'use strict';
+	APP = (function ( APP ) {
+
+        APP.params = {
+            title: 'My App',
+        };
+		APP.timers = {};
+		APP.db = {
+            token: null,
+        };
+        
+        
+		APP.init = function(){
+            APP.db.token = APP.getToken();
+            APP.loadEvents();
+            APP.getInfo();
+		};
+
+
+		APP.loadEvents = function(){
+            document.addEventListener("keydown", APP.keyDown, false);
+        };
+
+
+
+		return APP;
+	})( APP || {} );
+}(document));
+
+APP.init();
+```
+
+
 ## Events library
 
 ```JS
