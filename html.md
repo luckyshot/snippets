@@ -32,3 +32,11 @@ Common `<header>` tags:
 <link rel="manifest" href="/my.webmanifest">
 
 ```
+
+## Emojis on incompatible devices
+
+```HTML
+<style>.emoji { height: 1em; width: 1em; }</style>
+<script src="//twemoji.maxcdn.com/2/twemoji.min.js?2.4"></script>
+<script>twemoji.parse(document.body);</script>
+```
