@@ -24,25 +24,25 @@ var APP = APP || {};
 (function(d){ 'use strict';
 	APP = (function ( APP ) {
 
-        APP.params = {
-            title: 'My App',
-        };
+		APP.params = {
+			title: 'My App',
+		};
 		APP.timers = {};
 		APP.db = {
-            token: null,
-        };
+			token: null,
+		};
         
         
 		APP.init = function(){
-            APP.db.token = APP.getToken();
-            APP.loadEvents();
-            APP.getInfo();
+			APP.db.token = APP.getToken();
+			APP.loadEvents();
+			APP.router();
 		};
 
 
 		APP.loadEvents = function(){
-            document.addEventListener("keydown", APP.keyDown, false);
-        };
+			document.addEventListener("keydown", APP.keyDown, false);
+		};
 
 
 
