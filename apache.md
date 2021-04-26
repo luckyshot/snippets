@@ -4,15 +4,19 @@ _These are the default paths, each server can (and usually should) be customized
 
 ## OSX / Linux
 
-`sudo apache2ctl -S`                              (tests config)
-`sudo apachectl -k restart`
-`sudo code /usr/local/etc/httpd/httpd.conf`
-`sudo code /usr/local/etc/httpd/extra/httpd-vhosts.conf`
-`sudo code /etc/hosts`
-`code /usr/local/etc/php/7.4/php.ini`
+```
+sudo apache2ctl -S                     (tests config)
+sudo apachectl -k restart
+sudo code /usr/local/etc/httpd/httpd.conf
+sudo code /usr/local/etc/httpd/extra/httpd-vhosts.conf
+sudo code /etc/hosts
+code /usr/local/etc/php/7.4/php.ini
+```
 
+```
 ErrorLog "/usr/local/var/log/httpd/error_log"
 ServerRoot "/usr/local/opt/httpd"
+```
 
 
 ## OSX / Linux (via brew)
@@ -36,16 +40,18 @@ nano /usr/local/etc/httpd/extra/httpd-vhosts.conf
 
 ## Windows 10 (WSL Ubuntu)
 
-`sudo nano /etc/apache2/apache2.conf`
-
-`sudo nano /etc/apache2/sites-enabled/000-default.conf`
-
-`sudo nano /etc/php/7.4/apache2/php.ini`
+```
+sudo nano /etc/apache2/apache2.conf
+sudo nano /etc/apache2/sites-enabled/000-default.conf
+sudo nano /etc/php/7.4/apache2/php.ini
+```
 
 ### Edit through Windows c:\Windows\System32\Drivers\etc\hosts
 
-`sudo service mysql start`
-`sudo service apache2 restart`
+```
+sudo service mysql start
+sudo service apache2 restart
+```
 
 
 
