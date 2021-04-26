@@ -112,13 +112,95 @@ Gator(d.querySelector('#app')).on(['mousedown','touchstart'], '.button', runActi
 document.getElementById('app').innerHTML = tmpl('template-dashboard', data);
 ```
 
+```HTML
+<script type="text/template" id="template-dashboard">
+	<div class="grid-container">
+		<h2 class="heading"> {%=o.orders.length%} </h2>
+		<div class="numbers">
+			{% if (!!o.orders.length){ %}
+				{% for (var i=0; i < o.orders.length; i++) {
+				var order = o.orders[i]; %}
+					{%=order.code%}
+				{% } %}
+			{% } %}
+	     </div>
+	</div>
+</script>
+```
 
 
 
 
+## Color scale
+
+```JS
+colorScale = function(pct, min, max) {
+    if (pct > max){ pct = max; }
+    pct = max - pct;
+    var base = (max - min);
+
+    if (base == 0) { pct = 100; }
+    else {
+	pct = (pct - min) / base * 100;
+    }
+    var r, g, b = 0;
+    if (pct < 50) {
+	r = 255;
+	g = Math.round(5.1 * pct);
+    }
+    else {
+	g = 255;
+	r = Math.round(510 - 5.10 * pct);
+    }
+    var h = r * 0x10000 + g * 0x100 + b * 0x1;
+    return '#' + ('000000' + h.toString(16)).slice(-6) + '45';
+};
+```
 
 
+## Alert system
 
+```JS
+APP.showAlert = function( message, css ){
+
+    var _notificationTime = 3; // seconds
+
+    var alertElement = document.createElement('div');
+    alertElement.id = 'msg-' + (+ new Date());
+    alertElement.classList = [css];
+    alertElement.innerHTML = message;
+
+    document.querySelector('#alerts').append( alertElement );
+
+    APP.timers[ alertElement.id ] = setTimeout( function(){
+	APP.hideAlert( alertElement.id );
+	delete APP.timers[ alertElement.id ];
+    }, _notificationTime * 1000 );
+
+
+    return alertElement.id;
+};
+
+
+APP.hideAlert = function( e ){
+    const elem = document.querySelector('#'+e);
+    elem.parentNode.removeChild(elem);
+};
+
+
+APP.hideAllAlerts = function(){
+    document.querySelector('#alerts').innerHTML = '';
+};
+```
+
+
+## Is a number?
+
+```JS
+isNumeric = function(n){
+    return !isNaN(parseFloat(n)) && isFinite(n);
+};
+```
 
 
 
