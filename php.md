@@ -88,3 +88,36 @@ while ($row = $res->fetchArray()) {
 
 ```
 
+
+
+# Benchmarking
+
+Simple and short:
+
+```PHP
+$benchmark_time = microtime(1);
+$benchmark_string = '';
+function benchmark($string = '')
+{
+    global $benchmark_time, $benchmark_string;
+    $return = $benchmark_time ? substr(sprintf('%f', microtime(1) - $benchmark_time), 0, 4) . 's ' . $benchmark_string : date('Y-m-d H:i:s');
+    $benchmark_time = microtime(1);
+    $benchmark_string = $string;
+    return '🟣'.$return;
+}
+```
+
+```PHP
+echo benchmark('Get orders') . PHP_EOL;
+// ...
+echo benchmark('- Add new') . PHP_EOL;
+// ...
+echo benchmark('End') . PHP_EOL;
+```
+
+```
+🟣2021-04-26 20:13:46
+🟣1.43s Get orders
+🟣0.01s - Add new
+🟣0.00s End
+```
