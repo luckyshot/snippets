@@ -27,8 +27,12 @@ show global variables like 'slow%log%';
 
 SET GLOBAL slow_query_log = 'ON';
 SET GLOBAL slow_query_log_file = '/var/log/mysql/mysql-slow.log';
+```
 
-sudo grc tail -f
+**Remember to turn it off once done:**
+
+```SQL
+SET GLOBAL slow_query_log = 'OFF';
 ```
 
 See summary:
