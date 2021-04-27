@@ -26,11 +26,11 @@ select * from INFORMATION_SCHEMA.PROCESSLIST where db = 'filterbydatabase' ORDER
 show global variables like 'slow%log%';
 
 SET GLOBAL slow_query_log = 'ON';
-SET GLOBAL long_query_time = 5;
+SET GLOBAL long_query_time = 3;
 SET GLOBAL slow_query_log_file = '/var/log/mysql/mysql-slow.log';
 ```
 
-_(`long_query_time` is in seconds)_
+_(`long_query_time` is in seconds, start with 2 and run a `mysqldumpslow`, adjust accordingly)_
 
 **Remember to turn it off once done:**
 
