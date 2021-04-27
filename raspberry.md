@@ -3,8 +3,12 @@
 `sudo raspi-config`
 
 
-## Configure Wi-Fi
+## Enable SSH
 
+Create a file called `ssh` in `boot` (root folder in SD).
+
+
+## Wi-Fi
 
 ### Initial setup
 
