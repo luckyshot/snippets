@@ -17,7 +17,7 @@ create user 'USERNAME'@'localhost' identified by 'PASSWORD';
 or to filter rows:
 
 ```SQL
-select * from INFORMATION_SCHEMA.PROCESSLIST where db = 'somedb' order by Time desc;
+select * from INFORMATION_SCHEMA.PROCESSLIST where db = 'filterbydatabase' ORDER BY COMMAND, TIME DESC;
 ```
 
 ### Slow mode
