@@ -65,7 +65,16 @@ foreach($schedules as $schedule){
 
 
 
+# OB Cache
 
+```PHP
+ob_start();
+
+// ...
+
+$buffer = ob_get_clean();
+echo $buffer;
+```
 
 
 # SQLite
