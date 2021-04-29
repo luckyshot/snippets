@@ -7,6 +7,9 @@
 
 Create a file called `ssh` in `boot` (root folder in SD).
 
+
+`sudo tail -f /var/log/syslog`
+
 ## Encoding issues
 
 `sudo raspi-config`
