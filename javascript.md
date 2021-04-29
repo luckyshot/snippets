@@ -91,8 +91,9 @@ e)){for(var c in l)if(l[c].element===a)return l[c];p++;l[p]=new e(a,p);return l[
 ```
 
 ```JS
-Gator(d.querySelector('#app')).on('click', '#current-action', function(e) {
-    APP.toggleAction();
+Gator(d.querySelector('#app')).on('click', '.order', function(e) {
+    console.log( this ); // the listener event (.order)
+    console.log( e.target ); // the clicked element (i.e. a paragraph inside .order)
     e.preventDefault();
 });
 
