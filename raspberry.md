@@ -7,6 +7,14 @@
 
 Create a file called `ssh` in `boot` (root folder in SD).
 
+## Encoding issues
+
+`sudo raspi-config`
+
+`Localization Options` > `Locale`
+
+Choose `en_US UTF8` and also any language you are using (i.e. `es_ES UTF-8`)
+
 
 ## Wi-Fi
 
