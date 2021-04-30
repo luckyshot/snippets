@@ -25,6 +25,23 @@ Following these instructions: https://gist.github.com/karlhillx/5cd68430aeb25e5e
 
 And add to your path `echo 'export PATH="/usr/local/opt/php@8.0/bin:$PATH"' >> ~/.zshrc`
 
+For MySQL do:
+
+```yaml
+brew doctor
+brew update
+brew install mysql
+mysql.server start
+brew services start mysql
+mysql -u root -p
+```
+
+```SQL
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'youpassword';
+```
+
+Useful commands:
+
 ```
 sudo apachectl start
 sudo apachectl stop
