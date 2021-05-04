@@ -165,5 +165,5 @@ $users = DB::table('users')
 
 DB::statement("UPDATE `users` SET `status` = 'paused';");
 
-$results = DB::select( DB::raw("SELECT * FROM some_table WHERE some_col = 'active';") );
+$results = DB::select('select * from users where id = :id', ['id' => 1]);
 ```
