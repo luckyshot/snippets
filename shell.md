@@ -1,6 +1,6 @@
-# Bash
+# Shell
 
-```BASH
+```sh
 nano ~/.bashrc
 
 alias serveron="sudo service apache2 restart;sudo service mysql start"
@@ -19,7 +19,7 @@ alias _u="sudo apt update;sudo apt upgrade"
 - `eval "$(ssh-agent -s)"`
 - `nano ~/.ssh/config`
 
-```
+```sh
 Host *
   AddKeysToAgent yes
   UseKeychain yes
