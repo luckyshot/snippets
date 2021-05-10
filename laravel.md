@@ -147,6 +147,7 @@ protected $except = [
 
 $users = Users::select('count(*) as user_count, status')
     ->where('status', '<>', 1)
+    ->where('created_at', '>', date('Y-m-d H:i:s', time() - 8 * 3600))
     ->groupBy('status')
     ->get();
 
