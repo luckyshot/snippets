@@ -168,3 +168,15 @@ DB::statement("UPDATE `users` SET `status` = 'paused';");
 
 $results = DB::select('select * from users where id = :id', ['id' => 1]);
 ```
+
+## Measure raw query performance
+
+```php
+DB::connection()->enableQueryLog();
+
+// Run queries...
+
+$queries = DB::getQueryLog();
+$last_query = end($queries);
+dd($last_query['query']);
+```
