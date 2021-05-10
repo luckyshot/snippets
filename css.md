@@ -9,6 +9,18 @@ html {
 }
 ```
 
+## Webfont
+
+_(Compatible from IE9+)_
+
+```css
+@font-face {
+  font-family: 'MyWebFont';
+  src:  url('myfont.woff2') format('woff2'),
+        url('myfont.woff') format('woff');
+}
+```
+
 ## Animation
 
 ```CSS
