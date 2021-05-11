@@ -3,7 +3,7 @@
 ## Variables
 
 ```css
-filter:brightness(1.2);
+filter: brightness(1.2);
 ```
 
 ```css
