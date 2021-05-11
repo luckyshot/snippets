@@ -2,9 +2,11 @@
 
 ## Variables
 
-`filter:brightness(1.2);`
-
+```css
+filter:brightness(1.2);
 ```
+
+```css
 html {
   --colorIndigo50: #EEF2FF;
   color: var(--colorIndigo50);
@@ -47,7 +49,7 @@ _(Compatible from IE9+)_
 
 ## Animation
 
-```CSS
+```css
 .fire {
     animation: pulse 2s infinite;
     display: inline-block;
@@ -62,9 +64,13 @@ _(Compatible from IE9+)_
 
 ## Media queries
 
-`@media only screen and (min-width: 600px) { }`
+```css
+@media only screen and (min-width: 600px) { }
+```
 
 Targets iPad 1: 
 
-`@media only screen and (device-width: 768px) and (device-height: 1024px) { }`
+```css
+@media only screen and (device-width: 768px) and (device-height: 1024px) { }
+```
 
