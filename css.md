@@ -1,11 +1,35 @@
 # CSS
 
+## Variables
+
 `filter:brightness(1.2);`
 
 ```
 html {
   --colorIndigo50: #EEF2FF;
   color: var(--colorIndigo50);
+}
+```
+
+## Tiny Minimal Flexbox Grid
+
+```css
+/*
+Tiny Minimal Flexbox Grid
+Credits, gutters, margins and more: https://css-tricks.com/dont-overthink-flexbox-grids/
+*/
+.flex-grid {
+  display: flex;
+}
+.col {
+  flex: 1;
+}
+
+/* Break on mobile? */
+@media (max-width: 400px) {
+  .flex-grid {
+    display: block;
+  }
 }
 ```
 
