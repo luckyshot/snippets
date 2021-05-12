@@ -26,7 +26,7 @@ select * from INFORMATION_SCHEMA.PROCESSLIST where db = 'filterbydatabase' ORDER
 show global variables like 'slow%log%';
 
 SET GLOBAL slow_query_log = 'ON';
-SET GLOBAL long_query_time = 3;
+SET GLOBAL long_query_time = 2;
 SET GLOBAL slow_query_log_file = '/var/log/mysql/mysql-slow.log';
 ```
 
