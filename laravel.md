@@ -116,6 +116,31 @@ protected $commands = [
 Run it in the console: `php artisan EveryMinute`
 
 
+## Model Events
+
+```php
+    protected static function boot()
+    {
+        parent::boot();
+        static::created(function ($model) {
+            // ...
+        });
+    }
+```
+
+- `retrieved`
+- `creating`
+- `created`
+- `updating`
+- `updated`
+- `saving`
+- `saved`
+- `deleting`
+- `deleted`
+- `restoring`
+- `restored`
+
+
 ## Miscelaneous
 
 ### Global variables
