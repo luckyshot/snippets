@@ -133,8 +133,8 @@ Run it in the console: `php artisan EveryMinute`
 - `created`
 - `updating`
 - `updated`
-- `saving`
-- `saved`
+- `saving` (both creating and updating trigger this)
+- `saved` (both created and updated trigger this)
 - `deleting`
 - `deleted`
 - `restoring`
