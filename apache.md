@@ -93,3 +93,15 @@ sudo apt install php8.0 libapache2-mod-php8.0 php8.0-mysql
 sudo apt update
 php -v
 ```
+
+
+## Performance
+
+### Access log
+
+```BASH
+sudo grc tail -f /var/log/apache2/example.com-access.log
+sudo grc tail -f /var/log/apache2/other_vhosts_access.log
+
+tail -f /var/www/example.com/storage/logs/lastcommand.log
+```
