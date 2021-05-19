@@ -39,6 +39,8 @@ network={
 
 ### After setup
 
+NOTE: IP will be different than Ethernet connection!
+
 `sudo nano /etc/wpa_supplicant/wpa_supplicant.conf`
 
 ```
@@ -48,6 +50,7 @@ network={
 }
 ```
 
+`wpa_cli -i wlan0 reconfigure`
 
 
 ## Thermal printer
