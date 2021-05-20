@@ -1,5 +1,7 @@
 # PHP Laravel
 
+[snippets](https://github.com/luckyshot/snippets/) / [php](php.md) / laravel.md
+
 ## Migrations
 
 `php artisan migrate:reset`
