@@ -161,6 +161,14 @@ sudo apt update
 php -v
 ```
 
+## PHP FPM
+
+To enable PHP 7.4 FPM in Apache2 do:
+
+```BASH
+a2enmod proxy_fcgi setenvif
+a2enconf php7.4-fpm
+```
 
 ## Performance
 
