@@ -1,5 +1,11 @@
 # PHP
 
+Random item from array:
+
+```PHP
+echo $items[array_rand($items)];
+```
+
 ## Dates
 
 `date_default_timezone_set('Europe/Madrid');`
