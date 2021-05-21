@@ -1,5 +1,7 @@
 # CSS
 
+[TailWindCSS Color Palette as CSS native variables](https://gist.github.com/luckyshot/9605314b6f32304ea3d44381ad6788af)
+
 ## Variables
 
 ```css
