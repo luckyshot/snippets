@@ -196,7 +196,27 @@ DB::statement("UPDATE `users` SET `status` = 'paused';");
 $results = DB::select('select * from users where id = :id', ['id' => 1]);
 ```
 
-## Measure raw query performance
+
+## SQL performance
+
+Use `->toSql()` to output the generated SQL code.
+
+Use `->with(['products','users'])` to eager load if you know you are going to access those related tables.
+
+Add https://github.com/barryvdh/laravel-debugbar to your dev environment for easy optimizations.
+
+
+### Measure query performance
+
+This gives us the query, the bindings, and the time the query took to run
+
+```PHP
+\DB::listen(function($sql, $bindings, $time) {
+    var_dump($sql);
+    var_dump($bindings);
+    var_dump($time);
+});
+```
 
 ```php
 DB::connection()->enableQueryLog();
