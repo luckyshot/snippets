@@ -6,6 +6,12 @@ Random item from array:
 echo $items[array_rand($items)];
 ```
 
+File modified date
+
+```PHP
+echo date('jS F Y',filemtime(__FILE__));
+```
+
 ## Dates
 
 `date_default_timezone_set('Europe/Madrid');`
