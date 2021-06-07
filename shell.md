@@ -6,6 +6,12 @@
 sudo chown -R www-data:www-data /var/www/example.com/; sudo chmod -R g+rwxs /var/www/example.com/
 ```
 
+### Add to group
+
+```sh
+sudo usermod -a -G www-data petergriffin
+```
+
 
 ## Aliases
 
