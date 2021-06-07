@@ -1,5 +1,14 @@
 # Shell
 
+## Chown and permissions
+
+```sh
+sudo chown -R www-data:www-data /var/www/example.com/; sudo chmod -R g+rwxs /var/www/example.com/
+```
+
+
+## Aliases
+
 ```sh
 nano ~/.bashrc
 
