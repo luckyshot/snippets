@@ -225,4 +225,8 @@ isNumeric = function(n){
 
 #### Convert imperial to metric
 
-`document.body.innerHTML = document.body.innerHTML.replace(/([0-9\.]{1,10}) ?º/g, function(match, contents, offset, input_string){console.log(match, contents, offset, input_string);return Math.round((5/9) * (contents - 32), 1)+'º'})`
+```JS
+document.body.innerHTML = document.body.innerHTML
+.replace(/([0-9\.]{1,10}) ?º/g, function(match, contents, offset, input_string){console.log(match, contents, offset, input_string);return Math.round((5/9) * (contents - 32), 1)+'º'})
+.replace(/([0-9\.]{1,10}) ?(feet|ft|square feet)/g, function(match, contents, offset, input_string){return Math.round(contents * 30.48)/100+'m'})
+```
