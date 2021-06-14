@@ -215,10 +215,14 @@ isNumeric = function(n){
 
 `javascript:void( /* code here */ )`
 
-Go to another page
+#### Go to another page
 
 `location.href='https://example.com/add?url='+encodeURIComponent(location.href)+'&text='+encodeURIComponent(document.title)`
 
-Open a popup window
+#### Open a popup window
 
 `var bWindow=window.open("https://example.com","Window title","height=300,width=600");setTimeout(function(){ bWindow.close() }, 5000)`
+
+#### Convert imperial to metric
+
+`document.body.innerHTML = document.body.innerHTML.replace(/([0-9\.]{1,6}) ?º/, function(match, contents, offset, input_string){console.log(match, contents, offset, input_string);return ((5/9) * (contents - 32))+'º'}) `
