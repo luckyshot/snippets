@@ -225,4 +225,4 @@ isNumeric = function(n){
 
 #### Convert imperial to metric
 
-`document.body.innerHTML = document.body.innerHTML.replace(/([0-9\.]{1,6}) ?º/, function(match, contents, offset, input_string){console.log(match, contents, offset, input_string);return ((5/9) * (contents - 32))+'º'}) `
+`document.body.innerHTML = document.body.innerHTML.replace(/([0-9\.]{1,10}) ?º/g, function(match, contents, offset, input_string){console.log(match, contents, offset, input_string);return Math.round((5/9) * (contents - 32), 1)+'º'})`
