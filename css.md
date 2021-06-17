@@ -15,6 +15,18 @@ html {
 }
 ```
 
+## Box-sizing
+
+```css
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+```
+
 ## Tiny Minimal Flexbox Grid
 
 ```css
