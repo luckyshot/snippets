@@ -211,6 +211,41 @@ isNumeric = function(n){
 
 
 
+## Text to Speech
+
+```js
+    APP = APP || {};
+    APP.config = {
+        speechRate: "1.4",
+        speechPitch: "0.9",
+    };
+    APP.cache = {};
+    APP.cache.speech = {};
+    
+    APP.initSpeech = function(){
+        var voices = window.speechSynthesis.getVoices();
+        APP.cache.speech.voice = voices[0];
+        APP.cache.speech.rate = APP.config.speechRate;
+        APP.cache.speech.pitch = APP.config.speechPitch;
+        // APP.cache.speech.lang = "en-US";
+    };
+    APP.speak = function(text, callback){
+        APP.cache.speech.text = text;
+        console.log('callback before', callback);
+        APP.cache.speech.onend = function (e, callback) {
+            console.log('callback after', callback);
+            if (callback) { callback(e); }
+        };
+        console.log(APP.cache.speech);
+        speechSynthesis.speak(APP.cache.speech);
+    };
+
+
+APP.initSpeech();
+APP.speak("Hello world!");
+```
+
+
 ## Bookmarklets
 
 `javascript:void( /* code here */ )`
