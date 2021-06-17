@@ -102,3 +102,55 @@ Targets iPad 1:
 @media only screen and (device-width: 768px) and (device-height: 1024px) { }
 ```
 
+## CSS-based hamburger menu
+
+```css
+#sidebar-menu-toggle {
+	opacity: 0;
+	display: none;
+}
+.sidebar-menu-label {
+	position: absolute;
+	top: 20px;
+	left: 20px;
+	cursor: pointer;
+  z-index: 101;
+}
+.sidebar-menu {
+	display: none;
+}
+
+#sidebar-menu-toggle:checked ~ .sidebar-menu {
+	display: block;
+}
+@media screen and (max-width: 767px) {
+	.sidebar-menu {
+		position: absolute;
+		display: block;
+		overflow: hidden;
+		height: 100vh;
+		width: 360px;
+		left: -360px;
+		transition: left .1s ease-in-out;
+    background: #ccc;
+    z-index: 100;
+	}
+  
+  #sidebar-menu-toggle:checked ~ .sidebar-menu {
+		left: 0;
+		transition: left .3s ease-in-out;
+	}
+
+}
+```
+
+```html
+<label for="sidebar-menu-toggle" class="sidebar-menu-label">☰</label><input type="checkbox" id="sidebar-menu-toggle">
+
+<div class="sidebar-menu">
+  <ul>
+    <li>Item a</li>
+    <li>Item b</li>
+  </ul>
+</div>
+```
