@@ -1,5 +1,21 @@
 # PHP
 
+Match items via Regular Expressions (regexp)
+
+```PHP
+function regex($regex, $string)
+{
+    // regex flags: http://php.net/manual/en/reference.pcre.pattern.modifiers.php
+    preg_match_all(
+      $regex,
+        $string,
+        $matches,
+        PREG_SET_ORDER // formats data into an array of items
+    );
+    return $matches;
+}
+```
+
 Random item from array:
 
 ```PHP
