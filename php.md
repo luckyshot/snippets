@@ -91,6 +91,14 @@ foreach($schedules as $schedule){
 }
 ```
 
+## Only run locally
+
+```php
+// Only run locally
+if ('127.0.0.1' !== $_SERVER["REMOTE_ADDR"]){
+	die('Only local');
+}
+```
 
 
 # OB Cache
