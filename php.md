@@ -242,3 +242,39 @@ echo benchmark('End') . PHP_EOL;
 🟣0.01s - Add new
 🟣0.00s End
 ```
+
+## Generate slug
+
+```php
+/**
+ * replaces strange chars and generates a slug based on the provided string
+ *
+ * @param string $string The title of a story
+ * @return string The URL-friendly version of it
+ */
+protected function generateSlug( $slug )
+{
+
+	// lowercase
+	$slug = strtolower( $slug );
+
+	$slug = trim( $slug );
+
+	$slug = substr( $slug, 0, 95 );
+	// remove accents
+	//$slug = $this->removeAccents( $slug );
+
+	// only alphanumeric
+	$slug = preg_replace( '/[^A-Za-z0-9-]+/', ' ', $slug );
+
+	$slug = trim( $slug );
+
+	// spaces to -
+	$slug = str_replace( ' ', '-', $slug );
+
+	// multiple --- to one -
+	$slug = preg_replace( '#-+#', '-', $slug );
+
+	return $slug;
+}
+```
