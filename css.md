@@ -102,6 +102,14 @@ Targets iPad 1:
 @media only screen and (device-width: 768px) and (device-height: 1024px) { }
 ```
 
+## Change color of a SVG
+
+```css
+.logo svg {
+	fill: var(--colorBluePrimary);
+}
+```
+
 ## CSS-based hamburger menu
 
 ```css
