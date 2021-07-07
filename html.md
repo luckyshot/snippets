@@ -40,3 +40,51 @@ Common `<header>` tags:
 <script src="//twemoji.maxcdn.com/2/twemoji.min.js?2.4"></script>
 <script>twemoji.parse(document.body);</script>
 ```
+
+## Sample Chart
+
+```html
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
+
+<div id="chart" class="chart-morris" style="height:360px"></div>
+
+<script>
+
+				new Morris.Line({
+			element: 'chart',
+			data: [{"price_usd":"33169.451490","date":"2021-06-23 22:00"},{"price_usd":"33521.283679","date":"2021-06-24 01:00"}],
+						goals: [],
+			goalLineColors: [],
+			events: [],
+			eventLineColors: [],
+			hoverCallback: function (index, options, content, row) {
+				for (var i = 0; i < events.length; i++) {
+					if ( row.date.indexOf( events[i].date ) === 0 ){
+						content += '<div><button class="btn btn-fill btn-xs btn-'+(events[i].price_usd>33500?'info':'warning')+'">'+events[i].action+' $'+events[i].date+' <small>($'+events[i].price_usd+')</small></button></div>';
+					}
+				}
+				return content;
+			},
+			xkey: 'date',
+			ykeys: ['price_usd'],
+			labels: ['Price'],
+			lineColors: ['#eb5e28'],
+			lineWidth: 2,
+			goalStrokeWidth: 1,
+			pointSize: 0,
+			ymin: 'auto',
+			ymax: 'auto',
+			preUnits: '$',
+			resize: true,
+			hideHover: true,
+			yLabelFormat: function (y) { return Math.round(y * 1000000) / 1000000; }
+		});
+
+		var events = [];
+	
+</script>
+```
+
