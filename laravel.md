@@ -4,9 +4,11 @@
 
 ## Migrations
 
-`php artisan migrate:reset`
-
-`php artisan migrate`
+```bash
+php artisan migrate:fresh
+php artisan migrate
+php artisan make:migration create_flights_table
+```
 
 ```PHP
 public function up()
