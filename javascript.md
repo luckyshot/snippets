@@ -113,7 +113,7 @@ Gator(d.querySelector('#app')).on(['mousedown','touchstart'], '.button', runActi
 document.getElementById('app').innerHTML = tmpl('template-dashboard', data);
 ```
 
-Insert partial (use `#` instead of `=` to avoid escaping HTML):
+Insert partial (use `{%#` instead of `{%=` to avoid escaping HTML):
 
 ```JS
 {%#tmpl('template-partial-stats', data)%}
