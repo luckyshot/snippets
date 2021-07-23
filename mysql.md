@@ -1,5 +1,15 @@
 # MySQL
 
+## Useful queries
+
+Daily reporting:
+
+```sql
+GROUP BY DATE_FORMAT(date, "%Y-%m")
+```
+
+## Settings
+
 Create new MySQL user
 
 ```SQL
