@@ -1,5 +1,9 @@
 # MySQL
 
+## Data manipulation
+
+Date interval: `TIMESTAMPDIFF(MINUTE, created_at, NOW())`
+
 ## Useful queries
 
 Daily reporting:
