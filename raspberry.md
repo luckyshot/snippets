@@ -58,7 +58,7 @@ network={
 ```
 sudo apt-get install python3 python3-setuptools python3-pip libjpeg8-dev
 sudo pip3 install --upgrade pip
-sudo pip3 install python-escpos
+sudo pip3 install python-escpos==3.0a7
 ```
 
 Find idVendor and idProduct (they're like `04b8:0202` with command `lsusb` (use `lsusb -v` if you're having trouble finding it).
