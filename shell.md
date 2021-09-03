@@ -57,7 +57,7 @@ If you are getting a `Permission denied (publickey). fatal: Could not read from 
 
 
 
-## Hetzner LAMP server initial setup
+## Hetzner LAMP Ubuntu server initial setup (20.04)
 
 ```sh
 # Finish installing LetsEncrypt
@@ -70,7 +70,29 @@ passwd xavi
 usermod -a -G www-data xavi
 
 
-# APT
+# Swap file
+# - Less than 2 GB RAM - 2x the RAM
+# - 2 to 8 GB RAM - same size as RAM
+# - More than 8 GB RAM - at least 4 GB
+# Example for a 8GB swap file
+fallocate -l 8G /swapfile
+# for 2GB: `dd if=/dev/zero of=/swapfile bs=1024 count=2097152`
+dd if=/dev/zero of=/swapfile bs=1024 count=8388608
+chmod 600 /swapfile
+mkswap /swapfile
+swapon /swapfile
+nano /etc/fstab
+
+##### Paste this #####
+/etc/fstab
+/swapfile swap swap defaults 0 0
+###############################
+
+sudo swapon --show
+sudo free -h
+
+
+# APT update and upgrade PHP
 apt update
 apt upgrade
 
