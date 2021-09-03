@@ -64,7 +64,7 @@ If you are getting a `Permission denied (publickey). fatal: Could not read from 
 certbot --apache
 
 
-# Add your normal user
+# Add your non-privileged user
 useradd -m xavi
 passwd xavi
 usermod -a -G www-data xavi
