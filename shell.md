@@ -54,3 +54,66 @@ Host *
 - Do a first connection `ssh -T git@github.com` and add the RSA host key
 
 If you are getting a `Permission denied (publickey). fatal: Could not read from remote repository. Please make sure you have the correct access rights and the repository exists.` error or similar, usually after a reboot, try running `ssh-add -K ~/.ssh/id_ed25519` again.
+
+
+
+## Hetzner LAMP server initial setup
+
+```sh
+# Finish installing LetsEncrypt
+certbot --apache
+
+
+# Add your normal user
+useradd -m xavi
+passwd xavi
+usermod -a -G www-data xavi
+
+
+# APT
+apt update
+apt upgrade
+
+add-apt-repository ppa:ondrej/php
+add-apt-repository ppa:ondrej/apache2
+
+apt purge php7.*
+
+apt install git
+apt install php8.0-fpm
+
+service apache2 restart
+
+apt install php8.0-common php8.0-mysql php8.0-xml php8.0-xmlrpc php8.0-curl php8.0-gd php8.0-imagick php8.0-cli php8.0-dev php8.0-imap php8.0-mbstring php8.0-opcache php8.0-soap php8.0-zip php8.0-intl -y
+
+service apache2 restart
+
+a2dismod php8.0
+apt install php8.0-fpm
+a2enmod proxy_fcgi setenvif
+a2enconf php8.0-fpm
+
+apt autoclean
+apt autoremove
+
+systemctl restart apache2
+
+php -v
+mysql --version
+
+
+# Create Apache .conf files and folders
+nano /etc/apache2/sites-available/example.com.conf
+a2ensite example.com.conf
+systemctl reload apache2
+
+mkdir /var/www/example.com
+chown www-data:www-data example.com/
+chmod -R g+rwxs example.com/
+
+
+# Login to MySQL
+cat /root/.hcloud_password
+mysql -u root -p
+
+```
