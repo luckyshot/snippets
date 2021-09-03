@@ -92,7 +92,7 @@ sudo swapon --show
 sudo free -h
 
 
-# APT update and upgrade PHP
+# APT update and upgrade PHP, Apache
 apt update
 apt upgrade
 
@@ -114,6 +114,14 @@ a2dismod php8.0
 apt install php8.0-fpm
 a2enmod proxy_fcgi setenvif
 a2enconf php8.0-fpm
+
+
+# Upgrade Apache2
+
+add-apt-repository ppa:ondrej/apache2
+apt install apache2
+apt update
+apt upgrade
 
 apt autoclean
 apt autoremove
