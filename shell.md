@@ -120,6 +120,7 @@ apt autoremove
 
 systemctl restart apache2
 
+apache2 -v
 php -v
 mysql --version
 
