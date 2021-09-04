@@ -19,6 +19,10 @@ sudo passwd pettegriffin
 sudo usermod -a -G www-data petergriffin
 ```
 
+### Set bash as default console/terminal command shell
+
+`chsh`, enter password and type `/bin/bash`
+
 
 ## Aliases
 
