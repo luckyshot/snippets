@@ -90,3 +90,8 @@ Replace `idVendor` and `idProduct` hex numbers with the ones that you got.
 `sudo service udev restart` (or if it doesn't work `sudo udevadm control --reload`)
 
 Full docs: https://python-escpos.readthedocs.io/en/latest/user/methods.html
+
+
+## Temperature (in Celsius)
+
+`/opt/vc/bin/vcgencmd measure_temp`
