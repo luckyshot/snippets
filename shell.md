@@ -11,6 +11,9 @@ sudo chown -R www-data:www-data /var/www/example.com/; sudo chmod -R g+rwxs /var
 ```sh
 sudo useradd -m pettergriffin
 sudo passwd pettegriffin
+
+# if needed, add to sudoers group
+adduser pettergriffin sudo
 ```
 
 ### Add to group
