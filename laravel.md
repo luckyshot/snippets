@@ -94,6 +94,8 @@ use App\Http\Controllers\UserController;
 Route::get('/user/{id}', [UserController::class, 'show']);
 ```
 
+Run `php artisan route:list` to view all named routes.
+
 ## Views
 
 ```PHP
