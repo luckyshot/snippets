@@ -155,3 +155,28 @@ cat /root/.hcloud_password
 mysql -u root -p
 
 ```
+
+
+## Reverse SSH Tunnel
+
+Based on https://www.howtogeek.com/428413/what-is-reverse-ssh-tunneling-and-how-to-use-it/
+
+```sh
+# On remote computer
+
+# if SSH daemon not active, activate service on boot
+sudo systemctl enable sshd
+
+ssh -R 43022:localhost:22 dave@sulaco.local
+# - 43022: where local is listening
+# - localhost
+# - 22: remote port where local will connect
+# - dave@sulaco.local: account the remote computer will connect on local
+
+# Enter password
+# We’re now connected to local from remote
+
+# On local computer
+ssh localhost -p 43022
+
+```
