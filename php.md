@@ -114,8 +114,13 @@ echo date('jS F Y',filemtime(__FILE__));
 `date('j M H:i')`
 30 Apr 23:59
 
+`date('jS F Y')`
+1st April 2021
+
 `date('D H:i')`
 Fri 23:59
+
+Full documentation: https://www.php.net/manual/en/datetime.format.php
 
 ### UTC date to local
 
