@@ -4,9 +4,7 @@
 
 ## GPIO pins
 
-For RPi4B full-speed fan
-
-
+![GPIO_fan_connection](https://user-images.githubusercontent.com/141241/136574270-7e676a79-7466-499d-b393-4f756fc78156.jpeg)
 
 ## SSH
 
