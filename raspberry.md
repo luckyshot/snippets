@@ -2,6 +2,11 @@
 
 `sudo raspi-config`
 
+## GPIO pins
+
+For RPi4B full-speed fan
+
+
 
 ## SSH
 
