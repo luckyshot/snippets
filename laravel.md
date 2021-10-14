@@ -2,6 +2,12 @@
 
 [snippets](https://github.com/luckyshot/snippets/) / [php](php.md) / laravel.md
 
+## Environment
+
+```php
+if (!in_array(config('app.env'), ['local', 'test'])) {
+```
+
 ## Migrations
 
 ```bash
