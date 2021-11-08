@@ -177,6 +177,6 @@ ssh -R 43022:localhost:22 dave@sulaco.local
 # We’re now connected to local from remote
 
 # On local computer
-ssh localhost -p 43022
+ssh pi@localhost -p 43022
 
 ```
