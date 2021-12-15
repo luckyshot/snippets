@@ -226,7 +226,7 @@ while ($row = $res->fetchArray()) {
 
 
 
-# Benchmarking
+## Benchmarking
 
 Simple and short:
 
@@ -292,4 +292,27 @@ protected function generateSlug( $slug )
 
 	return $slug;
 }
+```
+
+## Simple REQUEST parameter to COOKIE Authentication Token
+
+```php
+
+public $params = [
+        'auth_token' => 'TOKEN',
+        'auth_token_duration' => 31536000,
+];
+
+public function authenticate(){
+	if (@trim($_REQUEST['auth_token']) === $this->params['auth_token']) {
+	    $_COOKIE['thermo_auth_token'] = $this->auth_token;
+	    setcookie('thermo_auth_token', $this->auth_token, time() + $this->params['auth_token_duration'], '/');
+	}
+	if (@$_COOKIE['thermo_auth_token'] !== $this->params['auth_token']) {
+	    setcookie('thermo_auth_token', '', 0, '/');
+	    return false;
+	}
+	return true;
+}
+
 ```
