@@ -180,3 +180,53 @@ ssh -R 43022:localhost:22 dave@sulaco.local
 ssh pi@localhost -p 43022
 
 ```
+
+
+## Access remote devices with tmate
+
+https://tmate.io/
+
+Download tmate officially (you need v2.4.0, not ready at the time of writing this):
+
+`sudo apt-get install tmate`
+
+Or unofficially (v2.4.0 ready):
+
+```sh
+curl -fsSL https://github.com/MaxPeal/tmate/raw/fork-with-get-tmate.sh/get-tmate.sh -o get-tmate.sh
+sh get-tmate.sh
+```
+
+Check version: `./bin/tmate -V`
+
+If no SSH keys generated yet: `ssh-keygen`
+
+Get an API key from: https://tmate.io/#api_key
+
+Get a random 50 char string from: https://xaviesteve.com/pro/tools.php#password-length=50|password
+
+Set configuration parameters:
+
+`nano ~/.tmate.conf`
+
+```sh
+set tmate-api-key "tmk-API_KEY"
+# Max 50 chars
+set tmate-session-name "RANDOM_STRING"
+```
+
+Alternatively, validate incoming clients with specific public keys: https://tmate.io/#access_control
+
+Raspberry run on boot:
+
+`nano /etc/xdg/lxsession/LXDE-pi/autostart`
+
+```sh
+@tmate -F
+```
+
+All done!
+
+Now you can SSH into it by using:
+
+```ssh YOUR_USERNAME/RANDOM_STRING@ssh.tmate.io```
