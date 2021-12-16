@@ -39,3 +39,11 @@ Cell D is empty but B is not:
 
 
 
+## Add new row via HTTP GET request
+
+1. Create a Google Form
+2. _Get prefilled form_
+3. Copy URL
+4. Change `/viewform` to `/formResponse`
+5. Add `&submit=Submit`
+
