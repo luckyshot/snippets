@@ -2,13 +2,48 @@
 
 `sudo raspi-config`
 
+
+## Enable SSH
+
+Create a file called `ssh` in `boot` (root folder in SD).
+
+
+## Change hostname
+
+```sh
+sudo nano /etc/hostname
+sudo nano /etc/hosts
+sudo reboot
+```
+
+## Change default password ('raspberry')
+
+`passwd`
+
+
+## Static IP
+
+`sudo nano /etc/dhcpcd.conf`
+
+```sh
+# STATIC IP
+interface wlan0
+static ip_address=192.168.1.106/24
+static routers=192.168.1.1
+static domain_name_servers=1.1.1.1 1.0.0.1
+```
+
+
+
+
+## Install Cockpit
+
+`sudo apt install cockpit`
+
+
 ## GPIO pins
 
 ![GPIO_fan_connection](https://user-images.githubusercontent.com/141241/136574270-7e676a79-7466-499d-b393-4f756fc78156.jpeg)
-
-## SSH
-
-Create a file called `ssh` in `boot` (root folder in SD).
 
 
 `sudo tail -f /var/log/syslog`
