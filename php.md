@@ -1,5 +1,16 @@
 # PHP
 
+### Cronjob/Command line parameters
+
+`php /home/user/script.php some_argument secret_key other_argument`
+
+```php
+echo $argv[0]; // /home/user/script.php
+echo $argv[1]; // some_argument
+echo $argv[2]; // secret_key
+echo $argv[3]; // other_argument
+```
+
 ### HEREDOC string
 
 ```php
