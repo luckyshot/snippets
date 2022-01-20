@@ -138,6 +138,9 @@ echo date('jS F Y',filemtime(__FILE__));
 `date('jS F Y')`
 1st April 2021
 
+`date('l, j F Y')`
+Thursday, 20 April 2021
+
 `date('D H:i')`
 Fri 23:59
 
