@@ -230,3 +230,13 @@ All done!
 Now you can SSH into it by using:
 
 ```ssh YOUR_USERNAME/RANDOM_STRING@ssh.tmate.io```
+
+
+### Scan devices on same network
+
+`sudo apt install nmap`
+
+`ifconfig`
+
+`sudo nmap -sn 192.168.1.0/24`
+
