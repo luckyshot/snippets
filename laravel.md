@@ -115,6 +115,12 @@ echo $name;
 
 ## Commands
 
+See available commands (both from Artisan and the ones you've created):
+
+`php artisan list`
+
+To run cronjobs via Laravel:
+
 `app\Console\Kernel.php`
 
 ```PHP
@@ -125,7 +131,7 @@ protected $commands = [
 ];
 ```
 
-Run it in the console: `php artisan EveryMinute`
+To run a command in console: `php artisan EveryMinute`
 
 
 ## Model Events
