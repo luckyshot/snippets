@@ -330,3 +330,53 @@ public function authenticate(){
 }
 
 ```
+
+
+
+## Time Ago
+
+```php
+protected function nice_time($timestamp) {
+    if ( !$timestamp ){
+        return '';
+    }
+    // if no timestamp, do it now
+    if ( !is_numeric($timestamp) ){ $timestamp = strtotime( $timestamp ); }
+    // $periods = array("second", "minute", "hour", "day", "week", "month", "year", "decade");
+    $periods = [$this->_("second"), $this->_("minute"), $this->_("hour"), $this->_("day"), $this->_("week"), $this->_("month"), $this->_("year"), $this->_("decade")];
+    $lengths = ["60","60","24","7","4.35","12","10"];
+    $tense = $this->_("ago");
+    $tense_future = $this->_("in");
+    $tense_present = $this->_("just now");
+    $now = time();
+
+    $difference = $now - $timestamp;
+
+    if ($difference == 0) {return $tense_present;}
+    if ($difference < 0) {$tense = $tense_future;$difference=$difference*-1;/*return 'now';*/}
+
+    for($j = 0; $difference >= $lengths[$j] && $j < count($lengths)-1; $j++) {
+        $difference /= $lengths[$j];
+    }
+
+    $difference = round($difference);
+
+    if ($difference != 1) {
+        $periods[$j].= "s";
+    }
+
+    $result = $this->_("{difference} {periods} {tense}");
+    $result = str_replace(['{difference}', '{periods}', '{tense}', 'mess'], [$difference, $periods[$j], $tense, 'meses'], $result);
+
+    return $result;
+}
+
+protected function _( $string, $vars = [] ){
+    $i = 1;
+    foreach ($vars as $var) {
+        $return = str_replace( '%' . $i, $vars[ $i-1 ], $return );
+        $i++;
+    }
+    return $return;
+}
+```
