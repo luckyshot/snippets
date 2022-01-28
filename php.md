@@ -333,7 +333,25 @@ public function authenticate(){
 
 
 
-## Time Ago
+## Relative Time Ago
+
+`2 hours, 37 minutes, 8 seconds`
+
+```php
+function relative_time($ss)
+{
+    $s = $ss % 60;
+    $m = floor(($ss % 3600) / 60);
+    $h = floor(($ss % 86400) / 3600);
+    $d = floor(($ss % 2592000) / 86400);
+    $M = floor($ss / 2592000);
+
+    return ($M ? "$M months" : '') . ($d ? "$d days" : '') . ($h ? "$h hours" : '') . ($m ? "$m minutes" : '') . ($s ? "$s seconds" : '');
+}
+```
+
+
+`34 hours ago`
 
 ```php
 protected function nice_time($timestamp) {
