@@ -92,7 +92,7 @@ mkswap /swapfile
 swapon /swapfile
 nano /etc/fstab
 
-##### Paste this #####
+######### Paste this ##########
 /etc/fstab
 /swapfile swap swap defaults 0 0
 ###############################
@@ -104,6 +104,8 @@ sudo free -h
 # APT update and upgrade PHP, Apache
 apt update
 apt upgrade
+apt autoremove
+apt autoclean
 
 add-apt-repository ppa:ondrej/php
 add-apt-repository ppa:ondrej/apache2
@@ -120,8 +122,9 @@ apt install php8.0-common php8.0-mysql php8.0-xml php8.0-xmlrpc php8.0-curl php8
 apt install php7.4-common php7.4-mysql php7.4-xml php7.4-xmlrpc php7.4-curl php7.4-gd php7.4-imagick php7.4-cli php7.4-dev php7.4-imap php7.4-mbstring php7.4-opcache php7.4-soap php7.4-zip php7.4-intl -y
 
 
-# To switch PHP version
-sudo update-alternatives --set php /usr/bin/php7.4
+# To see and switch PHP version
+sudo update-alternatives --config php
+
 
 service apache2 restart
 
@@ -164,6 +167,13 @@ mysql -u root -p
 
 
 sudo apt-get install php-mbstring
+
+
+# Hide server info
+sudo nano /etc/apache2/conf-enabled/security.conf
+## then modify
+ServerTokens Prod
+ServerSignature Off
 
 ```
 
