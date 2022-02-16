@@ -12,6 +12,19 @@ Daily reporting:
 GROUP BY DATE_FORMAT(date, "%Y-%m")
 ```
 
+## Variables
+
+```sql
+SET @origin_store_id = 30,
+    @origin_date_start = '2022-02-10 13:30:00',
+    @duration = 1 * 3600;
+SELECT description
+FROM orders
+WHERE store_id = @origin_store_id
+AND pending_at >= @origin_date_start
+AND pending_at < DATE_ADD(@origin_date_start, INTERVAL @duration SECOND);
+```
+
 ## Settings
 
 Create new MySQL user
