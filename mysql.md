@@ -15,14 +15,14 @@ GROUP BY DATE_FORMAT(date, "%Y-%m")
 ## Variables
 
 ```sql
-SET @origin_store_id = 30,
-    @origin_date_start = '2022-02-10 13:30:00',
+SET @store_id = 30,
+    @date_start = '2022-02-10 13:30:00',
     @duration = 1 * 3600;
 SELECT description
 FROM orders
-WHERE store_id = @origin_store_id
-AND pending_at >= @origin_date_start
-AND pending_at < DATE_ADD(@origin_date_start, INTERVAL @duration SECOND);
+WHERE store_id = @store_id
+AND created_at >= @date_start
+AND created_at < DATE_ADD(@date_start, INTERVAL @duration SECOND);
 ```
 
 ## Settings
