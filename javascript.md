@@ -167,6 +167,10 @@ colorScale = function(pct, min, max) {
 
 ## Alert system
 
+```html
+<div id="alerts"></div>
+```
+
 ```JS
 APP.showAlert = function( message, css ){
 
