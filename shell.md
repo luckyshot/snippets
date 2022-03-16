@@ -86,6 +86,7 @@ usermod -a -G www-data xavi
 # Example for a 8GB swap file
 fallocate -l 8G /swapfile
 # for 2GB: `dd if=/dev/zero of=/swapfile bs=1024 count=2097152`
+# for 4GB: `dd if=/dev/zero of=/swapfile bs=1024 count=4194304`
 dd if=/dev/zero of=/swapfile bs=1024 count=8388608
 chmod 600 /swapfile
 mkswap /swapfile
