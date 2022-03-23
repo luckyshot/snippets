@@ -262,3 +262,6 @@ Now you can SSH into it by using:
 
 `sudo nmap -sn 192.168.1.0/24`
 
+### Scan domain name for DNS records
+
+`dig -t txt salesforce.com`
