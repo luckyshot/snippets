@@ -182,6 +182,11 @@ protected $except = [
 ```
 
 
+### Full URL with parameters
+
+`\URL::full()`
+
+
 
 ## SQL query styles (Eloquent, Raw)
 
