@@ -134,6 +134,12 @@ apt install php8.0-fpm
 a2enmod proxy_fcgi setenvif
 a2enconf php8.0-fpm
 
+## May also need to do
+
+sudo a2disconf php7.4-fpm.conf
+sudo a2enconf php8.0-fpm.conf
+sudo systemctl reload apache2
+
 
 # Upgrade Apache2
 
