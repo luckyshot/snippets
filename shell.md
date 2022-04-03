@@ -1,5 +1,12 @@
 # Shell
 
+##
+
+```sh
+echo "Hello" > file.txt # saves as new file
+echo "Hello" >> file.txt # appends
+```
+
 ## Chown and permissions
 
 ```sh
