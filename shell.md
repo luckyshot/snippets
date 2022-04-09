@@ -70,6 +70,15 @@ Host *
 If you are getting a `Permission denied (publickey). fatal: Could not read from remote repository. Please make sure you have the correct access rights and the repository exists.` error or similar, usually after a reboot, try running `ssh-add -K ~/.ssh/id_ed25519` again.
 
 
+# OCR text
+
+```sh
+sudo apt install ocrmypdf
+sudo apt install tesseract-ocr-spa
+ocrmypdf -l spa --sidecar output.txt input.pdf output.pdf
+
+```
+
 
 ## Hetzner LAMP Ubuntu server initial setup (20.04)
 
