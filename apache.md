@@ -12,6 +12,9 @@ code /usr/local/etc/php/7.4/php.ini
 sudo code /usr/local/etc/httpd/httpd.conf
 sudo code /usr/local/etc/httpd/extra/httpd-vhosts.conf
 sudo code /etc/hosts
+
+# Find PHP config file location
+php -i | grep "Loaded Configuration File"
 ```
 
 ```
@@ -19,6 +22,9 @@ ErrorLog "/usr/local/var/log/httpd/error_log"
 ServerRoot "/usr/local/opt/httpd"
 ```
 
+## Linux via Andrej (multi-version)
+
+https://www.tecmint.com/install-different-php-versions-in-ubuntu/
 
 ## OSX / Linux (via brew)
 
