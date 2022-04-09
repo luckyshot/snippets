@@ -26,7 +26,7 @@ ServerRoot "/usr/local/opt/httpd"
 
 https://www.tecmint.com/install-different-php-versions-in-ubuntu/
 
-For files that should be writable by PHP, set the group to www-data. Example for Laravel:
+For files that should be writable by PHP, set the group to www-data and 775 permissions. Example for Laravel:
 
 ```sh
 sudo chown -R $USER:www-data storage
