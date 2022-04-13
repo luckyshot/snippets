@@ -26,4 +26,20 @@ network={
 }
 ```
 
+## Printer
+
+```bash
+sudo apt install python3-dev zlib1g zlib1g-dev libfreetype6-dev
+
+python3 -m pip install -U --force-reinstall pip
+
+sudo pip3 install -U --ignore-installed requests
+#sudo python3 pip install -U --ignore-installed requests
+
+sudo python3 -m pip uninstall pillow
+sudo python3 -m pip install -U --ignore-installed --no-cache-dir Pillow
+
+sudo pip3 install python-escpos
+
+```
 
