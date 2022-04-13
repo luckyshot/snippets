@@ -10,6 +10,10 @@ Image for Banana Pi M2 Zero: https://armbian.hosthatch.com/archive/bananapim2zer
 
 ## Set up WiFi
 
+`sudo armbian-config`
+
+#### Manually
+
 `sudo nano /etc/wpa_supplicant/wpa_supplicant.conf`
 
 ```sh
