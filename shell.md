@@ -269,6 +269,14 @@ Raspberry run on boot:
 @tmate -F
 ```
 
+Or on Armbian:
+
+`crontab -e`
+
+```sh
+@reboot ./bin/tmate -F
+```
+
 All done!
 
 Now you can SSH into it by using:
