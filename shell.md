@@ -79,6 +79,22 @@ ocrmypdf -l spa --sidecar output.txt input.pdf output.pdf
 
 ```
 
+## Mount drives
+
+```sh
+# Find its name
+sudo fdisk -l
+
+# Mount it
+# -w will make it writable
+# /dev/sdb1 is the address found in fdisk command
+# /mnt is the folder where you'll be able to cd to
+mount -w /dev/sdb1 /mnt
+
+# Unmount
+sudo umount /mnt
+```
+
 
 ## Hetzner LAMP Ubuntu server initial setup (20.04)
 
