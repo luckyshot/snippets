@@ -90,6 +90,10 @@ _(Compatible from IE9+)_
 }
 ```
 
+### Animation examples
+
+Wiggle: https://jsfiddle.net/75qvjy4s/
+
 ## Media queries
 
 ```css
