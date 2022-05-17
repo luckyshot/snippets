@@ -37,6 +37,32 @@ function regex($regex, $string)
 }
 ```
 
+### Simple nice trim text function
+
+```php
+function pcsite_trim ($text, $maxwords, $allowtags = "") {
+// <?php echo pcsite_trim(get_the_content(), 15, "");
+  // Strip tags
+  $text = strip_tags($text, $allowtags);
+ 
+  //workingonthis-$thinchars = ereg_replace("[^fijlt]", "", $text); 
+  //workingonthis-$fatchars = ereg_replace("[^mw]", "", $text);
+  //workingonthis-$modifier = 5.1 + ( (strlen($thinchars) / strlen($text)) - (strlen($fatchars) / strlen($text)) );
+  $modifier = 5.1; // average letters per word (in normal english it's 4.5, but in blogging and so it increases)
+ 
+  $text = substr($text, 0, $maxwords * $modifier);
+ 
+  $words = explode(" ", $text);
+  $words = array_slice($words, 0, count($words) - 1 );
+ 
+  // Array to text
+  $text = implode(" ", $words);
+  $text = "<p>".$text."...</p>";
+ 
+  return $text;
+}
+```
+
 ### CURL
 
 ```php
