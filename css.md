@@ -92,7 +92,50 @@ _(Compatible from IE9+)_
 
 ### Animation examples
 
-Wiggle: https://jsfiddle.net/75qvjy4s/
+- Wiggle: https://jsfiddle.net/75qvjy4s/
+
+```css
+.flash {
+	animation: flash 2s infinite steps(4);
+}
+@keyframes flash {
+	0% {
+		opacity: .66;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+```
+
+```css
+@keyframes fade-in {
+	0% {
+		opacity: 0;
+		transform: scale(2);
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+```
+
+```css
+@keyframes pulse {
+	0% {
+		opacity: 100%;
+	}
+
+	100% {
+		opacity: 0;
+	}
+}
+```
+
+
+
 
 ## Media queries
 
