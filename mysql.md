@@ -6,10 +6,25 @@ Date interval: `TIMESTAMPDIFF(MINUTE, created_at, NOW())`
 
 ## Useful queries
 
-Daily reporting:
+### Daily reporting
 
 ```sql
 GROUP BY DATE_FORMAT(date, "%Y-%m")
+```
+
+### Most relevant weighted results based (MATCH AGAINST)
+
+```sql
+SELECT *, (
+	(1.2 * (MATCH(title) AGAINST (:keyword IN BOOLEAN MODE))) + 
+	(0.8 * (MATCH(description) AGAINST (:keyword IN BOOLEAN MODE))) + 
+	(1.0 * (MATCH(tags) AGAINST (:keyword IN BOOLEAN MODE))) 
+) AS relevance
+FROM :table
+WHERE 
+	MATCH (title, description, tags) AGAINST (:keyword IN BOOLEAN MODE) 
+	ORDER BY relevance DESC 
+LIMIT 0,5
 ```
 
 ## Variables
@@ -24,6 +39,7 @@ WHERE store_id = @store_id
 AND created_at >= @date_start
 AND created_at < DATE_ADD(@date_start, INTERVAL @duration SECOND);
 ```
+
 
 ## Settings
 
