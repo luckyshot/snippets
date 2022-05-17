@@ -119,6 +119,18 @@ function curl( $url, $custom = [] ){
 echo $items[array_rand($items)];
 ```
 
+### Bayesian Rating - Weighted voted rating system
+
+```php
+$avg_num_votes = 18; // Average number of votes in all products
+$avg_rating = 3.7; // Average rating for all products
+$this_num_votes = 6; // Number of votes for this product
+$this_rating = 4; // Rating for this product
+ 
+ 
+$bayesian_rating = ( ($avg_num_votes * $avg_rating) + ($this_num_votes * this_rating) ) / ($avg_num_votes + $this_num_votes);
+```
+
 ### File modified date
 
 ```PHP
