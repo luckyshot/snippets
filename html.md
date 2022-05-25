@@ -88,3 +88,9 @@ Common `<header>` tags:
 </script>
 ```
 
+
+## WhatsApp send message link shortcut
+
+```html
+https://api.whatsapp.com/send?phone=34666505050&text=*Hola*.%20Me%20gustar%C3%ADa%20ampliar%20informaci%C3%B3n%20sobre%20el%20*Carnet%20de%20Manipulador%20de%20Alimentos*%20que%20ofrec%C3%A9is.%20Gracias.
+```
