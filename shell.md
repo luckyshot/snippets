@@ -70,6 +70,14 @@ Host *
 If you are getting a `Permission denied (publickey). fatal: Could not read from remote repository. Please make sure you have the correct access rights and the repository exists.` error or similar, usually after a reboot, try running `ssh-add -K ~/.ssh/id_ed25519` again.
 
 
+### Add user SSH public key to server
+
+```sh
+ssh-copy-id -i ~/.ssh/id_rsa.pub USERNAME@SERVER_IP
+```
+
+
+
 # OCR text
 
 ```sh
