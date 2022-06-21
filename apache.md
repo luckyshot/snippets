@@ -98,6 +98,10 @@ Configuration errors:
 
 `sudo grc tail -f /var/log/apache2/error.log`
 
+Live access requests:
+
+`sudo grc tail -f /var/log/apache2/access.log`
+
 
 ### Installing Apache/PHP
 
