@@ -1,5 +1,12 @@
 # Raspberry Pi
 
+# Images
+
+https://www.raspberrypi.com/software/operating-systems/
+
+
+# Config
+
 `sudo raspi-config`
 
 
