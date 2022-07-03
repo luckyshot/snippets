@@ -87,6 +87,12 @@ ocrmypdf -l spa --sidecar output.txt input.pdf output.pdf
 
 ```
 
+## List drives
+
+```sh
+lsblk
+```
+
 ## Mount drives
 
 ```sh
