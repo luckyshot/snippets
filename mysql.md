@@ -8,6 +8,14 @@ Date interval: `TIMESTAMPDIFF(MINUTE, created_at, NOW())`
 
 ### Daily reporting
 
+Day: 
+
+```sql
+GROUP BY DATE_FORMAT(date, "%Y-%m-%d")
+```
+
+Month: 
+
 ```sql
 GROUP BY DATE_FORMAT(date, "%Y-%m")
 ```
