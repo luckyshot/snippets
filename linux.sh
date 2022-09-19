@@ -1,6 +1,8 @@
 # This is a list of commands I run on a freshly installed Ubuntu/Debian
 
-
+# Make Downloads folders
+mkdir ~/Downloads/Temp
+mkdir ~/Downloads/Keep
 
 sudo apt update
 sudo apt -y upgrade
