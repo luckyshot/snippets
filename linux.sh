@@ -6,8 +6,10 @@ sudo apt update
 sudo apt -y upgrade
 
 # install browser?
+# install Visual Sudio Code
 # install syncthing https://apt.syncthing.net/
 # install dbeaver-ce https://dbeaver.io/download/
+# install iriun webcam https://iriun.com/
 # install teamviewer/anydesk/remote desktop
 sudo apt install filezilla
 sudo apt install qbittorrent
