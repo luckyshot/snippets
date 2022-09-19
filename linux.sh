@@ -6,7 +6,8 @@ sudo apt update
 sudo apt -y upgrade
 
 # install browser?
-# install syncthing
+# install syncthing https://apt.syncthing.net/
+# install dbeaver-ce https://dbeaver.io/download/
 # install teamviewer/anydesk/remote desktop
 sudo apt install filezilla
 sudo apt install qbittorrent
