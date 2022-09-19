@@ -7,6 +7,9 @@ mkdir ~/Downloads/Keep
 sudo apt update
 sudo apt -y upgrade
 
+sudo apt install fail2ban
+
+
 # install browser?
 # install Visual Sudio Code
 # install syncthing https://apt.syncthing.net/
@@ -39,12 +42,14 @@ sudo apt install mariadb-server mariadb-client
 sudo systemctl start mariadb
 sudo systemctl enable mariadb
 sudo mysql_secure_installation
+sudo service apache2 reload
 
 # PHP 8
 sudo apt install lsb-release ca-certificates apt-transport-https software-properties-common -y
 sudo add-apt-repository ppa:ondrej/php
 sudo apt install php8.0
-sudo apt install php8.0-cli php8.0-common php8.0-imap php8.0-redis php8.0-snmp php8.0-xml php8.0-zip php8.0-mbstring
+sudo apt install php8.0-cli php8.0-common php8.0-imap php8.0-redis php8.0-snmp php8.0-xml php8.0-zip php8.0-mbstring php8.0-mysql
+sudo service apache2 reload
 
 # Virtual hosts
 cd /etc/apache2/sites-available/
@@ -60,7 +65,8 @@ sudo apt install gamemode
 
 
 
-# Now reboot
+# Clean up and reboot
+sudo apt autoremove
 sudo reboot
 
 
