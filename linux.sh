@@ -26,6 +26,7 @@ powermate
 # Apache
 sudo apt install -y apache2 apache2-utils
 sudo systemctl enable apache2
+sudo ln -s ~/Dropbox/WWW/ /var/www/WWW
 sudo chown www-data:www-data /var/www/ -R
 
 # Add user to www-data and vice-versa
