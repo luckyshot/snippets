@@ -114,6 +114,12 @@ sudo apt update
 php -v
 ```
 
+### Common setup mistakes
+
+- `<VirtualHost>` to `<VirtualHost *:80>`
+- `Order Allow,Deny` to `Require all granted`
+
+
 
 
 ## HTTP codes
