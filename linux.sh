@@ -7,8 +7,11 @@ mkdir ~/Downloads/Keep
 sudo apt update
 sudo apt -y upgrade
 
-sudo apt install fail2ban
+sudo apt-get install nodejs
+sudo apt install npm
 
+
+sudo apt install fail2ban
 
 # install browser?
 # install Visual Sudio Code
