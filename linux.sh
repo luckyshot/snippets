@@ -13,6 +13,7 @@ sudo apt install npm
 
 sudo apt install fail2ban
 
+# install espanso
 # install browser?
 # install Visual Sudio Code
 # install syncthing https://apt.syncthing.net/
