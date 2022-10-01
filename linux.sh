@@ -19,7 +19,7 @@ sudo apt install fail2ban
 # install browser?
 # install Visual Sudio Code
 # install syncthing https://apt.syncthing.net/
-# install dbeaver-ce https://dbeaver.io/download/
+# install TablePlus or DBeaver-CE https://dbeaver.io/download/
 # install iriun webcam https://iriun.com/
 # install teamviewer/anydesk/remote desktop
 sudo apt install filezilla
