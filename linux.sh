@@ -14,6 +14,7 @@ sudo apt install npm
 sudo apt install fail2ban
 
 # install espanso
+# install netdata
 # install browser?
 # install Visual Sudio Code
 # install syncthing https://apt.syncthing.net/
