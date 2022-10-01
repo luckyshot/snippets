@@ -1,4 +1,5 @@
 # This is a list of commands I run on a freshly installed Ubuntu/Debian
+# NOTE: It is not meant to be ran as a .sh file, but to copy/paste each line separately
 
 # Make Downloads folders
 mkdir ~/Downloads/Temp
@@ -10,9 +11,9 @@ sudo apt -y upgrade
 sudo apt-get install nodejs
 sudo apt install npm
 
-
 sudo apt install fail2ban
 
+# set up KDE Connect
 # install espanso
 # install netdata
 # install browser?
