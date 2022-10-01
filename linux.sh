@@ -23,7 +23,7 @@ sudo apt install fail2ban
 sudo apt install filezilla
 sudo apt install qbittorrent
 
-# Powermate
+# Powermate (you don't need this, it's a gadget I bought long time ago)
 sudo add-apt-repository ppa:stefansundin/powermate
 sudo apt-get update
 sudo apt-get install powermate
