@@ -23,7 +23,7 @@ sudo apt install fail2ban
 sudo apt install filezilla
 sudo apt install qbittorrent
 
-# Powermate (you don't need this, it's a gadget I bought long time ago)
+# Griffin PowerMate (you don't need this, it's a gadget I bought a long time ago and use it as a volume slider for my desktop computer + click to sleep)
 sudo add-apt-repository ppa:stefansundin/powermate
 sudo apt-get update
 sudo apt-get install powermate
