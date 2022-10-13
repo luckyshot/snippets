@@ -16,4 +16,7 @@ Map zoom toggle
 
 `bind e "toggle cl_radar_scale 0.5 1"`
 
+Hide player avatars and show numeric alive count
+
+`cl_hud_playercount 1`
 
