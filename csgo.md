@@ -1,5 +1,11 @@
 # CS:GO
 
+Autoexec.cfg location
+
+`/home/$USER/.steam/steam/userdata/{STEAM_ID}/730/local/cfg`
+
+- `730`: CS:GO
+
 Clear decals
 
 `bind w "+forward; r_cleardecals"`
