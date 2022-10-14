@@ -22,6 +22,7 @@ sudo apt install fail2ban
 # install TablePlus or DBeaver-CE https://dbeaver.io/download/
 # install iriun webcam https://iriun.com/
 # install teamviewer/anydesk/remote desktop
+# gaming PC? https://gitlab.com/corectrl/corectrl
 sudo apt install filezilla
 sudo apt install qbittorrent
 
