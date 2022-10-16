@@ -79,4 +79,8 @@ sudo reboot
 
 
 
+# ====================================
 
+# Download YT playlist as mp3 audio files
+sudo apt install yt-dlp
+yt-dlp --extract-audio --audio-format mp3 -o "%(title)s.%(ext)s" https://www.youtube.com/playlist?list=xxxxxxx
