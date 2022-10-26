@@ -52,6 +52,9 @@ static domain_name_servers=1.1.1.1 1.0.0.1
 
 ![GPIO_fan_connection](https://user-images.githubusercontent.com/141241/136574270-7e676a79-7466-499d-b393-4f756fc78156.jpeg)
 
+![image](https://user-images.githubusercontent.com/141241/198149694-241a2497-466b-4d44-8bca-5a628aad4af0.png)
+
+
 
 `sudo tail -f /var/log/syslog`
 
