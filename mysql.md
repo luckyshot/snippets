@@ -1,5 +1,14 @@
 # MySQL
 
+### Export/Dump
+
+`/usr/bin/mysqldump --single-transaction --routines --add-drop-table --disable-keys --extended-insert database_name | gzip > file.0.sql.gz`
+
+### Import/Restore
+
+`mysql -u root -ppassword database_name < file.sql`
+
+
 ## Data manipulation
 
 Date interval: `TIMESTAMPDIFF(MINUTE, created_at, NOW())`
