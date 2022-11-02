@@ -8,6 +8,10 @@
 
 `mysql -u root -ppassword database_name < file.sql`
 
+or a `.sql.gz` file:
+
+`zcat /path/to/file.sql.gz | mysql -u 'root' -p database_name`
+
 
 ## Data manipulation
 
