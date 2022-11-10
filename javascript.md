@@ -1,5 +1,13 @@
 # JavaScript
 
+### Loop QuerySelectorAll
+
+```js
+document.querySelectorAll('.classes').forEach(function(item){
+	// ...
+});
+```
+
 ### Fetch and insert data
 
 ```JS
