@@ -143,3 +143,10 @@ Full docs: https://python-escpos.readthedocs.io/en/latest/user/methods.html
 ## Temperature (in Celsius)
 
 `/opt/vc/bin/vcgencmd measure_temp`
+
+
+## Mount USB drive via cronjob
+
+```
+@reboot sudo mount /dev/sda2 /media/elements/
+```
