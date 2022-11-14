@@ -1,3 +1,6 @@
+# Ctrl+Alt+F2: swap to another TTY
+# Ctrl+Alt+F1: put you back into the normal desktop
+
 # This is a list of commands I run on a freshly installed Ubuntu/Debian
 # NOTE: It is not meant to be ran as a .sh file, but to copy/paste each line separately
 
