@@ -1,6 +1,3 @@
-# Ctrl+Alt+F2: swap to another TTY
-# Ctrl+Alt+F1: put you back into the normal desktop
-
 # This is a list of commands I run on a freshly installed Ubuntu/Debian
 # NOTE: It is not meant to be ran as a .sh file, but to copy/paste each line separately
 
@@ -79,11 +76,3 @@ sudo apt install gamemode
 # Clean up and reboot
 sudo apt autoremove
 sudo reboot
-
-
-
-# ====================================
-
-# Download YT playlist as mp3 audio files
-sudo apt install yt-dlp
-yt-dlp --extract-audio --audio-format mp3 -o "%(title)s.%(ext)s" https://www.youtube.com/playlist?list=xxxxxxx
