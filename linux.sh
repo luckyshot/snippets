@@ -12,6 +12,12 @@ sudo apt-get install nodejs
 sudo apt install npm
 
 sudo apt install fail2ban
+sudo apt install ufw
+sudo ufw allow ssh
+sudo ufw allow http
+sudo ufw allow https
+sudo ufw enable
+sudo ufw status
 
 # set up KDE Connect
 # install espanso
