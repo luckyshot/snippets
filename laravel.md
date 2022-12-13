@@ -250,7 +250,7 @@ dd($last_query['query']);
 ```
 
 
-## New Laravel Jetstream + Livewire/Blade + Cashier
+## New Laravel Jetstream + Livewire/Blade + Cashier Paddle
 
 ```sh
 
@@ -291,6 +291,12 @@ nvm use v18.0.0
 # Run Vite for live reload
 npm run dev
 
+# Cashier Paddle
+composer require laravel/cashier-paddle
+echo 'PADDLE_SANDBOX=true' >> .env
+php artisan vendor:publish --tag="cashier-migrations"
+sudo apt install php-intl
 
+# Create Paddle sandbox account... https://sandbox-vendors.paddle.com/
 
 ```
