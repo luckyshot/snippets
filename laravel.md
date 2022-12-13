@@ -248,3 +248,32 @@ $queries = DB::getQueryLog();
 $last_query = end($queries);
 dd($last_query['query']);
 ```
+
+
+## New Laravel Jetstream + Livewire/Blade + Cashier
+
+```sh
+
+# Install composer 
+# Installation steps: https://getcomposer.org/doc/00-intro.md#installation-linux-unix-macos
+# Make it globally available
+sudo mv composer.phar /usr/local/bin/composer
+
+# Dependencies and libraries
+sudo apt-get install php-curl
+
+# Laravel new project
+composer create-project laravel/laravel newproject.com
+cd newproject.com
+
+# Jetstream
+composer require laravel/jetstream
+php artisan jetstream:install livewire --teams
+
+npm install
+npm run build
+
+# Edit config/database.php with your DB settings
+
+php artisan migrate
+```
