@@ -273,7 +273,12 @@ php artisan jetstream:install livewire --teams
 npm install
 npm run build
 
-# Edit config/database.php with your DB settings
+# Database migrations
+nano .env
+php artisan config:cache
+php artisan migrate:refresh
 
-php artisan migrate
+# Publish the Livewire stack's Blade components:
+php artisan vendor:publish --tag=jetstream-views
+
 ```
