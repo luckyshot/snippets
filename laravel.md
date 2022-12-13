@@ -255,7 +255,7 @@ dd($last_query['query']);
 ```sh
 
 # Install composer 
-# Installation steps: https://getcomposer.org/doc/00-intro.md#installation-linux-unix-macos
+# Installation steps... https://getcomposer.org/doc/00-intro.md#installation-linux-unix-macos
 # Make it globally available
 sudo mv composer.phar /usr/local/bin/composer
 
@@ -280,5 +280,17 @@ php artisan migrate:refresh
 
 # Publish the Livewire stack's Blade components:
 php artisan vendor:publish --tag=jetstream-views
+
+# Configure virtual hosts...
+
+# Install NVM to update Node.js version
+https://github.com/nvm-sh/nvm#installing-and-updating
+nvm install v18.0.0
+nvm use v18.0.0
+
+# Run Vite for live reload
+npm run dev
+
+
 
 ```
