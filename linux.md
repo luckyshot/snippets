@@ -9,17 +9,8 @@ ssh-copy-id  username@remotehost
 
 ## Compress/Uncompress tar.gz
 
-### Compress
-
-```
-tar -czvf {filename}.tar.gz {directory}
-```
-
-### Uncompress
-
-```
-tar -xzvf {filename}.tar.gz
-```
+- Compress: `tar -czvf {filename}.tar.gz {directory}`
+- Uncompress: `tar -xzvf {filename}.tar.gz`
 
 ## Shortcut
 
