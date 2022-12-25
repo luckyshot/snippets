@@ -20,16 +20,20 @@ ssh-copy-id  username@remotehost
 ## Auto-mount external disk on boot
 
 ```
+# Get disk UUID
 ls -al /dev/disk/by-uuid/
-# Copy UUID
 
+# Get user and group ID
+id YOURUSERNAME
+
+# Get file format
 lsblk -f
-# Copy file format
 
 sudo nano /etc/fstab
 
-# Paste it
-UUID=628B-1CD8  /media/mydisk  exfat   defaults 0 0
+# Put all together
+UUID=628B-1CD8  /media/mydisk  exfat   defaults,uid=1000,gid=1001 0 0
+
 
 # Save and check for errors
 findmnt --verify
