@@ -17,6 +17,24 @@ ssh-copy-id  username@remotehost
 - `Ctrl+Alt+F2`: swap to another TTY
 - `Ctrl+Alt+F1`: put you back into the normal desktop
 
+## Auto-mount external disk on boot
+
+```
+ls -al /dev/disk/by-uuid/
+# Copy UUID
+
+lsblk -f
+# Copy file format
+
+sudo nano /etc/fstab
+
+# Paste it
+UUID=628B-1CD8  /media/mydisk  exfat   defaults 0 0
+
+# Save and check for errors
+findmnt --verify
+```
+
 ## Download YT playlist as mp3 audio files
 
 ```
