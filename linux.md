@@ -46,4 +46,12 @@ sudo apt install yt-dlp
 yt-dlp --extract-audio --audio-format mp3 -o "%(title)s.%(ext)s" https://www.youtube.com/playlist?list=xxxxxxx
 ```
 
+## Create user
 
+```
+sudo useradd -m peter
+sudo passwd peter
+
+# Add to sudo
+usermod -aG sudo peter
+```
