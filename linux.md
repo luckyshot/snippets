@@ -55,3 +55,11 @@ sudo passwd peter
 # Add to sudo
 usermod -aG sudo peter
 ```
+
+
+## Fix Kernel issue
+
+```
+sudo apt remove linux-image-5.15.0-10058-tuxedo
+sudo apt install linux-image-5.15.0-10058-tuxedo
+```
