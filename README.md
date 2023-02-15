@@ -7,17 +7,21 @@ I made this repo so I don't need to be constantly searching for them all over th
 
 ## Taxonomies
 
+In no particular order, some of these are the same but might fit better for certain projects (i.e. _Blocked_ vs _Needs info_, or _Archived_ vs _Closed_).
+
 ### Statuses
 
 - New
 - Ready
-- In Progress
+- In progress
+- In review
 - Ready to test
 - Done
-- Archived
 - Closed
+- Archived
 - Rejected
 - Postponed
+- Blocked
 - Needs info
 
 ### Priorities
