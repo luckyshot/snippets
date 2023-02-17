@@ -32,6 +32,7 @@ In no particular order, some of these are the same but might fit better for cert
 
 - Archived
 - Rejected
+- Discarded
 
 
 ### Priorities
