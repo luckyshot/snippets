@@ -12,17 +12,27 @@ In no particular order, some of these are the same but might fit better for cert
 ### Statuses
 
 - New
-- Ready
-- In progress
-- In review
-- Ready to test
-- Done
-- Closed
-- Archived
-- Rejected
-- Postponed
+- Suggested
+
+- Planned
+- To Do
 - Blocked
 - Needs info
+- Postponed
+
+- In progress
+- Doing
+
+- In review
+- Waiting for Approval
+- Testing
+
+- Done
+- Closed
+
+- Archived
+- Rejected
+
 
 ### Priorities
 
