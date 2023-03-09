@@ -6,6 +6,17 @@
 ssh-copy-id  username@remotehost
 ```
 
+## SSHFS
+
+Mount remote server as directory (instead of SFTP client)
+
+```
+sudo apt install sshfs
+sudo mkdir /mnt/remotehost
+ssh username@remotehost
+sudo sshfs -o allow_other,default_permissions username@remotehost:/ /mnt/remotehost/
+```
+
 
 ## Compress/Uncompress tar.gz
 
