@@ -1,5 +1,12 @@
 # PHP
 
+### Return JSON response
+
+```
+header('Content-Type: application/json; charset=utf-8');
+echo json_encode($data);
+```
+
 ### Cronjob/Command line parameters
 
 `php /home/user/script.php some_argument secret_key other_argument`
