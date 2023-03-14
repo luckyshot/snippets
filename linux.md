@@ -1,5 +1,12 @@
 # Linux
 
+## File permissions
+
+```
+sudo chown -R www-data:www-data /var/www/example.com
+sudo chmod -R 755 /var/www/example.com
+```
+
 ## Install SSH Key into server
 
 ```
