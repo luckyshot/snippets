@@ -135,6 +135,42 @@ _(Compatible from IE9+)_
 ```
 
 
+### Clock animation
+
+For refreshing dashboards, inspired by Metabase:
+
+```html
+<div class="clock">
+  <div class="clock-hand"></div>
+</div>
+```
+
+```css
+.clock {
+  position: relative;
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  background: rgba(0, 255, 0, 0.2);
+}
+
+.clock > .clock-hand {
+  position: absolute;
+  width: 0px;
+  height: 50%;
+  top: 0%;
+  left: 50%;
+  box-sizing: border-box;
+  border: 1px solid green;
+  transform-origin: bottom;
+  animation: clockHandAnimation 15s infinite linear;
+}
+
+@keyframes clockHandAnimation {
+  0% {transform: rotate(0deg);}
+  100% {transform: rotate(360deg);}
+}
+```
 
 
 ## Media queries
