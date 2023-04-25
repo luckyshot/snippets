@@ -84,10 +84,15 @@ sudo apt install linux-image-5.15.0-10058-tuxedo
 
 ## NeoVim + NvChad
 
+NvChad Releases: https://github.com/neovim/neovim/releases
+
 ```
-sudo apt install neovim
+wget https://github.com/neovim/neovim/releases/download/v0.9.0/nvim.appimage
 alias vim=nvim
 echo 'alias vim=nvim' >> .zshrc
+echo 'alias vim=nvim' >> .zbashrc
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.3.3/JetBrainsMono.zip
+# install JetBrains Mono Medium Nerd Font Complete.ttf
 git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1 && nvim
 
 
