@@ -81,3 +81,14 @@ usermod -aG sudo peter
 sudo apt remove linux-image-5.15.0-10058-tuxedo
 sudo apt install linux-image-5.15.0-10058-tuxedo
 ```
+
+## NeoVim + NvChad
+
+```
+sudo apt install neovim
+alias vim=nvim
+echo 'alias vim=nvim' >> .zshrc
+git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1 && nvim
+
+
+```
