@@ -39,6 +39,20 @@ sudo apt-get install powermate
 powermate
 # Extra settings: sudo nano /etc/powermate.toml
 
+# Battery saving
+sudo add-apt-repository ppa:linrunner/tlp
+sudo apt update
+sudo apt install tlp tlp-rdw
+sudo tlp start
+tlp-stat -s
+sudo systemctl enable tlp.service
+tlp-stat -s
+sudo nvim /etc/tlp.conf
+sudo powertop
+sudo add-apt-repository ppa:slimbook/slimbook
+sudo apt-get update
+sudo apt-get install slimbookbattery
+
 # Apache
 sudo apt install -y apache2 apache2-utils
 sudo systemctl enable apache2
