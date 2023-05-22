@@ -7,6 +7,21 @@ sudo chown -R www-data:www-data /var/www/example.com
 sudo chmod -R 755 /var/www/example.com
 ```
 
+## Check disk space
+
+Overview (`/dev/sda1` is usually the main HD):
+
+```sh
+df -h
+```
+
+To analyze folders:
+
+```
+du -shc /var/*
+```
+
+
 ## Install SSH Key into server
 
 ```
