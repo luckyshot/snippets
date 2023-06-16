@@ -17,6 +17,7 @@ sudo ufw allow ssh
 sudo ufw allow http
 sudo ufw allow https
 sudo ufw enable
+sudo ufw deny from 91.109.117.228
 sudo ufw status
 
 # set up KDE Connect
