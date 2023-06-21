@@ -28,6 +28,20 @@ du -shc /var/*
 ssh-copy-id  username@remotehost
 ```
 
+## External SSH Keys management
+
+```
+# Remove existing key
+ssh-keygen -f "~/.ssh/known_hosts" -R "bitbucket.org"
+
+# Get key and add it
+ssh-keygen -R bitbucket.org && curl https://bitbucket.org/site/ssh >> ~/.ssh/known_hosts
+ 
+# Get info on current key
+ssh git@bitbucket.org host_key_info
+```
+
+
 ## SSHFS
 
 Mount remote server as directory (instead of SFTP client)
@@ -39,6 +53,13 @@ ssh username@remotehost
 sudo sshfs -o allow_other,default_permissions username@remotehost:/ /mnt/remotehost/
 ```
 
+
+## Create a symlink
+
+```
+ln -s {source} {link}
+# Example: ln -s /var/www/foo/bar ~/foobar
+```
 
 ## Compress/Uncompress tar.gz
 
@@ -97,19 +118,6 @@ sudo apt remove linux-image-5.15.0-10058-tuxedo
 sudo apt install linux-image-5.15.0-10058-tuxedo
 ```
 
-
-## External SSH Keys management
-
-```
-# Remove existing key
-ssh-keygen -f "~/.ssh/known_hosts" -R "bitbucket.org"
-
-# Get key and add it
-ssh-keygen -R bitbucket.org && curl https://bitbucket.org/site/ssh >> ~/.ssh/known_hosts
- 
-# Get info on current key
-ssh git@bitbucket.org host_key_info
-```
 
 ## NeoVim + NvChad
 
