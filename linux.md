@@ -97,6 +97,20 @@ sudo apt remove linux-image-5.15.0-10058-tuxedo
 sudo apt install linux-image-5.15.0-10058-tuxedo
 ```
 
+
+## External SSH Keys management
+
+```
+# Remove existing key
+ssh-keygen -f "~/.ssh/known_hosts" -R "bitbucket.org"
+
+# Get key and add it
+ssh-keygen -R bitbucket.org && curl https://bitbucket.org/site/ssh >> ~/.ssh/known_hosts
+ 
+# Get info on current key
+ssh git@bitbucket.org host_key_info
+```
+
 ## NeoVim + NvChad
 
 NvChad Releases: https://github.com/neovim/neovim/releases
