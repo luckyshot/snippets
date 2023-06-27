@@ -109,6 +109,7 @@ function curl( $url, $custom = [] ){
 	];
 
 	// Headers
+	// 'headers' => ['X-AUTH-TOKEN: DfGhJkL'],
 	if ( array_key_exists('headers', $custom) AND is_array( $custom['headers'] ) ) {
 		$options[ CURLOPT_HTTPHEADER ] = $custom['headers'];
 	}
