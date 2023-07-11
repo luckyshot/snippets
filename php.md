@@ -46,7 +46,7 @@ function regex($regex, $string)
 
 #### Match Regular Expressions array with string
 
-```
+```php
 foreach ($regexpList as $regexp) {
     if (preg_match($regexp, trim($string))) {
         return true;
