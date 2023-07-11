@@ -28,7 +28,7 @@ Newlines and everything else is preserved.
 HEREDOC;
 ```
 
-### Match items via Regular Expressions (regexp)
+### Match items via Regular Expressions (regexp) and return matches
 
 ```PHP
 function regex($regex, $string)
@@ -41,6 +41,16 @@ function regex($regex, $string)
         PREG_SET_ORDER // formats data into an array of items
     );
     return $matches;
+}
+```
+
+#### Match Regular Expressions array with string
+
+```
+foreach ($regexpList as $regexp) {
+    if (preg_match($regexp, trim($string))) {
+        return true;
+    }
 }
 ```
 
