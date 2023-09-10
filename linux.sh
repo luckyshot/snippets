@@ -51,11 +51,11 @@ tlp-stat -s
 sudo nvim /etc/tlp.conf
 sudo powertop
 sudo add-apt-repository ppa:slimbook/slimbook
-sudo apt-get update
-sudo apt-get install slimbookbattery
+sudo apt update
+sudo apt install slimbookbattery
 
 # Apache
-sudo apt install -y apache2 apache2-utils
+sudo apt install -y apache2 apache2-utils composer curl
 sudo systemctl enable apache2
 sudo ln -s ~/Dropbox/WWW/ /var/www/WWW
 sudo chown www-data:www-data /var/www/ -R
@@ -63,6 +63,8 @@ sudo chown www-data:www-data /var/www/ -R
 # Add user to www-data and vice-versa
 sudo usermod -a -G www-data xavi
 sudo usermod -a -G xavi www-data
+
+sudo chown -R $USER:www-data /var/www/
 
 # MariaDB
 sudo nano /etc/apache2/conf-available/servername.conf
@@ -75,10 +77,10 @@ sudo service apache2 reload
 # PHP 8
 sudo apt install lsb-release ca-certificates apt-transport-https software-properties-common -y
 sudo add-apt-repository ppa:ondrej/php
-sudo apt install php8.0
-sudo apt install php8.0-cli php8.0-common php8.0-imap php8.0-redis php8.0-snmp php8.0-xml php8.0-zip php8.0-mbstring php8.0-mysql
-# find more extensions via `apt search php- | less`
-sudo service apache2 reload
+sudo apt install php8.1 php8.1-cli php8.1-common php8.1-imap php8.1-redis php8.1-snmp php8.1-xml php8.1-zip php8.1-mbstring php8.1-mysql php8.1-curl
+# find more extensions via `apt search php- | less
+
+sudo a2enmod rewrite
 
 # Virtual hosts
 cd /etc/apache2/sites-available/
