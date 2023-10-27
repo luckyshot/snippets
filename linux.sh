@@ -86,6 +86,7 @@ sudo a2enmod rewrite
 # sudo mv composer.phar /usr/local/bin/composer
 
 # install deployer https://deployer.org/docs/7.x/installation
+# remember to create the alias
 
 # Virtual hosts
 cd /etc/apache2/sites-available/
