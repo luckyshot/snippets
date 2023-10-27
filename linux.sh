@@ -83,6 +83,9 @@ sudo apt install php8.1 php8.1-cli php8.1-common php8.1-imap php8.1-redis php8.1
 sudo a2enmod rewrite
 
 # install composer https://getcomposer.org/download/
+# sudo mv composer.phar /usr/local/bin/composer
+
+# install deployer https://deployer.org/docs/7.x/installation
 
 # Virtual hosts
 cd /etc/apache2/sites-available/
