@@ -22,13 +22,34 @@ du -shc /var/*
 ```
 
 
-## Install SSH Key into server
+## SSH
+
+
+### Generate SSH Keys
+
+```
+sudo apt install -y openssh-client
+cd ~
+ssh-keygen
+```
+
+Or generate custom ones:
+
+```
+cd ~/.ssh/
+ssh-keygen -t ed25519 -b 4096 -C "{xavi@workemail.com}" -f bitbucket_work
+```
+
+(do not enter a passphrase)
+
+
+### Install SSH Key into server
 
 ```
 ssh-copy-id  username@remotehost
 ```
 
-## External SSH Keys management
+### External SSH Keys management
 
 ```
 # Remove existing key
