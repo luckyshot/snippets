@@ -74,6 +74,10 @@ sudo systemctl enable mariadb
 sudo mysql_secure_installation
 sudo service apache2 reload
 
+# set MariaDB root password
+sudo mysql
+# ALTER USER 'root'@'localhost' IDENTIFIED VIA mysql_native_password USING PASSWORD('root');
+
 # PHP 8
 sudo apt install lsb-release ca-certificates apt-transport-https software-properties-common -y
 sudo add-apt-repository ppa:ondrej/php
