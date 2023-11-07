@@ -21,6 +21,15 @@ To analyze folders:
 du -shc /var/*
 ```
 
+## Mount HDDs via crontab
+
+```
+# Mount a drive on boot after 30 seconds
+@reboot sleep 30 && sudo mount /dev/sda1 /media/seagate1tb/
+
+# Auto-update (only do this for non-critical infrastructure)
+9 4 * * 1 sudo apt update -y && sudo apt upgrade -y
+```
 
 ## SSH
 
