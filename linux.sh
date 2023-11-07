@@ -8,11 +8,9 @@ mkdir ~/Downloads/Keep
 sudo apt update
 sudo apt -y upgrade
 
-sudo apt-get install nodejs
-sudo apt install npm
+sudo apt install openssh-server fail2ban ufw
+sudo apt install nodejs npm
 
-sudo apt install fail2ban
-sudo apt install ufw
 sudo ufw allow ssh
 sudo ufw allow http
 sudo ufw allow https
@@ -30,13 +28,12 @@ sudo ufw status
 # install iriun webcam https://iriun.com/
 # install teamviewer/anydesk/remote desktop
 # gaming PC? https://gitlab.com/corectrl/corectrl
-sudo apt install filezilla
-sudo apt install qbittorrent
+sudo apt install filezilla qbittorrent
 
 # Griffin PowerMate (you don't need this, it's a gadget I bought a long time ago and use it as a volume slider for my desktop computer + click to sleep)
 sudo add-apt-repository ppa:stefansundin/powermate
-sudo apt-get update
-sudo apt-get install powermate
+sudo apt update
+sudo apt install powermate
 powermate
 # Extra settings: sudo nano /etc/powermate.toml
 
