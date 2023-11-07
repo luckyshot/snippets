@@ -140,8 +140,15 @@ sudo passwd peter
 usermod -aG sudo peter
 ```
 
+## Random fixes
 
-## Fix Kernel issue
+### Fix Bluetooth connection failed
+
+```
+systemctl --user enable pulseaudio && systemctl --user start pulseaudio
+```
+
+### Fix Kernel issue
 
 ```
 sudo apt remove linux-image-5.15.0-10058-tuxedo
