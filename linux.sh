@@ -18,12 +18,12 @@ sudo ufw enable
 sudo ufw deny from 91.109.117.228
 sudo ufw status
 
+# install syncthing https://www.linuxcapable.com/how-to-install-syncthing-on-ubuntu-linux/
 # set up KDE Connect
 # install espanso
 # install netdata
 # install browser?
 # install Visual Sudio Code
-# install syncthing https://apt.syncthing.net/
 # install TablePlus or DBeaver-CE https://dbeaver.io/download/
 # install iriun webcam https://iriun.com/
 # install teamviewer/anydesk/remote desktop
