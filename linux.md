@@ -71,8 +71,14 @@ ssh-keygen -R bitbucket.org && curl https://bitbucket.org/site/ssh >> ~/.ssh/kno
 ssh git@bitbucket.org host_key_info
 ```
 
+### Forward port
 
-## SSHFS
+```
+ssh -L 9090:localhost:8384 myserver.com
+```
+
+
+### SSHFS
 
 Mount remote server as directory (instead of SFTP client)
 
