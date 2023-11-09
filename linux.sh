@@ -9,7 +9,7 @@ sudo apt update
 sudo apt -y upgrade
 
 sudo apt install openssh-server fail2ban ufw
-sudo apt install nodejs npm
+sudo apt install npx nodejs
 
 sudo ufw allow ssh
 sudo ufw allow http
