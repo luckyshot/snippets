@@ -2,7 +2,7 @@
 
 ## File permissions
 
-```
+```sh
 sudo chown -R www-data:www-data /var/www/example.com
 sudo chmod -R 755 /var/www/example.com
 ```
@@ -17,13 +17,13 @@ df -h
 
 To analyze folders:
 
-```
+```sh
 du -shc /var/*
 ```
 
 ## Mount HDDs via crontab
 
-```
+```sh
 # Mount a drive on boot after 30 seconds
 @reboot sleep 30 && sudo mount /dev/sda1 /media/seagate1tb/
 
@@ -36,7 +36,7 @@ du -shc /var/*
 
 ### Generate SSH Keys
 
-```
+```sh
 sudo apt install -y openssh-client
 cd ~
 ssh-keygen
@@ -44,7 +44,7 @@ ssh-keygen
 
 Or generate custom ones:
 
-```
+```sh
 cd ~/.ssh/
 ssh-keygen -t ed25519 -b 4096 -C "{xavi@workemail.com}" -f bitbucket_work
 ```
@@ -60,7 +60,7 @@ ssh-copy-id  username@remotehost
 
 ### External SSH Keys management
 
-```
+```sh
 # Remove existing key
 ssh-keygen -f "~/.ssh/known_hosts" -R "bitbucket.org"
 
@@ -73,7 +73,7 @@ ssh git@bitbucket.org host_key_info
 
 ### Forward port
 
-```
+```sh
 ssh -L 9090:localhost:8384 myserver.com
 ```
 
@@ -82,7 +82,7 @@ ssh -L 9090:localhost:8384 myserver.com
 
 Mount remote server as directory (instead of SFTP client)
 
-```
+```sh
 sudo apt install sshfs
 sudo mkdir /mnt/remotehost
 ssh username@remotehost
@@ -109,7 +109,7 @@ ln -s {source} {link}
 
 ## Auto-mount external disk on boot
 
-```
+```sh
 # Get disk UUID
 ls -al /dev/disk/by-uuid/
 
@@ -150,23 +150,30 @@ usermod -aG sudo peter
 
 ### Fix Bluetooth connection failed
 
-```
+```sh
 systemctl --user enable pulseaudio && systemctl --user start pulseaudio
 ```
 
 ### Fix Kernel issue
 
-```
+```sh
 sudo apt remove linux-image-5.15.0-10058-tuxedo
 sudo apt install linux-image-5.15.0-10058-tuxedo
 ```
 
+### Fix KDE Connect not showing devices
+
+```sh
+sudo ufw allow 1714:1764/udp
+sudo ufw allow 1714:1764/tcp
+sudo ufw reload
+```
 
 ## NeoVim + NvChad
 
 NvChad Releases: https://github.com/neovim/neovim/releases
 
-```
+```sh
 wget https://github.com/neovim/neovim/releases/download/v0.9.0/nvim.appimage
 alias vim=nvim
 echo 'alias vim=nvim' >> .zshrc
