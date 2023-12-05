@@ -6,18 +6,19 @@ As a functional work station we need, at a minimum:
 
 - ✅ Window toggle/switcher/splitter (`tmux`)
 - ✅ Text Editor/IDE (`micro`)
-  - 🟨 Plugins
+  - 🟨 Move to neovim some day
 - ✅ Web Browser (`w3m`)
-- 🟨 Syncthing
+- ✅ Syncthing
 - ✅ System information
   - ✅ Battery level (`tmux plugin`)
   - ✅ Clock (`tmux`)
 - ✅ WiFi management (`nmtui`)
 - 🟨 Boot from console
-- 🟨 Aliases 
+- ✅ Aliases 
   - ✅ Load graphical interface (`startx`)
-  - 🟨 `mc`: Micro shortcut
-  - 🟨 `lll`: `ls -lah`
+  - ✅ `lll`: `ls -lah`
+  - ✅ `m`: Micro shortcut
+
 
 ## Shortcuts
 
@@ -44,7 +45,8 @@ Keyboard shortcuts that you will need to learn:
   - 
 - **Graphical interface**
   - Type command `startx`
-  - `Ctrl+Alt+F1` up to `F6`: switch between sessions
+  - `Ctrl+Alt+F1`-`F6`: switch between sessions
+  - `Ctrl+Alt+F7`: switch to graphical session
 - **WiFi**
   - Command `nmtui`
   
@@ -99,13 +101,9 @@ echo 'Install W3M`
 sudo apt install -y w3m w3m-img
 
 
-# Syncthing
-
-
 # WiFi management
 # Required for nmtui
 sudo apt install -y network-manager
-
 
 
 # Boot from console by default
@@ -114,6 +112,8 @@ sudo apt install -y network-manager
 # TODO: https://askubuntu.com/questions/859630/how-to-start-ubuntu-in-console-mode
 
 
+# Syncthing
+# Install from graphical interface once
 
 
 ```
