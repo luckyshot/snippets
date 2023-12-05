@@ -16,11 +16,15 @@ As a functional work station we need, at a minimum:
 - 🟨 Music player
 - 🟨 Boot from console
 - ✅ Aliases 
-  - ✅ Load graphical interface (`startx`)
+  - ✅ Load graphical interface (`sudo startx`)
   - ✅ `lll`: `ls -lah`
   - ✅ `m`: Micro shortcut
 - ✅ Mouse support (`gpm`)
   - 🟨 Compatibility with micro+w3m
+- 🟨 Controls
+  - 🟨 Volume
+  - 🟨 Screen brightness
+  - 🟨 Keyboard brightness
 
 
 ## Shortcuts
@@ -47,7 +51,7 @@ Keyboard shortcuts that you will need to learn:
 - **micro**
   - 
 - **Graphical interface**
-  - Type command `startx`
+  - Type command `sudo startx`
   - `Ctrl+Alt+F1`-`F6`: switch between sessions
   - `Ctrl+Alt+F7`: switch to graphical session
 - **WiFi**
