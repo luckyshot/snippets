@@ -13,11 +13,14 @@ As a functional work station we need, at a minimum:
   - ✅ Battery level (`tmux plugin`)
   - ✅ Clock (`tmux`)
 - ✅ WiFi management (`nmtui`)
+- 🟨 Music player
 - 🟨 Boot from console
 - ✅ Aliases 
   - ✅ Load graphical interface (`startx`)
   - ✅ `lll`: `ls -lah`
   - ✅ `m`: Micro shortcut
+- ✅ Mouse support (`gpm`)
+  - 🟨 Compatibility with micro+w3m
 
 
 ## Shortcuts
@@ -58,6 +61,9 @@ Keyboard shortcuts that you will need to learn:
 
 ```sh
 cd ~
+
+# Download this file for reference
+curl https://raw.githubusercontent.com/luckyshot/snippets/main/linux-terminal.md >> ~/linux-terminal.md
 
 
 # Aliases
@@ -104,6 +110,10 @@ sudo apt install -y w3m w3m-img
 # WiFi management
 # Required for nmtui
 sudo apt install -y network-manager
+
+
+# Mouse support
+sudo apt install -y gpm
 
 
 # Boot from console by default
