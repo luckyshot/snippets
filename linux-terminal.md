@@ -4,24 +4,24 @@ This document outlines the configuration tweaks needed to go full-terminal on a 
 
 As a functional work station we need, at a minimum:
 
-- Window toggle/switcher/splitter (`tmux`)
-- Text Editor/IDE (`micro`)
-- Web Browser (`w3m`)
-- System information
-  - Battery level (`tmux plugin`)
-  - Clock (`tmux`)
+- ✅ Window toggle/switcher/splitter (`tmux`)
+- ✅ Text Editor/IDE (`micro`)
+  - 🟨 Plugins
+- ✅ Web Browser (`w3m`)
+- 🟨 Syncthing
+- ✅ System information
+  - ✅ Battery level (`tmux plugin`)
+  - ✅ Clock (`tmux`)
+- ✅ WiFi management (`nmtui`)
+- 🟨 Boot from console
+- 🟨 Aliases 
+  - ✅ Load graphical interface (`startx`)
+  - 🟨 `mc`: Micro shortcut
+  - 🟨 `lll`: `ls -lah`
 
-We will also need to do the following settings tweaks:
+## Shortcuts
 
-- Boot from console directly, with an easy alias/command to turn on graphical interface just in case we need to do a videocall, etc.
-
-We will set up these aliases:
-
-- `mc`: Micro shortcut
-- `lll`: `ls -lah`
-- ``:
-
-And here's some good shortcuts:
+Keyboard shortcuts that you will need to learn:
 
 - **tmux**
   - Pane splitting
@@ -40,24 +40,78 @@ And here's some good shortcuts:
   - `Shift+B`: go back
   - `Shift+T`: new tab
   - `Shift+U`: new URL
+- **micro**
+  - 
+- **Graphical interface**
+  - Type command `startx`
+  - `Ctrl+Alt+F1` up to `F6`: switch between sessions
+- **WiFi**
+  - Command `nmtui`
+  
 
-## Script
+## Installation
+
+1. Install OS with a graphical interface
+2. Run these commands carefully one by one (it's not yet ready to simply run as-is)
 
 ```sh
 cd ~
 
+
+# Aliases
+echo "alias lll='ls -lisah'" >> ~/.bashrc
+echo "alias m='micro'" >> ~/.bashrc
+
+
 # Install tmux
 echo 'Install tmux'
-sudo apt install tmux
+sudo apt install -y tmux
+
+## Install tmux Plugin Manager (https://github.com/tmux-plugins/tpm)
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+echo "# List of plugins" >> ~/.tmux.conf
+echo "set -g @plugin 'tmux-plugins/tpm'" >> ~/.tmux.conf
+echo "set -g @plugin 'tmux-plugins/tmux-sensible'" >> ~/.tmux.conf
+echo "set -g @plugin 'tmux-plugins/tmux-battery'" >> ~/.tmux.conf
+
+echo "set -g status-right '#{battery_status_bg} Batt: #{battery_icon} #{battery_percentage} #{battery_remain} | %a %h-%d %H:%M '" >> ~/.tmux.conf
+
+echo "# Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)" >> ~/.tmux.conf
+echo "run '~/.tmux/plugins/tpm/tpm'" >> ~/.tmux.conf
+
+## Install requirements for tmux battery plugin
+sudo apt install -y acpi
+
+## Press `Ctrl+B I` (uppercase I) to download plugins
+
+## Reload tmux settings
+tmux source ~/.tmux.conf
+
 
 # Install micro
 echo 'Install micro`
 curl https://getmic.ro | bash
 sudo mv micro /usr/bin
 
+
 # Install W3M
 echo 'Install W3M`
-sudo apt install w3m w3m-img
+sudo apt install -y w3m w3m-img
+
+
+# Syncthing
+
+
+# WiFi management
+# Required for nmtui
+sudo apt install -y network-manager
+
+
+
+# Boot from console by default
+# sudo cp -n /etc/default/grub /etc/default/grub.orig
+# sudo mv /etc/default/grub.orig /etc/default/grub && sudo update-grub
+# TODO: https://askubuntu.com/questions/859630/how-to-start-ubuntu-in-console-mode
 
 
 
