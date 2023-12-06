@@ -2,6 +2,8 @@
 
 This document outlines the configuration tweaks needed to go full-terminal on a work laptop/computer. The motivation for this is to increase productivity and creativity by removing distractions and having a clean, simple and minimal workspace that also saves tons of battery life whenever you're out and about.
 
+To use this, you must be comfortable with using the terminal and know the basic commands. There's no need to be a pro at shell scripting or anything like that. I've kept plugins and customizations to a minimum so you don't need to learn too many commands/hotkeys.
+
 ## Checklist
 
 As a functional work station we need, at a minimum:
@@ -13,7 +15,7 @@ _(✅: Scripted; 🟨: Pending; 🤚 Manually done following some steps)_
   - ✅ zsh-autosuggestions
   - ✅ dirhistory
   - 🟨 zsh-syntax-highlighting
-  - 🟨 Powerlevel10k
+  - ✅ Powerlevel10k
 - ✅ Text Editor/IDE (`micro`)
   - 🟨 Move to neovim some day
 - ✅ Web Browser (`w3m`)
