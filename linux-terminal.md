@@ -1,8 +1,13 @@
 # Linux Terminal
 
-This document outlines the configuration tweaks needed to go full-terminal on a work laptop/computer. The motivation for this is to increase productivity and creativity by removing distractions and having a clean, simple and minimal workspace that also saves tons of battery life whenever you're out and about.
+This document outlines the configuration tweaks needed to go full-terminal on a work laptop/computer. The motivation for this is to increase productivity and creativity by removing distractions and having a clean, simple and minimal workspace that also saves tons of battery life whenever you're out and about (I've gone from 3 hours to 12 hours on my laptop).
 
 To use this, you must be comfortable with using the terminal and know the basic commands. There's no need to be a pro at shell scripting or anything like that. I've kept plugins and customizations to a minimum so you don't need to learn too many commands/hotkeys.
+
+## Drawbacks
+
+- Current browser (w3m) doesn't load JavaScript websites properly
+- Currently, terminal only has 8 colors 
 
 ## Checklist
 
