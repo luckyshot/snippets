@@ -15,6 +15,7 @@ As a functional work station we need, at a minimum:
 - ✅ WiFi management (`nmtui`)
 - 🟨 Music player
 - ✅ Video player (`mpv`, plays music too)
+  - 🟨 Can't hear sounds though yet
 - 🟨 Boot from console
 - ✅ Aliases 
   - ✅ Load graphical interface (`sudo startx`)
