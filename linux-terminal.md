@@ -146,10 +146,10 @@ sudo apt install brightnessctl
 # Aliases
 echo "alias lll='ls -lisah'" >> ~/.bashrc
 echo "alias m='micro'" >> ~/.bashrc
-echo "alias bright1='sudo brightnessctl -c backlight set +10%"
-echo "alias bright0='sudo brightnessctl -c backlight set -10%"
-echo "alias kbd1='sudo brightnessctl -d tpacpi::kbd_backlight set 1"
-echo "alias kbd0='sudo brightnessctl -d tpacpi::kbd_backlight set 0"
+echo "alias bright1='sudo brightnessctl -c backlight set +10%" >> ~/.bashrc
+echo "alias bright0='sudo brightnessctl -c backlight set -10%" >> ~/.bashrc
+echo "alias kbd1='sudo brightnessctl -d tpacpi::kbd_backlight set 1" >> ~/.bashrc
+echo "alias kbd0='sudo brightnessctl -d tpacpi::kbd_backlight set 0" >> ~/.bashrc
 
 
 ```
