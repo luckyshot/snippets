@@ -9,6 +9,7 @@ As a functional work station we need, at a minimum:
 _(✅: Scripted; 🟨: Pending; 🤚 Manually done following some steps)_
 
 - ✅ Window toggle/switcher/splitter (`tmux`)
+- ✅ Terminal helpers/autocomplete/etc (`Oh My Zsh`)
 - ✅ Text Editor/IDE (`micro`)
   - 🟨 Move to neovim some day
 - ✅ Web Browser (`w3m`)
@@ -20,10 +21,6 @@ _(✅: Scripted; 🟨: Pending; 🤚 Manually done following some steps)_
 - ✅ Music & Video player (`mpv`)
   - 🟨 Can't hear sounds on full console mode though, is it even possible?
 - 🤚 Boot from console
-- ✅ Aliases 
-  - ✅ Load graphical interface (`sudo startx`)
-  - ✅ `lll`: `ls -lah`
-  - ✅ `m`: Micro shortcut
 - ✅ Mouse support (`gpm`)
   - 🟨 Compatibility with micro+w3m
 - 🟨 Controls
@@ -54,6 +51,7 @@ Keyboard shortcuts that you will need to learn:
   - `Shift+T`: new tab
   - `Shift+U`: new URL
 - **micro**
+  - Alias `m`: Micro shortcut
 - **mpv**
   - Command `mpv {filename}`
   - `9` `0`: Volume down/up 
@@ -64,11 +62,13 @@ Keyboard shortcuts that you will need to learn:
 - **WiFi**
   - Command `nmtui`
 - **Brightness**
-  - Command `b1`: Increase screen brightness by 10%
-  - Command `b0`: Decrease screen brightness by 10%
-  - Command `k1`: Turn keyboard light on
-  - Command `k0`: Turn keyboard light off
-  
+  - Alias `b1`: Increase screen brightness by 10%
+  - Alias `b0`: Decrease screen brightness by 10%
+  - Alias `k1`: Turn keyboard light on
+  - Alias `k0`: Turn keyboard light off
+- **Graphical interface**
+  - Command `sudo startx`: Load graphical interface
+
 
 ## Installation
 
@@ -80,6 +80,17 @@ cd ~
 
 # Download this file for reference
 curl https://raw.githubusercontent.com/luckyshot/snippets/main/linux-terminal.md >> ~/linux-terminal.md
+
+# Install Zsh
+# Install Zsh
+sudo apt install zsh
+# Make it default
+chsh -s $(which zsh)
+
+# You should now logout and log back in
+
+# Install Oh My Zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 
 # Install tmux
@@ -144,12 +155,12 @@ sudo apt install brightnessctl
 
 
 # Aliases
-echo "alias lll='ls -lisah'" >> ~/.bashrc
-echo "alias m='micro'" >> ~/.bashrc
-echo "alias b1='sudo brightnessctl -c backlight set +10%"' >> ~/.bashrc
-echo "alias b0='sudo brightnessctl -c backlight set 10%-"' >> ~/.bashrc
-echo "alias k1='sudo brightnessctl -d tpacpi::kbd_backlight set 1"' >> ~/.bashrc
-echo "alias k0='sudo brightnessctl -d tpacpi::kbd_backlight set 0"' >> ~/.bashrc
+echo "alias lll='ls -lisah'" >> ~/.zshrc
+echo "alias m='micro'" >> ~/.zshrc
+echo "alias b1='sudo brightnessctl -c backlight set +25'" >> ~/.zshrc
+echo "alias b0='sudo brightnessctl -c backlight set 25-'" >> ~/.zshrc
+echo "alias k1='sudo brightnessctl -d tpacpi::kbd_backlight set 1'" >> ~/.zshrc
+echo "alias k0='sudo brightnessctl -d tpacpi::kbd_backlight set 0'" >> ~/.zshrc
 
 
 ```
