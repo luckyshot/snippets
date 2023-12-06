@@ -10,6 +10,10 @@ _(✅: Scripted; 🟨: Pending; 🤚 Manually done following some steps)_
 
 - ✅ Window toggle/switcher/splitter (`tmux`)
 - ✅ Terminal helpers/autocomplete/etc (`Oh My Zsh`)
+  - ✅ zsh-autosuggestions
+  - ✅ dirhistory
+  - 🟨 zsh-syntax-highlighting
+  - 🟨 Powerlevel10k
 - ✅ Text Editor/IDE (`micro`)
   - 🟨 Move to neovim some day
 - ✅ Web Browser (`w3m`)
@@ -97,15 +101,20 @@ chsh -s $(which zsh)
 ## Install Oh My Zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
-## Install Zsh plugins
+## Install Zsh plugins/themes
 ### Zsh Autosuggestions
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+### Install Powerlevel10k theme
 
-## Activate Zsh plugins
+## Activate Zsh plugins/themes
 sed -i 's/plugins=(git)/plugins=(zsh-autosuggestions dirhistory git)/g' .zshrc
+sed -i 's/robbyrussell/powerlevel10k\/powerlevel10k/g' .zshrc
 
 ## Reload .zshrc config
 exec zsh
+
+### You will probably be shown the Powerlevel10k wizard
+
 
 # Install tmux
 echo 'Install tmux'
