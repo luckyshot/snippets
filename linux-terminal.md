@@ -1,6 +1,8 @@
 # Linux Terminal
 
-This document outlines the configuration tweaks needed to go full-terminal on a work laptop/computer.
+This document outlines the configuration tweaks needed to go full-terminal on a work laptop/computer. The motivation for this is to increase productivity and creativity by removing distractions and having a clean, simple and minimal workspace that also saves tons of battery life whenever you're out and about.
+
+## Checklist
 
 As a functional work station we need, at a minimum:
 
