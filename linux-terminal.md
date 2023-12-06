@@ -68,7 +68,8 @@ Keyboard shortcuts that you will need to learn:
   - Command `mpv {filename}`
   - `9` `0`: Volume down/up 
 - **Graphical interface**
-  - Type command `sudo startx`
+  - Command `sudo startx`: start graphical interface
+  - Command: `sudo init 3`: end graphical interface
   - `Ctrl+Alt+F1`-`F6`: switch between sessions
   - `Ctrl+Alt+F7`: switch to graphical session
 - **WiFi**
