@@ -81,16 +81,23 @@ cd ~
 # Download this file for reference
 curl https://raw.githubusercontent.com/luckyshot/snippets/main/linux-terminal.md >> ~/linux-terminal.md
 
-# Install Zsh
-# Install Zsh
+# Zsh
+## Install Zsh
 sudo apt install zsh
-# Make it default
+## Make it default
 chsh -s $(which zsh)
 
-# You should now logout and log back in
+## You should now logout and log back in
 
-# Install Oh My Zsh
+## Install Oh My Zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+## Install Zsh plugins
+### Zsh Autosuggestions
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+
+## Activate Zsh plugins
+sed -i 's/plugins=(git)/plugins=(zsh-autosuggestions git)/g' .zshrc
 
 
 # Install tmux
