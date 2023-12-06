@@ -14,6 +14,7 @@ As a functional work station we need, at a minimum:
   - ✅ Clock (`tmux`)
 - ✅ WiFi management (`nmtui`)
 - 🟨 Music player
+- Video player (mpv plays video and music too)
 - 🟨 Boot from console
 - ✅ Aliases 
   - ✅ Load graphical interface (`sudo startx`)
