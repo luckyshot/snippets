@@ -11,7 +11,8 @@ As a functional work station we need, at a minimum:
 _(✅: Scripted; 🟨: Pending; 🤚 Manually done following some steps)_
 
 - ✅ Window toggle/switcher/splitter (`tmux`)
-- ✅ Terminal helpers/autocomplete/etc (`Oh My Zsh`)
+- ✅ Terminal improvements (`Oh My Zsh`)
+  - ✅ Zsh
   - ✅ zsh-autosuggestions
   - ✅ dirhistory
   - 🟨 zsh-syntax-highlighting
