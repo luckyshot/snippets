@@ -14,7 +14,7 @@ As a functional work station we need, at a minimum:
   - ✅ Clock (`tmux`)
 - ✅ WiFi management (`nmtui`)
 - 🟨 Music player
-- Video player (mpv plays video and music too)
+- ✅ Video player (`mpv`, plays music too)
 - 🟨 Boot from console
 - ✅ Aliases 
   - ✅ Load graphical interface (`sudo startx`)
@@ -50,7 +50,9 @@ Keyboard shortcuts that you will need to learn:
   - `Shift+T`: new tab
   - `Shift+U`: new URL
 - **micro**
-  - 
+- **mpv**
+  - Command `mpv {filename}`
+  - `9` `0`: Volume down/up 
 - **Graphical interface**
   - Type command `sudo startx`
   - `Ctrl+Alt+F1`-`F6`: switch between sessions
