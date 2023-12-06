@@ -6,6 +6,8 @@ This document outlines the configuration tweaks needed to go full-terminal on a 
 
 As a functional work station we need, at a minimum:
 
+_(✅: Scripted; 🟨: Pending; 🤚 Manually done following some steps)_
+
 - ✅ Window toggle/switcher/splitter (`tmux`)
 - ✅ Text Editor/IDE (`micro`)
   - 🟨 Move to neovim some day
@@ -17,7 +19,7 @@ As a functional work station we need, at a minimum:
 - ✅ WiFi management (`nmtui`)
 - ✅ Music & Video player (`mpv`)
   - 🟨 Can't hear sounds on full console mode though, is it even possible?
-- 🟨 Boot from console
+- 🤚 Boot from console
 - ✅ Aliases 
   - ✅ Load graphical interface (`sudo startx`)
   - ✅ `lll`: `ls -lah`
@@ -26,8 +28,8 @@ As a functional work station we need, at a minimum:
   - 🟨 Compatibility with micro+w3m
 - 🟨 Controls
   - 🟨 Volume
-  - 🟨 Screen brightness
-  - 🟨 Keyboard brightness
+  - ✅ Screen brightness
+  - ✅ Keyboard brightness
 
 
 ## Shortcuts
