@@ -64,7 +64,7 @@ Keyboard shortcuts that you will need to learn:
 - **WiFi**
   - Command `nmtui`
 - **Brightness**
-  - Command `bright1`: Increase screen brightness by 10%
+  - Command `bright`: Increase screen brightness by 10%
   - Command `bright0`: Decrease screen brightness by 10%
   - Command `kbd1`: Turn keyboard light on
   - Command `kbd0`: Turn keyboard light off
@@ -146,10 +146,10 @@ sudo apt install brightnessctl
 # Aliases
 echo "alias lll='ls -lisah'" >> ~/.bashrc
 echo "alias m='micro'" >> ~/.bashrc
-echo "alias bright1='sudo brightnessctl -c backlight set +10%" >> ~/.bashrc
-echo "alias bright0='sudo brightnessctl -c backlight set -10%" >> ~/.bashrc
-echo "alias kbd1='sudo brightnessctl -d tpacpi::kbd_backlight set 1" >> ~/.bashrc
-echo "alias kbd0='sudo brightnessctl -d tpacpi::kbd_backlight set 0" >> ~/.bashrc
+echo "alias bright1='sudo brightnessctl -c backlight set +10%"' >> ~/.bashrc
+echo "alias bright0='sudo brightnessctl -c backlight set 10%-"' >> ~/.bashrc
+echo "alias kbd1='sudo brightnessctl -d tpacpi::kbd_backlight set 1"' >> ~/.bashrc
+echo "alias kbd0='sudo brightnessctl -d tpacpi::kbd_backlight set 0"' >> ~/.bashrc
 
 
 ```
