@@ -45,6 +45,11 @@ Keyboard shortcuts that you will need to learn:
     - `Ctrl+B 0-9`: go to window N
   - Sessions
     - _to do_
+  - **Zsh**
+    - `Alt+Left`: previous directory
+    - `Alt+Right`: next directory
+    - `Alt+Up`: parent directory
+    - `Alt+Down`: first child directory by alphabetical order
 - **w3m**
   - `Shift+Q`: quit
   - `Shift+B`: go back
@@ -97,8 +102,10 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
 ## Activate Zsh plugins
-sed -i 's/plugins=(git)/plugins=(zsh-autosuggestions git)/g' .zshrc
+sed -i 's/plugins=(git)/plugins=(zsh-autosuggestions dirhistory git)/g' .zshrc
 
+## Reload .zshrc config
+exec zsh
 
 # Install tmux
 echo 'Install tmux'
