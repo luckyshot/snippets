@@ -15,9 +15,8 @@ As a functional work station we need, at a minimum:
   - ✅ Battery level (`tmux plugin`)
   - ✅ Clock (`tmux`)
 - ✅ WiFi management (`nmtui`)
-- 🟨 Music player
-- ✅ Video player (`mpv`, plays music too)
-  - 🟨 Can't hear sounds though yet
+- ✅ Music & Video player (`mpv`)
+  - 🟨 Can't hear sounds on full console mode though, is it even possible?
 - 🟨 Boot from console
 - ✅ Aliases 
   - ✅ Load graphical interface (`sudo startx`)
@@ -62,6 +61,11 @@ Keyboard shortcuts that you will need to learn:
   - `Ctrl+Alt+F7`: switch to graphical session
 - **WiFi**
   - Command `nmtui`
+- **Brightness**
+  - Command `bright1`: Increase screen brightness by 10%
+  - Command `bright0`: Decrease screen brightness by 10%
+  - Command `kbd1`: Turn keyboard light on
+  - Command `kbd0`: Turn keyboard light off
   
 
 ## Installation
@@ -74,11 +78,6 @@ cd ~
 
 # Download this file for reference
 curl https://raw.githubusercontent.com/luckyshot/snippets/main/linux-terminal.md >> ~/linux-terminal.md
-
-
-# Aliases
-echo "alias lll='ls -lisah'" >> ~/.bashrc
-echo "alias m='micro'" >> ~/.bashrc
 
 
 # Install tmux
@@ -134,6 +133,21 @@ sudo apt install -y gpm
 
 # Syncthing
 # Install from graphical interface once
+
+
+# Brightness control
+sudo apt install brightnessctl
+
+
+
+
+# Aliases
+echo "alias lll='ls -lisah'" >> ~/.bashrc
+echo "alias m='micro'" >> ~/.bashrc
+echo "alias bright1='sudo brightnessctl -c backlight set +10%"
+echo "alias bright0='sudo brightnessctl -c backlight set -10%"
+echo "alias kbd1='sudo brightnessctl -d tpacpi::kbd_backlight set 1"
+echo "alias kbd0='sudo brightnessctl -d tpacpi::kbd_backlight set 0"
 
 
 ```
