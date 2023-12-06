@@ -20,7 +20,7 @@ _(✅: Scripted; 🟨: Pending; 🤚 Manually done following some steps)_
 - ✅ Text Editor/IDE (`micro`)
   - 🟨 Move to neovim some day
 - ✅ Web Browser (`w3m`)
-- ✅ Syncthing
+- 🤚 Syncthing
 - ✅ System information
   - ✅ Battery level (`tmux plugin`)
   - ✅ Clock (`tmux`)
