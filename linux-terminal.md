@@ -5,7 +5,7 @@ This document outlines the configuration tweaks needed to go full-terminal on a 
 ## 🟩 Advantages
 
 - 💪 **Productivity**: The motivation for this is to increase productivity and creativity by removing distractions and having a clean, simple and minimal workspace. 
-- 🔋 **Battery**: It saves tons of battery life whenever you're out and about (I've gone from 3 hours to 12 hours on my laptop). Running Ubuntu 23.10 with KDE on a Thinkpad P14s consumes between 8-12W with 16W peaks; on terminal session with graphical in the back we get 6-9W with 11W peaks while on full-terminal mode (without graphical in the background) the consumption goes to [PENDING TEST].
+- 🔋 **Battery**: It saves tons of battery life whenever you're out and about (I've gone from 3 hours to 12 hours on my laptop). Running Ubuntu 23.10 with KDE on a Thinkpad P14s consumes between 8-12W with 16W peaks; on terminal session with graphical in the back we get 6-9W with 11W peaks while on full-terminal mode (without graphical in the background) the consumption goes to 4-7W with 9W peaks.
 
 ## 🟥 Drawbacks
 
