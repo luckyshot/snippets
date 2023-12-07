@@ -48,6 +48,7 @@ _(✅: Scripted; 🟨: Pending; 🤚 Manually done following some steps)_
 - ✅ Music & Video player (`mpv`)
   - 🟨 Can't hear sounds on full console mode though, is it even possible?
 - ✅ Calculator
+- 🟨 Email client
 - 🟨 Jira
 - 🟨 Slack (`Slack-term`?)
 
