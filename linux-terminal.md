@@ -15,6 +15,9 @@ As a functional work station we need, at a minimum:
 
 _(✅: Scripted; 🟨: Pending; 🤚 Manually done following some steps)_
 
+### Device management
+
+- 🤚 Boot from console
 - ✅ Window toggle/switcher/splitter (`tmux`)
 - ✅ Terminal improvements (`Oh My Zsh`)
   - ✅ Zsh
@@ -22,23 +25,31 @@ _(✅: Scripted; 🟨: Pending; 🤚 Manually done following some steps)_
   - ✅ dirhistory
   - 🟨 zsh-syntax-highlighting
   - ✅ Powerlevel10k
-- ✅ Text Editor/IDE (`micro`)
-  - 🟨 Move to neovim some day
-- ✅ Web Browser (`w3m`)
-- 🤚 Syncthing
 - ✅ System information
   - ✅ Battery level (`tmux plugin`)
   - ✅ Clock (`tmux`)
 - ✅ WiFi management (`nmtui`)
-- ✅ Music & Video player (`mpv`)
-  - 🟨 Can't hear sounds on full console mode though, is it even possible?
-- 🤚 Boot from console
 - ✅ Mouse support (`gpm`)
   - 🟨 Compatibility with micro+w3m
 - 🟨 Controls
   - 🟨 Volume
   - ✅ Screen brightness
   - ✅ Keyboard brightness
+
+### Basic tools
+
+- ✅ Text Editor/IDE (`micro`)
+  - 🟨 Move to neovim some day
+- ✅ Web Browser (`w3m`)
+
+### Productivity tools
+
+- 🤚 Syncthing
+- ✅ Music & Video player (`mpv`)
+  - 🟨 Can't hear sounds on full console mode though, is it even possible?
+- ✅ Calculator
+- 🟨 Jira
+- 🟨 Slack (`Slack-term`?)
 
 
 ## Shortcuts
@@ -86,6 +97,8 @@ Keyboard shortcuts that you will need to learn:
   - Alias `k0`: Turn keyboard light off
 - **Graphical interface**
   - Command `sudo startx`: Load graphical interface
+- **Calculator**
+  - Open `python3` and do your calculations in Python itself
 
 
 ## Installation
