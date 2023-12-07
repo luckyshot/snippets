@@ -1,15 +1,18 @@
 # Linux Terminal
 
-This document outlines the configuration tweaks needed to go full-terminal on a work laptop/computer. The motivation for this is to increase productivity and creativity by removing distractions and having a clean, simple and minimal workspace that also saves tons of battery life whenever you're out and about (I've gone from 3 hours to 12 hours on my laptop).
+This document outlines the configuration tweaks needed to go full-terminal on a work laptop/computer. To use this, you must be comfortable with using the terminal and know the basic commands. There's no need to be a pro at shell scripting or anything like that. I've kept plugins and customizations to a minimum so you don't need to learn too many commands/hotkeys.
 
-To use this, you must be comfortable with using the terminal and know the basic commands. There's no need to be a pro at shell scripting or anything like that. I've kept plugins and customizations to a minimum so you don't need to learn too many commands/hotkeys.
+## 🟩 Advantages
 
-## Drawbacks
+- 💪 **Productivity**: The motivation for this is to increase productivity and creativity by removing distractions and having a clean, simple and minimal workspace. 
+- 🔋 **Battery**: It saves tons of battery life whenever you're out and about (I've gone from 3 hours to 12 hours on my laptop). Running Ubuntu 23.10 with KDE on a Thinkpad P14s consumes between 8-12W with 16W peaks while on full-terminal mode the consumption goes to
 
-- Current browser (w3m) doesn't load JavaScript websites properly
+## 🟥 Drawbacks
+
+- Current browser (`w3m`) doesn't load JavaScript websites properly, so no web clients for Slack/Jira/Reddit/etc
 - Currently, terminal only has 8 colors 
 
-## Checklist
+## 🏁 Checklist
 
 As a functional work station we need, at a minimum:
 
@@ -36,24 +39,24 @@ _(✅: Scripted; 🟨: Pending; 🤚 Manually done following some steps)_
   - ✅ Screen brightness
   - ✅ Keyboard brightness
 
-### Basic tools
+### The Basics
 
 - ✅ Text Editor/IDE (`micro`)
   - 🟨 Move to neovim some day
 - ✅ Web Browser (`w3m`)
 
-### Productivity tools
+### The Extras
 
 - 🤚 Syncthing
 - ✅ Music & Video player (`mpv`)
   - 🟨 Can't hear sounds on full console mode though, is it even possible?
 - ✅ Calculator
-- 🟨 Email client
+- 🟨 Emails
 - 🟨 Jira
-- 🟨 Slack (`Slack-term`?)
+- 🟨 Slack
+- 🟨 YouTube: browse and watch
 
-
-## Shortcuts
+## ⌨ Shortcuts
 
 Keyboard shortcuts that you will need to learn:
 
@@ -100,9 +103,11 @@ Keyboard shortcuts that you will need to learn:
   - Command `sudo startx`: Load graphical interface
 - **Calculator**
   - Open `python3` and do your calculations in Python itself
+- **Weechat**
+  - Command `/quit`: exit
+  - 
 
-
-## Installation
+## 🚧 Installation
 
 1. Install OS with a graphical interface
 2. Run these commands carefully one by one (it's not yet ready to simply run as-is)
@@ -196,6 +201,24 @@ sudo apt install -y gpm
 
 # Brightness control
 sudo apt install brightnessctl
+
+# Slack
+sudo apt install ca-certificates dirmngr gpg-agent apt-transport-https
+sudo mkdir /root/.gnupg
+sudo chmod 700 /root/.gnupg
+sudo mkdir -p /usr/share/keyrings
+sudo gpg --no-default-keyring --keyring /usr/share/keyrings/weechat-archive-keyring.gpg --keyserver hkps://keys.openpgp.org --recv-keys 11E9DE8848F2B65222AA75B8D1820DB22A11534E
+
+## For 23.10 (others here: https://weechat.org/download/debian/ )
+echo "deb [signed-by=/usr/share/keyrings/weechat-archive-keyring.gpg] https://weechat.org/ubuntu mantic main" | sudo tee /etc/apt/sources.list.d/weechat.list
+echo "deb-src [signed-by=/usr/share/keyrings/weechat-archive-keyring.gpg] https://weechat.org/ubuntu mantic main" | sudo tee -a /etc/apt/sources.list.d/weechat.list
+
+sudo apt update
+sudo apt install weechat-curses weechat-plugins weechat-python weechat-perl
+
+## Weechat Slack
+sudo apt install weechat-python python3-websocket
+# TO DO...
 
 
 
