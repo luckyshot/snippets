@@ -103,9 +103,6 @@ Keyboard shortcuts that you will need to learn:
   - Command `sudo startx`: Load graphical interface
 - **Calculator**
   - Open `python3` and do your calculations in Python itself
-- **Weechat**
-  - Command `/quit`: exit
-  - 
 
 ## 🚧 Installation
 
@@ -201,24 +198,6 @@ sudo apt install -y gpm
 
 # Brightness control
 sudo apt install brightnessctl
-
-# Slack
-sudo apt install ca-certificates dirmngr gpg-agent apt-transport-https
-sudo mkdir /root/.gnupg
-sudo chmod 700 /root/.gnupg
-sudo mkdir -p /usr/share/keyrings
-sudo gpg --no-default-keyring --keyring /usr/share/keyrings/weechat-archive-keyring.gpg --keyserver hkps://keys.openpgp.org --recv-keys 11E9DE8848F2B65222AA75B8D1820DB22A11534E
-
-## For 23.10 (others here: https://weechat.org/download/debian/ )
-echo "deb [signed-by=/usr/share/keyrings/weechat-archive-keyring.gpg] https://weechat.org/ubuntu mantic main" | sudo tee /etc/apt/sources.list.d/weechat.list
-echo "deb-src [signed-by=/usr/share/keyrings/weechat-archive-keyring.gpg] https://weechat.org/ubuntu mantic main" | sudo tee -a /etc/apt/sources.list.d/weechat.list
-
-sudo apt update
-sudo apt install weechat-curses weechat-plugins weechat-python weechat-perl
-
-## Weechat Slack
-sudo apt install weechat-python python3-websocket
-# TO DO...
 
 
 
