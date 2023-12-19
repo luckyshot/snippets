@@ -171,7 +171,11 @@ sudo ufw reload
 
 ## Syncthing
 
-Follow this tutorial to avoid the 'deprecated keys' issue: https://www.linuxcapable.com/how-to-install-syncthing-on-ubuntu-linux/
+Follow this tutorial to avoid the 'deprecated keys' issue: 
+
+https://www.linuxcapable.com/how-to-install-syncthing-on-ubuntu-linux/
+
+- Config file: `nano ~/.local/state/syncthing/config.xml`
 
 ## NeoVim + NvChad
 
