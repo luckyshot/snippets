@@ -176,6 +176,11 @@ Follow this tutorial to avoid the 'deprecated keys' issue:
 https://www.linuxcapable.com/how-to-install-syncthing-on-ubuntu-linux/
 
 - Config file: `nano ~/.local/state/syncthing/config.xml`
+- Use these UFW rules:
+  ```sh
+  sudo ufw allow syncthing
+  sudo ufw allow syncthing-gui
+  ```
 
 ## NeoVim + NvChad
 
