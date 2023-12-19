@@ -169,6 +169,10 @@ sudo ufw allow 1714:1764/tcp
 sudo ufw reload
 ```
 
+## Syncthing
+
+Follow this tutorial to avoid the 'deprecated keys' issue: https://www.linuxcapable.com/how-to-install-syncthing-on-ubuntu-linux/
+
 ## NeoVim + NvChad
 
 NvChad Releases: https://github.com/neovim/neovim/releases
