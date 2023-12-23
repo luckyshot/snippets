@@ -191,6 +191,10 @@ sudo apt install -y gpm
 # sudo mv /etc/default/grub.orig /etc/default/grub && sudo update-grub
 # TODO: https://askubuntu.com/questions/859630/how-to-start-ubuntu-in-console-mode
 
+# Allow user to startx
+# # WARNING: Read about the security implications here https://unix.stackexchange.com/q/478742
+# sudo nano /etc/X11/Xwrapper.config
+# # Then replace `allowed_user=console` with `allowed_users=anybody`
 
 # Syncthing
 # Install from graphical interface once
