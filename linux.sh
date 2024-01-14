@@ -31,7 +31,10 @@ sudo ufw status
 sudo apt install filezilla qbittorrent
 
 # Griffin PowerMate (you don't need this, it's a gadget I bought a long time ago and use it as a volume slider for my desktop computer + click to sleep)
+# Ubuntu
 sudo add-apt-repository ppa:stefansundin/powermate
+# Debian
+echo 'deb http://ppa.launchpad.net/stefansundin/powermate/ubuntu focal main' | sudo tee /etc/apt/sources.list.d/powermate.list && sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 0xFFE1FFFFAFEC55BB
 sudo apt update
 sudo apt install powermate
 powermate
