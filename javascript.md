@@ -6,7 +6,7 @@
 
 formatCurrency = function (number) {
 	return new Intl.NumberFormat(APP.params.intl, {
-		maximumSignificantDigits: 2,
+		maximumSignificantDigits: 21,
 		style: "currency",
 		currency: "EUR",
 	}).format(number);
