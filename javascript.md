@@ -1,8 +1,10 @@
 # JavaScript
 
-### Utils
+## Utils
 
 ```js
+// Numbers
+
 formatCurrency = function (number) {
     return new Intl.NumberFormat(APP.params.intl, {
         maximumSignificantDigits: 21,
@@ -10,46 +12,26 @@ formatCurrency = function (number) {
         currency: "EUR",
     }).format(number);
 };
+
 formatNumber = function (number, decimals) {
     return parseFloat(number).toFixed(decimals || 0);
-};
-randomNumber = function (min, max) {
-    return Math.floor(Math.random() * max) + min;
-}
-capitalizeFirstLetter = function (string) {
-    return string.charAt(0).toUpperCase() + string.slice(1);
 };
 
 isNumeric = function (n) {
     return !isNaN(parseFloat(n)) && isFinite(n);
 };
+
+randomNumber = function (min, max) {
+    return Math.floor(Math.random() * max) + min;
+}
+
+// Strings
+
+capitalizeFirstLetter = function (string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+};
+
 ```
-
-### Loop QuerySelectorAll
-
-```js
-document.querySelectorAll('.classes').forEach(function(item){
-    // ...
-});
-```
-
-### Fetch and insert data
-
-```js
-fetch('/clickedMessage/')
-    .then(response => response.text())
-    .then(data => {
-        document.getElementById('fetch-target-1').innerHTML = data
-    })
-```
-
-### Toggle CSS class
-
-```js
-document.getElementById('toggle-target-1').classList.toggle('red-border')
-```
-
-
 
 ## Vanilla template
 
@@ -87,7 +69,37 @@ APP.init();
 ```
 
 
-## Cookie set/get
+## DOM
+
+### Loop QuerySelectorAll
+
+```js
+document.querySelectorAll('.classes').forEach(function(item){
+    // ...
+});
+```
+
+### Toggle CSS class
+
+```js
+document.getElementById('toggle-target-1').classList.toggle('red-border')
+```
+
+
+## Network
+
+### Fetch and insert data
+
+```js
+fetch('/clickedMessage/')
+    .then(response => response.text())
+    .then(data => {
+        document.getElementById('fetch-target-1').innerHTML = data
+    })
+```
+
+
+## Cookies
 
 ```js
 let _setCookie = function (name, value, days) {
@@ -111,8 +123,9 @@ let _getCookie = function (name) {
 }
 ```
 
+## Micro-Libraries
 
-## Events library
+### Events library
 
 ```
 /* gator v1.2.4 craig.is/riding/gators */
@@ -134,7 +147,7 @@ Gator(d.querySelector('#app')).on(['mousedown','touchstart'], '.button', runActi
 ```
 
 
-## Minimal Template engine library
+### Minimal Template engine library
 
 ```
 // Template Engine
@@ -169,7 +182,9 @@ Insert partial (use `{%#` instead of `{%=` to avoid escaping HTML):
 ```
 
 
-## Color scale
+## Miscelaneous
+
+### Color scale
 
 ```js
 colorScale = function(pct, min, max) {
@@ -197,7 +212,7 @@ colorScale = function(pct, min, max) {
 };
 ```
 
-## String to unique color
+### String to unique color
 
 ```js
 var stringToColour = function(str) {
@@ -215,7 +230,7 @@ var stringToColour = function(str) {
 ```
 
 
-## Alert system
+### Alert system
 
 ```html
 <div id="alerts"></div>
@@ -254,7 +269,7 @@ APP.hideAllAlerts = function(){
 ```
 
 
-## Text to Speech
+### Text to Speech
 
 ```js
 APP = APP || {};
@@ -293,19 +308,19 @@ APP.speak("Hello world!");
 javascript:void( /* code here */ )
 ```
 
-#### Go to another page
+### Go to another page
 
 ```js
 location.href='https://example.com/add?url='+encodeURIComponent(location.href)+'&text='+encodeURIComponent(document.title)
 ```
 
-#### Open a popup window
+### Open a popup window
 
 ```js
 var bWindow=window.open("https://example.com","Window title","height=300,width=600");setTimeout(function(){ bWindow.close() }, 5000)
 ```
 
-#### Convert imperial to metric
+### Convert imperial to metric
 
 ```js
 document.body.innerHTML = document.body.innerHTML
