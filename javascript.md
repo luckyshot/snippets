@@ -1,5 +1,29 @@
 # JavaScript
 
+### Utils
+
+```js
+
+formatCurrency = function (number) {
+	return new Intl.NumberFormat(APP.params.intl, {
+		maximumSignificantDigits: 2,
+		style: "currency",
+		currency: "EUR",
+	}).format(number);
+};
+formatNumber = function (number, decimals) {
+	return parseFloat(number).toFixed(decimals || 0);
+};
+randomNumber = function (min, max) {
+	return Math.floor(Math.random() * max) + min;
+}
+capitalizeFirstLetter = function (string) {
+	return string.charAt(0).toUpperCase() + string.slice(1);
+};
+
+
+```
+
 ### Loop QuerySelectorAll
 
 ```js
