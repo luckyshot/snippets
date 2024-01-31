@@ -33,6 +33,14 @@ capitalizeFirstLetter = function (string) {
 
 ```
 
+## Regular Expressions
+
+Cover all diacritics:
+
+```js
+([A-z0-9À-ž\s]){2,}
+```
+
 ## Vanilla template
 
 ```js
