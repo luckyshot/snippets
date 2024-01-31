@@ -245,3 +245,81 @@ Targets iPad 1:
   </ul>
 </div>
 ```
+
+
+## Color Palettes
+
+### Stripe
+
+```css
+:root {
+--stripe-hue-gray0: #ffffff;
+--stripe-hue-gray50: #f6f8fa;
+--stripe-hue-gray100: #ebeef1;
+--stripe-hue-gray150: #d5dbe1;
+--stripe-hue-gray200: #c0c8d2;
+--stripe-hue-gray300: #a3acba;
+--stripe-hue-gray400: #87909f;
+--stripe-hue-gray500: #687385;
+--stripe-hue-gray600: #545969;
+--stripe-hue-gray700: #414552;
+--stripe-hue-gray800: #30313d;
+--stripe-hue-gray900: #1a1b25;
+--stripe-hue-gray950: #10111a;
+--stripe-hue-blue50: #ddfffe;
+--stripe-hue-blue100: #cff5f6;
+--stripe-hue-blue150: #a2e5ef;
+--stripe-hue-blue200: #75d5e8;
+--stripe-hue-blue300: #06b9ef;
+--stripe-hue-blue400: #0096eb;
+--stripe-hue-blue500: #0570de;
+--stripe-hue-blue600: #0055bc;
+--stripe-hue-blue700: #04438c;
+--stripe-hue-blue800: #003262;
+--stripe-hue-blue900: #011c3a;
+--stripe-hue-green50: #ecfed7;
+--stripe-hue-green100: #d7f7c2;
+--stripe-hue-green150: #a6eb84;
+--stripe-hue-green200: #76df47;
+--stripe-hue-green300: #48c404;
+--stripe-hue-green400: #3fa40d;
+--stripe-hue-green500: #228403;
+--stripe-hue-green600: #006908;
+--stripe-hue-green700: #0b5019;
+--stripe-hue-green800: #043b15;
+--stripe-hue-green900: #02220d;
+--stripe-hue-orange50: #fef9da;
+--stripe-hue-orange100: #fcedb9;
+--stripe-hue-orange150: #fcd579;
+--stripe-hue-orange200: #fcbd3a;
+--stripe-hue-orange300: #ff8f0e;
+--stripe-hue-orange400: #ed6704;
+--stripe-hue-orange500: #c84801;
+--stripe-hue-orange600: #a82c00;
+--stripe-hue-orange700: #842106;
+--stripe-hue-orange800: #5f1a05;
+--stripe-hue-orange900: #331302;
+--stripe-hue-red50: #fff5fa;
+--stripe-hue-red100: #ffe7f2;
+--stripe-hue-red150: #ffccdf;
+--stripe-hue-red200: #ffb1cd;
+--stripe-hue-red300: #fe87a1;
+--stripe-hue-red400: #fc526a;
+--stripe-hue-red500: #df1b41;
+--stripe-hue-red600: #b3093c;
+--stripe-hue-red700: #890d37;
+--stripe-hue-red800: #68052b;
+--stripe-hue-red900: #3e021a;
+--stripe-hue-purple50: #f9f7ff;
+--stripe-hue-purple100: #f2ebff;
+--stripe-hue-purple150: #dfd3fc;
+--stripe-hue-purple200: #d1befe;
+--stripe-hue-purple300: #b49cfc;
+--stripe-hue-purple400: #8d7ffa;
+--stripe-hue-purple500: #625afa;
+--stripe-hue-purple600: #513dd9;
+--stripe-hue-purple700: #3f32a1;
+--stripe-hue-purple800: #302476;
+--stripe-hue-purple900: #14134e;
+}
+```
