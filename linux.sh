@@ -19,6 +19,7 @@ sudo ufw deny from 91.109.117.228
 sudo ufw status
 
 # install syncthing https://www.linuxcapable.com/how-to-install-syncthing-on-ubuntu-linux/
+# install rustdesk https://github.com/rustdesk/rustdesk/releases
 # set up KDE Connect
 # install espanso
 # install netdata
