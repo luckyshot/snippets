@@ -109,6 +109,14 @@ ln -s {source} {link}
 
 ## Auto-mount external disk on boot
 
+### Auto-mount via paths in cron
+
+```sh
+@reboot sudo mount /dev/sda /media/xavi/Elements15A/
+```
+
+### Auto-mount by UUID in fstab
+
 ```sh
 # Get disk UUID
 ls -al /dev/disk/by-uuid/
