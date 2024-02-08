@@ -51,7 +51,7 @@ du -shc /var/*
 Sync two directories (watch for the `*`!):
 
 ```sh
-rsync /media/xavi/Elements15A/* /media/xavi/Elements15B/
+rsync -avP /media/xavi/Elements15A/* /media/xavi/Elements15B/
 ```
 
 ### File permissions
