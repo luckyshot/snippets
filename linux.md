@@ -1,13 +1,28 @@
 # Linux
 
-## File permissions
+
+## General tweaks
 
 ```sh
-sudo chown -R www-data:www-data /var/www/example.com
-sudo chmod -R 755 /var/www/example.com
+# crontab -e
+# Auto-update (only do this for non-critical infrastructure)
+9 4 * * 1 sudo apt update -y && sudo apt upgrade -y
 ```
 
-## Check disk space
+### Create user
+
+```
+sudo useradd -m peter
+sudo passwd peter
+
+# Add to sudo
+usermod -aG sudo peter
+```
+
+
+## Disks
+
+### Check disk space
 
 Overview (`/dev/sda1` is usually the main HD):
 
@@ -21,18 +36,45 @@ To analyze folders:
 du -shc /var/*
 ```
 
-## Mount HDDs via crontab
+### Mount HDDs via crontab
 
 ```sh
 # Mount a drive on boot after 30 seconds
 @reboot sleep 30 && sudo mount /dev/sda1 /media/seagate1tb/
-
-# Auto-update (only do this for non-critical infrastructure)
-9 4 * * 1 sudo apt update -y && sudo apt upgrade -y
 ```
 
-## SSH
 
+## Files
+
+## Syncing files
+
+Sync two directories (watch for the `*`!):
+
+```sh
+rsync /source/path/* /dest/path/
+```
+
+### File permissions
+
+```sh
+sudo chown -R www-data:www-data /var/www/example.com
+sudo chmod -R 755 /var/www/example.com
+```
+
+### Create a symlink
+
+```
+ln -s {source} {link}
+# Example: ln -s /var/www/foo/bar ~/foobar
+```
+
+### Compress/Uncompress tar.gz
+
+- `tar -czvf {filename}.tar.gz {directory}`: Compress
+- `tar -xzvf {filename}.tar.gz`: Uncompress
+
+
+## SSH
 
 ### Generate SSH Keys
 
@@ -50,7 +92,6 @@ ssh-keygen -t ed25519 -b 4096 -C "{xavi@workemail.com}" -f bitbucket_work
 ```
 
 (do not enter a passphrase)
-
 
 ### Install SSH Key into server
 
@@ -77,7 +118,6 @@ ssh git@bitbucket.org host_key_info
 ssh -L 9090:localhost:8384 myserver.com
 ```
 
-
 ### SSHFS
 
 Mount remote server as directory (instead of SFTP client)
@@ -90,69 +130,21 @@ sudo sshfs -o allow_other,default_permissions username@remotehost:/ /mnt/remoteh
 ```
 
 
-## Create a symlink
-
-```
-ln -s {source} {link}
-# Example: ln -s /var/www/foo/bar ~/foobar
-```
-
-## Compress/Uncompress tar.gz
-
-- `tar -czvf {filename}.tar.gz {directory}`: Compress
-- `tar -xzvf {filename}.tar.gz`: Uncompress
-
-## Shortcut
+## Shortcuts
 
 - `Ctrl+Alt+F2`: swap to another TTY
 - `Ctrl+Alt+F1`: put you back into the normal desktop
 
-## Auto-mount external disk on boot
 
-### Auto-mount via paths in cron
+## Miscelaneous
 
-```sh
-@reboot sudo mount /dev/sda /media/xavi/Elements15A/
-```
-
-### Auto-mount by UUID in fstab
-
-```sh
-# Get disk UUID
-ls -al /dev/disk/by-uuid/
-
-# Get user and group ID
-id YOURUSERNAME
-
-# Get file format
-lsblk -f
-
-sudo nano /etc/fstab
-
-# Put all together
-UUID=628B-1CD8  /media/mydisk  exfat   defaults,uid=1000,gid=1001 0 0
-
-
-# Save and check for errors
-findmnt --verify
-```
-
-## Download YT playlist as mp3 audio files
+### Download YT playlist as mp3 audio files
 
 ```
 sudo apt install yt-dlp
 yt-dlp --extract-audio --audio-format mp3 -o "%(title)s.%(ext)s" https://www.youtube.com/playlist?list=xxxxxxx
 ```
 
-## Create user
-
-```
-sudo useradd -m peter
-sudo passwd peter
-
-# Add to sudo
-usermod -aG sudo peter
-```
 
 ## Random fixes
 
