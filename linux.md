@@ -138,6 +138,20 @@ sudo sshfs -o allow_other,default_permissions username@remotehost:/ /mnt/remoteh
 
 ## Miscelaneous
 
+### Play Windows games in Linux using Steam Proton
+
+1. Add the installer to your Steam library with "Add a non-Steam to My Library"
+2. Right click on the installer in your library and force the use of Proton
+3. Click on the installer in your library and then click "Play". The installer should run.
+4. Search your .steam folder for the game .exe
+5. Open properties for the installer, and change the target to the .exe you found
+
+Steam files can be found here in these paths in Debian/Ubuntu:
+
+- Executable files: `/home/USER/.steam/debian-installation/steamapps/compatdata/ID/pfx/dosdevices/e:/Games/GAME`
+- Saved games: `/home/USER/.steam/debian-installation/steamapps/compatdata/ID/pfx/drive_c/users/steamuser/Saved Games/GAME/users/ID`
+
+
 ### Download YT playlist as mp3 audio files
 
 ```
