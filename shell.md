@@ -131,16 +131,13 @@ usermod -a -G www-data xavi
 # - More than 8 GB RAM - at least 4 GB
 # Example for a 8GB swap file
 fallocate -l 8G /swapfile
-# for 2GB: `dd if=/dev/zero of=/swapfile bs=1024 count=2097152`
-# for 4GB: `dd if=/dev/zero of=/swapfile bs=1024 count=4194304`
-dd if=/dev/zero of=/swapfile bs=1024 count=8388608
+dd if=/dev/zero of=/swapfile bs=1024 count=8G
 chmod 600 /swapfile
 mkswap /swapfile
 swapon /swapfile
 nano /etc/fstab
 
-######### Paste this ##########
-/etc/fstab
+######### Paste this at the end ##########
 /swapfile swap swap defaults 0 0
 ###############################
 
