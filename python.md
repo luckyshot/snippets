@@ -1,5 +1,13 @@
 # Python
 
+## Initial Setup
+
+```sh
+python3 --version
+sudo apt install python3 python-is-python3 python3-pip
+sudo rm /usr/lib/python3.11/EXTERNALLY-MANAGED
+```
+
 ```py
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
