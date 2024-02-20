@@ -19,15 +19,23 @@ sudo ufw deny from 91.109.117.228
 sudo ufw status
 
 # install syncthing https://www.linuxcapable.com/how-to-install-syncthing-on-ubuntu-linux/
-# install rustdesk https://github.com/rustdesk/rustdesk/releases
+
 # set up KDE Connect
+
 # install espanso
-# install netdata
-# install browser?
+cd ~/Downloads/Temp
+wget https://github.com/federico-terzi/espanso/releases/download/v2.2.1/espanso-debian-x11-amd64.deb
+sudo apt install ./espanso-debian-x11-amd64.deb
+espanso service register
+
+# install netdata?
+# install Firefox
 # install Visual Sudio Code
-# install TablePlus or DBeaver-CE https://dbeaver.io/download/
+# install DBeaver-CE https://dbeaver.io/download/
 # install iriun webcam https://iriun.com/
-# install teamviewer/anydesk/remote desktop
+# install remote desktop (meshcentral, rustdesk, teamviewer, anydesk...)
+# install rustdesk https://github.com/rustdesk/rustdesk/releases
+
 # gaming PC? https://gitlab.com/corectrl/corectrl
 sudo apt install filezilla qbittorrent
 
