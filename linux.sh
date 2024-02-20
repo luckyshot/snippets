@@ -6,7 +6,7 @@ mkdir ~/Downloads/Temp
 mkdir ~/Downloads/Keep
 
 sudo apt update
-sudo apt -y upgrade
+sudo apt upgrade -y
 
 sudo apt install openssh-server fail2ban ufw
 sudo apt install npx nodejs
