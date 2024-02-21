@@ -76,7 +76,7 @@ sudo usermod -a -G xavi www-data
 sudo chown -R $USER:www-data /var/www/
 
 # MariaDB
-sudo nano /etc/apache2/conf-available/servername.conf
+# sudo nano /etc/apache2/conf-available/servername.conf
 sudo apt install mariadb-server mariadb-client
 sudo systemctl start mariadb
 sudo systemctl enable mariadb
@@ -103,7 +103,7 @@ sudo a2enmod rewrite
 
 # Virtual hosts
 cd /etc/apache2/sites-available/
-sudo touch vhosts.conf
+sudo nano vhosts.conf
 sudo a2dissite 000-default.conf
 sudo a2ensite vhosts.conf
 sudo service apache2 reload
