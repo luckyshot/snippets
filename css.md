@@ -75,6 +75,13 @@ _(Compatible from IE9+)_
 */
 ```
 
+# Transition effects
+
+```css
+.fader {
+    transition: opacity 0.5s linear;
+}
+
 ## Animation
 
 ```css
