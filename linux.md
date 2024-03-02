@@ -5,8 +5,13 @@
 
 ```sh
 # crontab -e
+
 # Auto-update (only do this for non-critical infrastructure)
-9 4 * * 1 sudo apt update -y && sudo apt upgrade -y
+9 4 * * 1 sudo apt update && sudo apt upgrade -y
+
+# Reduce volume at night
+0 23 * * * amixer sset 'Master' 30%
+
 ```
 
 ### Create user
