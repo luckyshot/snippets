@@ -253,6 +253,26 @@ Targets iPad 1:
 </div>
 ```
 
+
+## Print CSS
+
+```css
+@page
+{
+    size: A4 portrait;
+    margin: 0;
+}
+
+
+/* Avoid break after header*/
+h2,h3,h4,h5,h6,h7,h8 {break-after: avoid-page;}
+/* Avoid splitting image */
+img, svg, table, canvas {break-inside: avoid;}
+/* Print URL of links */
+a::after {content: " (" attr(href) ")";}
+
+```
+
 ## CSS Libraries/Frameworks
 
 - [Pico (pure HTML selectors)](https://v2.picocss.com/)
