@@ -49,6 +49,12 @@ sudo apt install powermate
 powermate
 # Extra settings: sudo nano /etc/powermate.toml
 
+# Amazon Web Services CLI
+sudo apt install awscli
+aws configure
+## List: aws s3 ls s3://bucketname/
+## Download: aws s3 cp s3://bucketname/file.txt file.txt
+
 # Battery saving
 sudo add-apt-repository ppa:linrunner/tlp
 sudo apt update
