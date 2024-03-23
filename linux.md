@@ -143,6 +143,16 @@ sudo sshfs -o allow_other,default_permissions username@remotehost:/ /mnt/remoteh
 
 ## Miscelaneous
 
+### Schedule shutdown/suspend
+
+```sh
+# Shutdown in 30 minutes
+sudo shutdown +30
+
+# Suspend in 30 minutes
+sleep 30m && systemctl suspend
+```
+
 ### Play Windows games in Linux using Steam Proton
 
 1. Add the installer to your Steam library with "Add a non-Steam to My Library"
