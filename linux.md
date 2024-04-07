@@ -59,6 +59,12 @@ Sync two directories (watch for the `*`!):
 rsync -avP /media/xavi/Elements15A/* /media/xavi/Elements15B/
 ```
 
+Get a file from remote to local:
+
+```sh
+scp root@60.60.60.60:/backups/backup-$(date '+%Y%m%d').tar.gz ~/backups/backup-$(date '+%Y%m%d').tar.gz
+```
+
 ### File permissions
 
 ```sh
