@@ -1,7 +1,34 @@
 # Linux
 
+```sh
+echo "Hello" > file.txt # saves as new file
+echo "Hello" >> file.txt # appends
+```
 
-## General tweaks
+## Configurations
+
+```sh
+# Set bash as default console/terminal command shell
+chsh
+# Enter password and type
+/bin/bash
+```
+
+### Aliases
+
+```sh
+nano ~/.bashrc
+
+alias serveron="sudo service apache2 restart;sudo service mysql start"
+alias ll="ls -la"
+alias _u="sudo apt update;sudo apt upgrade"
+```
+
+```sh
+sudo nano /etc/apache2/sites-enabled/000-default.conf
+```
+
+## Crontab generic tweaks
 
 ```sh
 # crontab -e
@@ -16,14 +43,14 @@
 
 ### Create user
 
-```
+```sh
 sudo useradd -m peter
-sudo passwd peter
+sudo passwd griffin
 
-# Add to sudo
-usermod -aG sudo peter
+# Add to groups
+sudo usermod -aG sudo peter
+sudo usermod -aG www-data peter
 ```
-
 
 ## Disks
 
@@ -48,7 +75,6 @@ du -shc /var/*
 @reboot sleep 30 && sudo mount /dev/sda1 /media/seagate1tb/
 ```
 
-
 ## Files
 
 ## Syncing files
@@ -68,7 +94,8 @@ scp root@60.60.60.60:/backups/backup-$(date '+%Y%m%d').tar.gz ~/backups/backup-$
 ### File permissions
 
 ```sh
-sudo chown -R www-data:www-data /var/www/example.com
+sudo chown -R www-data:www-data /var/www/example.com/
+sudo chmod -R g+rwxs /var/www/example.com/
 sudo chmod -R 755 /var/www/example.com
 ```
 
@@ -83,7 +110,6 @@ ln -s {source} {link}
 
 - `tar -czvf {filename}.tar.gz {directory}`: Compress
 - `tar -xzvf {filename}.tar.gz`: Uncompress
-
 
 ## SSH
 
@@ -106,8 +132,10 @@ ssh-keygen -t ed25519 -b 4096 -C "{xavi@workemail.com}" -f bitbucket_work
 
 ### Install SSH Key into server
 
-```
-ssh-copy-id  username@remotehost
+```sh
+ssh-copy-id username@remotehost
+# or with a custom key
+ssh-copy-id -i ~/.ssh/id_rsa.pub username@remotehost
 ```
 
 ### External SSH Keys management
@@ -118,7 +146,7 @@ ssh-keygen -f "~/.ssh/known_hosts" -R "bitbucket.org"
 
 # Get key and add it
 ssh-keygen -R bitbucket.org && curl https://bitbucket.org/site/ssh >> ~/.ssh/known_hosts
- 
+
 # Get info on current key
 ssh git@bitbucket.org host_key_info
 ```
@@ -140,12 +168,26 @@ ssh username@remotehost
 sudo sshfs -o allow_other,default_permissions username@remotehost:/ /mnt/remotehost/
 ```
 
-
 ## Shortcuts
 
 - `Ctrl+Alt+F2`: swap to another TTY
 - `Ctrl+Alt+F1`: put you back into the normal desktop
 
+## Networking
+
+### Scan devices on same network
+
+```sh
+sudo apt install nmap
+ifconfig
+sudo nmap -sn 192.168.1.0/24
+```
+
+### Scan domain name for DNS records
+
+```sh
+dig -t txt salesforce.com
+```
 
 ## Miscelaneous
 
@@ -172,14 +214,12 @@ Steam files can be found here in these paths in Debian/Ubuntu:
 - Executable files: `/home/USER/.steam/debian-installation/steamapps/compatdata/ID/pfx/dosdevices/e:/Games/GAME`
 - Saved games: `/home/USER/.steam/debian-installation/steamapps/compatdata/ID/pfx/drive_c/users/steamuser/Saved Games/GAME/users/ID`
 
-
 ### Download YT playlist as mp3 audio files
 
 ```
 sudo apt install yt-dlp
 yt-dlp --extract-audio --audio-format mp3 -o "%(title)s.%(ext)s" https://www.youtube.com/playlist?list=xxxxxxx
 ```
-
 
 ## Random fixes
 
@@ -204,9 +244,11 @@ sudo ufw allow 1714:1764/tcp
 sudo ufw reload
 ```
 
-## Syncthing
+## Apps
 
-Follow this tutorial to avoid the 'deprecated keys' issue: 
+### Syncthing
+
+Follow this tutorial to avoid the 'deprecated keys' issue:
 
 https://www.linuxcapable.com/how-to-install-syncthing-on-ubuntu-linux/
 
@@ -217,7 +259,7 @@ https://www.linuxcapable.com/how-to-install-syncthing-on-ubuntu-linux/
   sudo ufw allow syncthing-gui
   ```
 
-## NeoVim + NvChad
+### NeoVim + NvChad
 
 NvChad Releases: https://github.com/neovim/neovim/releases
 
@@ -229,6 +271,12 @@ echo 'alias vim=nvim' >> .zbashrc
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.3.3/JetBrainsMono.zip
 # install JetBrains Mono Medium Nerd Font Complete.ttf
 git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1 && nvim
+```
 
+### OCR text
 
+```sh
+sudo apt install ocrmypdf
+sudo apt install tesseract-ocr-spa
+ocrmypdf -l spa --sidecar output.txt input.pdf output.pdf
 ```
