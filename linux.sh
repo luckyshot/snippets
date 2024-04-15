@@ -52,6 +52,11 @@ powermate
 # Amazon Web Services CLI
 sudo apt install awscli
 aws configure
+# https://us-east-1.console.aws.amazon.com/iam/home?region=eu-west-1#/users
+# - AWS Access Key ID
+# - AWS Secret Access Key
+# - Default region name: eu-west-1
+# - Default output format
 ## List: aws s3 ls s3://bucketname/
 ## Download: aws s3 cp s3://bucketname/file.txt file.txt
 
