@@ -53,15 +53,14 @@ var APP = APP || {};
             title: 'My App',
         };
         APP.timers = {};
+        APP.library = {};
         APP.db = {
             token: null,
         };
         
         
         APP.init = function(){
-            APP.db.token = APP.getToken();
             APP.loadEvents();
-            APP.router();
         };
 
 
@@ -179,10 +178,9 @@ Insert partial (use `{%#` instead of `{%=` to avoid escaping HTML):
         <h2 class="heading"> {%=o.orders.length%} </h2>
         <div class="numbers">
             {% if (!!o.orders.length){ %}
-                {% for (var i=0; i < o.orders.length; i++) {
-                var order = o.orders[i]; %}
-                    {%=order.code%}
-                {% } %}
+                {% o.orders.forEach( order => { %}
+                    {%= order.code %}
+                {% }) %}
             {% } %}
          </div>
     </div>
