@@ -180,7 +180,7 @@ Insert partial (use `{%#` instead of `{%=` to avoid escaping HTML):
             {% if (!!o.orders.length){ %}
                 {% o.orders.forEach( order => { %}
                     {%= order.code %}
-                {% }) %}
+                {% }); %}
             {% } %}
          </div>
     </div>
