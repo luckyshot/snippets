@@ -148,6 +148,10 @@ sudo apt install slimbookbattery
 # ====== Gaming =====
 # ===================
 
+# 🔵 Steam
+# steam
+# protontricks
+
 # 🔵 GameMode
 sudo apt install gamemode
 
