@@ -59,6 +59,9 @@ espanso edit
 # 🔵 FileZilla, qBittorrent
 sudo apt install filezilla qbittorrent
 
+# 🔵 RadioTray-NG
+# https://github.com/ebruck/radiotray-ng/releases
+
 
 # =================================
 # ====== Software Development =====
