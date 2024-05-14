@@ -242,10 +242,28 @@ var stringToColour = function(str) {
 <div id="alerts"></div>
 ```
 
-```js
-APP.showAlert = function( message, css ){
+```css
+:root {
+    --zIndexAlerts: 9000;
+}
+.alerts {
+    position: fixed;
+    z-index: var(--zIndexAlerts);
+    font-size: 0.8rem;
+    bottom: 10px;
+    right: 10px;
+    width: 20em;
+}
+.alerts > div {
+    background: #000;
+    border-radius: 3px;
+    line-height: 1;
+    padding: 0.5em 1em;
+}
+```
 
-    var _notificationTime = 3; // seconds
+```js
+APP.showAlert = function( message, css, duration ){
     var alertElement = document.createElement('div');
 
     alertElement.id = 'msg-' + (+ new Date());
@@ -257,7 +275,7 @@ APP.showAlert = function( message, css ){
     APP.timers[ alertElement.id ] = setTimeout( function(){
     APP.hideAlert( alertElement.id );
     delete APP.timers[ alertElement.id ];
-    }, _notificationTime * 1000 );
+    }, duration || 2000 );
 
     return alertElement.id;
 };
