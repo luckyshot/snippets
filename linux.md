@@ -28,7 +28,7 @@ alias _u="sudo apt update;sudo apt upgrade"
 sudo nano /etc/apache2/sites-enabled/000-default.conf
 ```
 
-## Crontab generic tweaks
+### Crontab generic tweaks
 
 ```sh
 # crontab -e
@@ -39,6 +39,33 @@ sudo nano /etc/apache2/sites-enabled/000-default.conf
 # Reduce volume at night
 0 23 * * * amixer sset 'Master' 30%
 
+```
+
+### Systemd service
+
+```sh
+sudo nano /usr/local/sbin/xavi.sh
+```
+Type in any commands
+
+```sh
+chmod 0700 /usr/local/sbin/xavi.sh
+sudo nano /etc/systemd/system/xavi.service
+```
+
+```ini
+[Unit]
+Description=Some description on what this service does
+[Service]
+ExecStart=/usr/local/sbin/xavi.sh
+[Install]
+WantedBy=multi-user.target
+```
+
+```sh
+sudo systemctl daemon-reload
+systemctl start xavi.service
+systemctl enable xavi.service
 ```
 
 ### Create user
@@ -77,7 +104,7 @@ du -shc /var/*
 
 ## Files
 
-## Syncing files
+### Syncing files
 
 Sync two directories (watch for the `*`!):
 
