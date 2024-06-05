@@ -11,43 +11,48 @@ In no particular order, some of these are the same but might fit better for cert
 
 ### Statuses
 
-- New
-- Suggested
+- 💡 New
+- 💡 Suggested
 
-- Planned
-- To Do
-- Blocked
-- Needs info
-- Postponed
+- ⏩ Planned
+- ⏩ To Do
+- 🚫 Blocked
+- ℹ️ Needs info
+- 🕐 Postponed
 
-- In progress
-- Doing
+- 🔥 In progress
+- 🔥 Doing
 
-- In review
-- Waiting for Approval
-- Testing
+- 👀 In review
+- 👀 Testing
+- 🤚 Waiting for Approval
 
-- Done
-- Closed
+- ✅ Done
+- ✅ Closed
 
-- Archived
-- Rejected
-- Discarded
+- 📦 Archived
+- 🚫 Rejected
+- 🚫 Discarded
 
 
 ### Priorities
 
-- Low
-- Normal
-- High
+- ⬜ Low
+- ℹ️ Normal
+- ⚠️ High
+
+- ⬜ None
+- ℹ️ Minor
+- ⚠️ Major
+- 📛 CRITICAL
 
 ### Severities
 
-- Whishlist
-- Minor
-- Normal
-- Important
-- Critical
+- 💡 Whishlist
+- ⬜ Minor
+- ℹ️ Major
+- ⚠️ Important
+- 📛 Critical
 
 ### Types
 
