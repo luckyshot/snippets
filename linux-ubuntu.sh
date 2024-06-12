@@ -5,6 +5,8 @@
 # ====== Must-haves =====
 # =======================
 
+ssh-keygen -t rsa
+
 sudo apt update && sudo apt upgrade -y
 
 # Make Downloads folders
