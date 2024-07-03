@@ -114,7 +114,8 @@ aws configure
 # - Default region name: eu-west-1
 # - Default output format
 ## List: aws s3 ls s3://bucketname/
-## Download: aws s3 cp s3://bucketname/file.txt file.txt
+## Download file: aws s3 cp s3://bucketname/file.txt file.txt
+## Download folder: aws s3 cp --recursive s3://bucketname/dir localdir
 
 # 🔵 Composer 
 # https://getcomposer.org/download/
