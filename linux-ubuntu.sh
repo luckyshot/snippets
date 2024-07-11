@@ -34,6 +34,7 @@ sudo systemctl start syncthing@xavi.service
 sudo ufw allow syncthing
 
 # 🔵 Visual Sudio Code
+# NOTE: Or install VS Codium (non-Microsoft binaries)
 sudo apt install software-properties-common apt-transport-https wget gpg
 wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
 sudo install -D -o root -g root -m 644 packages.microsoft.gpg /etc/apt/keyrings/packages.microsoft.gpg
