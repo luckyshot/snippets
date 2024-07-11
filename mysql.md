@@ -74,7 +74,15 @@ create user 'USERNAME'@'localhost' identified by 'PASSWORD';
 
 ### Troubleshoot slow queries/high CPU
 
-### Live troubleshooting
+### Latest queries
+
+```sql
+SET GLOBAL log_output = "FILE";
+SET GLOBAL general_log_file = "/var/log/mysql/mysql.log";
+SET GLOBAL general_log = 'ON';
+```
+
+### Currently active queries
 
 `SHOW FULL PROGRESSLIST;`
 
