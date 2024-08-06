@@ -9,6 +9,11 @@ ssh-keygen -t rsa
 
 sudo apt update && sudo apt upgrade -y
 
+sudo apt install htop lm-sensors
+sudo sensors-detect
+# Press ENTER until done for recommended settings
+watch sensors
+
 # Make Downloads folders
 mkdir ~/Downloads/Temp
 mkdir ~/Downloads/Keep
