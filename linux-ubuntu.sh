@@ -51,8 +51,8 @@ sudo ufw allow 1714:1764/tcp
 
 # 🔵 Espanso
 cd ~/Downloads/Temp
-wget https://github.com/federico-terzi/espanso/releases/download/v2.2.1/espanso-debian-x11-amd64.deb
-sudo apt install ./espanso-debian-x11-amd64.deb
+wget https://github.com/federico-terzi/espanso/releases/download/v2.2.1/espanso-debian-wayland-amd64.deb
+sudo apt install ./espanso-debian-wayland-amd64.deb
 espanso service register
 espanso edit
 # Then paste these: https://gist.github.com/luckyshot/0cc362020d55efa6d4d9a297ec9a61b5
