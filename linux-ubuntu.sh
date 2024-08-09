@@ -92,6 +92,31 @@ sudo usermod -a -G xavi www-data
 
 sudo chown -R $USER:www-data /var/www/
 
+sudo a2enmod rewrite
+sudo systemctl restart apache2
+
+
+# 🔵 Virtual hosts
+cd /etc/apache2/sites-available/
+sudo nano vhosts.conf
+sudo a2dissite 000-default.conf
+sudo a2ensite vhosts.conf
+sudo service apache2 reload
+sudo nano /etc/hosts
+
+
+# 🔵 PHP 8
+sudo apt install lsb-release ca-certificates apt-transport-https software-properties-common -y
+sudo add-apt-repository ppa:ondrej/php
+sudo apt install php8.3 php8.3-cli php8.3-common php8.3-imap php8.3-redis php8.3-snmp php8.3-xml php8.3-zip php8.3-mbstring php8.3-mysql php8.3-curl
+
+## Find more extensions via `apt search php- | less
+
+## Change version: 
+##   sudo update-alternatives --config php
+##   sudo update-alternatives --config phar
+
+
 # 🔵 MariaDB
 # sudo nano /etc/apache2/conf-available/servername.conf
 sudo apt install mariadb-server mariadb-client
@@ -103,18 +128,6 @@ sudo service apache2 reload
 sudo mysql
 # ALTER USER 'root'@'localhost' IDENTIFIED VIA mysql_native_password USING PASSWORD('root');
 
-# 🔵 PHP 8
-sudo apt install lsb-release ca-certificates apt-transport-https software-properties-common -y
-sudo add-apt-repository ppa:ondrej/php
-sudo apt install php8.1 php8.1-cli php8.1-common php8.1-imap php8.1-redis php8.1-snmp php8.1-xml php8.1-zip php8.1-mbstring php8.1-mysql php8.1-curl
-
-## Find more extensions via `apt search php- | less
-
-## Change version: 
-##   sudo update-alternatives --config php
-##   sudo update-alternatives --config phar
-
-sudo a2enmod rewrite
 
 # 🔵 Amazon Web Services CLI
 sudo apt install awscli
@@ -135,14 +148,6 @@ aws configure
 # 🔵 Deployer
 # https://deployer.org/docs/7.x/installation
 # remember to create the alias
-
-# Virtual hosts
-cd /etc/apache2/sites-available/
-sudo nano vhosts.conf
-sudo a2dissite 000-default.conf
-sudo a2ensite vhosts.conf
-sudo service apache2 reload
-sudo nano /etc/hosts
 
 
 # ====================
