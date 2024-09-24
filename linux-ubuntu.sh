@@ -7,6 +7,9 @@
 
 ssh-keygen -t rsa
 
+# Avoid destroying your crontab by asking for confirmation
+echo "alias crontab=\"crontab -i\"" >> .bashrc
+
 sudo apt update && sudo apt upgrade -y
 
 sudo apt install htop lm-sensors
