@@ -48,6 +48,13 @@ WHERE
 LIMIT 0,5
 ```
 
+###  Computing Average/Median value ignoring outliers/extremes
+
+```sql
+-- Exclude outliers while trying to get the average
+SELECT AVG(price) FROM transactions WHERE ABS(price - (SELECT AVG(price) FROM transactions) < 3*(SELECT stddev(price) from transactions));
+```
+
 ## Variables
 
 ```sql
