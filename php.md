@@ -330,6 +330,14 @@ echo benchmark('End') . PHP_EOL;
 
 ## Generate slug
 
+Simple
+
+```php
+$url = preg_replace('/[^A-Za-z0-9-]+/', '-', transliterator_transliterate("Any-Latin; NFD; [:Nonspacing Mark:] Remove; NFC; [:Punctuation:] Remove; Lower();", $url ));
+```
+
+A bit more complex
+
 ```php
 /**
  * replaces strange chars and generates a slug based on the provided string
