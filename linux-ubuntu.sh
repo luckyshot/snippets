@@ -1,16 +1,27 @@
 # This is a list of commands I run on a freshly installed Ubuntu/Debian
 # NOTE: It is not meant to be ran as a .sh file, but to copy/paste each line separately
 
-# =======================
-# ====== Must-haves =====
-# =======================
+# =======================================================
+# 🟥 Backup former setup files
+# =======================================================
+zip -r ~/Desktop/local-share.backup.zip ~/.local/share
+zip -r ~/Desktop/local-config.backup.zip ~/.local/config
+# =======================================================
+
+
+# =======================================================
+
+
+# =======================================================
+# 🟨 Must-haves
+# =======================================================
+
+sudo apt update && sudo apt upgrade -y
 
 ssh-keygen -t rsa
 
 # Avoid destroying your crontab by asking for confirmation
 echo "alias crontab=\"crontab -i\"" >> .bashrc
-
-sudo apt update && sudo apt upgrade -y
 
 sudo apt install htop lm-sensors
 sudo sensors-detect
@@ -19,7 +30,6 @@ watch sensors
 
 # Make Downloads folders
 mkdir ~/Downloads/Temp
-mkdir ~/Downloads/Keep
 
 # 🔵 SSH, Fail2Ban and UFW
 sudo apt install openssh-server fail2ban ufw
@@ -65,10 +75,16 @@ espanso service register
 espanso edit
 # Then paste these: https://gist.github.com/luckyshot/0cc362020d55efa6d4d9a297ec9a61b5
 
+# 🔵 ZSH
+# 🔵 Firefox
+# 🔵 Cheese
+# 🔵 Redshift
+# 🔵 VLC Player
 # 🔵 DBeaver-CE https://dbeaver.io/download/
 # 🔵 Iriun Webcam https://iriun.com/
 # 🔵 Remote Desktop (MeshCentral, RustDesk, TeamViewer, AnyDesk...)
 #    - RustDesk https://github.com/rustdesk/rustdesk/releases
+# 🔵 OBS Studio
 
 # 🔵 FileZilla, qBittorrent
 sudo apt install filezilla qbittorrent
@@ -77,9 +93,9 @@ sudo apt install filezilla qbittorrent
 # https://github.com/ebruck/radiotray-ng/releases
 
 
-# =================================
-# ====== Software Development =====
-# =================================
+# =======================================================
+# 🟨  Software Development
+# =======================================================
 
 # 🔵 Node
 sudo apt install npx nodejs
@@ -153,9 +169,9 @@ aws configure
 # remember to create the alias
 
 
-# ====================
-# ====== Laptops =====
-# ====================
+# =======================================================
+# 🟨 Laptop
+# =======================================================
 
 # 🔵 Battery saving
 sudo add-apt-repository ppa:linrunner/tlp
@@ -172,13 +188,14 @@ sudo apt update
 sudo apt install slimbookbattery
 
 
-# ===================
-# ====== Gaming =====
-# ===================
+# =======================================================
+# 🟨 Gaming
+# =======================================================
 
 # 🔵 Steam
-# steam
-# protontricks
+# Steam
+# Protontricks
+# Lutris
 
 # 🔵 GameMode
 sudo apt install gamemode
@@ -187,9 +204,9 @@ sudo apt install gamemode
 # https://gitlab.com/corectrl/corectrl
 
 
-# ===========================
-# ====== Other software =====
-# ===========================
+# =======================================================
+# 🟨 Other software
+# =======================================================
 
 # 🔵 Netdata
 
@@ -204,9 +221,9 @@ powermate
 # Extra settings: sudo nano /etc/powermate.toml
 
 
-# ========================
-# ====== Final Steps =====
-# ========================
+# =======================================================
+# 🟨 Final Steps
+# =======================================================
 
 # Clean up and reboot
 sudo apt autoremove
