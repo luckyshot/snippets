@@ -4,8 +4,8 @@
 # =======================================================
 # 🟥 Backup former setup files
 # =======================================================
-zip -r ~/Desktop/local-share.backup.zip ~/.local/share
-zip -r ~/Desktop/local-config.backup.zip ~/.local/config
+zip -r ~/Desktop/home-share.backup.zip ~/.local
+zip -r ~/Desktop/home-config.backup.zip ~/.config
 # =======================================================
 
 
