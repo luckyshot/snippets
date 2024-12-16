@@ -4,6 +4,15 @@ This is a collection of code snippets that I tend to use a lot while coding.
 
 I made this repo so I don't need to be constantly searching for them all over the place so don't expect this to be a tutorial or make any sense.
 
+## Linux flavors
+
+You'll find quite a few Linux config files, I like a few distros for different purposes:
+
+- [Ubuntu / Mint](linux-ubuntu.sh): Linux for work, I want a stable release, well supported distro, Debian-based, with zero tinkering and everything working. Either Linux Mint or Kubuntu (Ubuntu + KDE), depending on the computer specs.
+- [Fedora](linux-fedora.sh): Linux on ARM Macbooks for traveling due to nice battery time, a somewhat reliable distro with lower tinkering.
+- [Arch](linux-arch.sh): Linux for gaming and personal use, great performance and fun to tinker and learn the insides of Linux.
+- [Terminal](linux-terminal.md): Linux for quick note taking in meetings basically. Useful in really old laptops or when my main is really low on battery.
+
 
 ## Taxonomies
 
@@ -78,8 +87,6 @@ In no particular order, some of these are the same but might fit better for cert
 - 8
 - 10
 - 13
-- 20
-- 40
 
 ## Cookie Policy purposes
 
