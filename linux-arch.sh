@@ -24,6 +24,10 @@ sudo pacman -S syncthing
 systemctl start syncthing.service --user
 systemctl enable syncthing.service --user
 
+# 🔵 Rustdesk
+wget https://github.com/rustdesk/rustdesk/releases/download/1.3.5/rustdesk-1.3.5-0-x86_64.pkg.tar.zst
+sudo pacman -U ./rustdesk-1.3.5-0-x86_64.pkg.tar.zst
+
 # 🔵 Macro pad
 # See https://xaviesteve.com/7047/setup-macropad-aliexpress-linux/
 sudo pacman -S xbindkeys
