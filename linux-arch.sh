@@ -17,7 +17,8 @@ ssh-keygen -t rsa
 # Avoid destroying your crontab by asking for confirmation
 echo "alias crontab=\"crontab -i\"" >> .bashrc
 
-sudo pacman -S nano firefox code qbittorrent
+# Must-have packages (ordered alphabetically)
+sudo pacman -S nano code firefox qbittorrent unrar
 
 # 🔵 Syncthing
 sudo pacman -S syncthing
