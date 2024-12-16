@@ -2,6 +2,8 @@
 
 This document outlines the configuration tweaks needed to go full-terminal on a work laptop/computer. To use this, you must be comfortable with using the terminal and know the basic commands. There's no need to be a pro at shell scripting or anything like that. I've kept plugins and customizations to a minimum so you don't need to learn too many commands/hotkeys.
 
+_**TO DO:** Migrate to Arch or another minimal distro for better battery life._
+
 ## 🟩 Advantages
 
 - 💪 **Productivity**: The motivation for this is to increase productivity and creativity by removing distractions and having a clean, simple and minimal workspace. 
