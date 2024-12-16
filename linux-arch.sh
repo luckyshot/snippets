@@ -18,7 +18,7 @@ ssh-keygen -t rsa
 echo "alias crontab=\"crontab -i\"" >> .bashrc
 
 # Must-have packages (ordered alphabetically)
-sudo pacman -S nano code firefox qbittorrent spectacle unrar
+sudo pacman -S nano code firefox git qbittorrent spectacle unrar
 
 # 🔵 Syncthing
 sudo pacman -S syncthing
