@@ -29,3 +29,5 @@ systemctl enable syncthing.service --user
 sudo pacman -S xbindkeys
 xbindkeys --defaults > ~/.xbindkeysrc
 nano ~/.xbindkeysrc
+xbindkeys
+# killall -HUP xbindkeys; xbindkeys
