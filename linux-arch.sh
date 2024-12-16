@@ -35,3 +35,17 @@ xbindkeys --defaults > ~/.xbindkeysrc
 nano ~/.xbindkeysrc
 xbindkeys
 # killall -HUP xbindkeys; xbindkeys
+
+# =======================================================
+# 🟨 Gaming
+# =======================================================
+
+# 🔵 Steam
+sudo pacman -S steam
+# Select vulkan-radeon for AMD
+
+# 🔵 Gamemode
+sudo pacman -S gamemode
+sudo usermod -aG gamemode $(whoami)
+# Enable features: https://wiki.archlinux.org/title/GameMode
+# Change run commands in Steam with `gamemoderun %command%`
