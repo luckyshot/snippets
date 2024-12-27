@@ -17,6 +17,7 @@ zip -r ~/Desktop/home-config.backup.zip ~/.config
 # =======================================================
 
 sudo apt update && sudo apt upgrade -y
+sudo ubuntu-drivers autoinstall
 
 ssh-keygen -t rsa
 
