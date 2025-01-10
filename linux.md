@@ -95,11 +95,11 @@ To analyze folders:
 du -shc /var/*
 ```
 
-### Mount HDDs via crontab
+### Repair and Mount HDDs via crontab
 
 ```sh
 # Mount a drive on boot after 30 seconds
-@reboot sleep 30 && sudo mount /dev/sda1 /media/seagate1tb/
+@reboot sleep 30 && sudo fsck -y /dev/sda1 && sudo mount /dev/sda1 /media/seagate1tb/
 ```
 
 ## Files
