@@ -37,6 +37,17 @@ nano ~/.xbindkeysrc
 xbindkeys
 # killall -HUP xbindkeys; xbindkeys
 
+# 🔵 Backblaze B2 backups
+sudo pacman -S rclone
+rclone config
+# Get keys here https://secure.backblaze.com/app_keys.htm
+# list all buckets (keep the : at the end)
+rclone lsd NAMEOFREMOTEBACKUP: 
+# list a bucket
+rclone ls NAMEOFREMOTEBACKUP:NAMEOFREMOTEBUCKET 
+# mount it in Linux
+rclone mount NAMEOFREMOTEBACKUP:NAMEOFREMOTEBUCKET /PATH/TO/MOUNT --vfs-cache-mode writes 
+
 # =======================================================
 # 🟨 Gaming
 # =======================================================
