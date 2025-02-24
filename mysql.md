@@ -91,7 +91,7 @@ SET GLOBAL general_log = 'ON';
 
 ### Currently active queries
 
-`SHOW FULL PROGRESSLIST;`
+`SHOW FULL PROCESSLIST;`
 
 or to filter rows:
 
