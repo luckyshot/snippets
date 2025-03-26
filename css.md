@@ -179,6 +179,36 @@ For refreshing dashboards, inspired by Metabase:
 }
 ```
 
+### Shimmer loading animation effect (while waiting for asynchronous content)
+
+From Reddit:
+
+```css
+:root {
+  --color-shimmer-background: #ffffff08;
+  --color-shimmer-gradient-overlay: linear-gradient(to right, #ffffff00, #ffffff05 20%, #ffffff0f 50%, #ffffff08 70%, #ffffff00 100%);
+}
+
+.loader {
+  background: var(--color-shimmer-background);
+  height: 100%;
+  width: 100%;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.loader .shimmer-object {
+  background: var(--color-shimmer-gradient-overlay);
+  border-radius: 0.5rem;
+  height: 100%;
+  width: 200%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  transform: translateX(-100%);
+}
+```
+
 
 ## Media queries
 
