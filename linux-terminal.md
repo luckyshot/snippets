@@ -20,7 +20,7 @@ This document outlines the configuration tweaks needed to go full-terminal on a 
 
 As a functional work station we need, at a minimum:
 
-_(✅: Scripted; 🔲: Pending; 🫳 Non-automatic (manual process)_
+_✅: Scripted; 🫳 Non-automatic (manual process); 🔲: Pending_
 
 ### Device management
 
