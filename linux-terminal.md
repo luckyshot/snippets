@@ -2,8 +2,7 @@
 
 This document outlines the configuration tweaks needed to go full-terminal on a work laptop/computer. To use this, you must be comfortable with using the terminal and know the basic commands. There's no need to be a pro at shell scripting or anything like that. I've kept plugins and customizations to a minimum so you don't need to learn too many commands/hotkeys.
 
-_**TO DO:** Migrate to Arch or another minimal distro for better battery life._
-_**TO DO:** Check out https://github.com/fathyb/carbonyl for Chromium running inside your terminal, will consume more battery but work better? useful in some cases_
+- _**TO DO:** Migrate to Arch or another minimal distro for better battery life._
 
 ## 🟩 Advantages
 
@@ -13,51 +12,53 @@ _**TO DO:** Check out https://github.com/fathyb/carbonyl for Chromium running in
 ## 🟥 Drawbacks
 
 - Current browser (`w3m`) doesn't load JavaScript websites properly, so no web clients for Slack/Jira/Reddit/etc
+  - Check out [Carbonyl](https://github.com/fathyb/carbonyl) for Chromium running inside your terminal
+    - May consume more battery, but run JS and render pages better
 - Currently, terminal only has 8 colors 
 
 ## 🏁 Checklist
 
 As a functional work station we need, at a minimum:
 
-_(✅: Scripted; 🟨: Pending; 🤚 Manually done following some steps)_
+_(✅: Scripted; 🔲: Pending; 🫳 Non-automatic (manual process)_
 
 ### Device management
 
-- 🤚 Boot from console
+- 🫳 Boot from console
 - ✅ Window toggle/switcher/splitter (`tmux`)
 - ✅ Terminal improvements (`Oh My Zsh`)
   - ✅ Zsh
   - ✅ zsh-autosuggestions
   - ✅ dirhistory
-  - 🟨 zsh-syntax-highlighting
+  - 🔲 zsh-syntax-highlighting
   - ✅ Powerlevel10k
 - ✅ System information
   - ✅ Battery level (`tmux plugin`)
   - ✅ Clock (`tmux`)
 - ✅ WiFi management (`nmtui`)
 - ✅ Mouse support (`gpm`)
-  - 🟨 Compatibility with micro+w3m
-- 🟨 Controls
-  - 🟨 Volume
+  - 🔲 Compatibility with micro+w3m
+- 🔲 Controls
+  - 🔲 Volume
   - ✅ Screen brightness
   - ✅ Keyboard brightness
 
 ### The Basics
 
 - ✅ Text Editor/IDE (`micro`)
-  - 🟨 Move to neovim some day
+  - 🔲 Move to neovim some day
 - ✅ Web Browser (`w3m`)
 
 ### The Extras
 
-- 🤚 Syncthing
+- 🫳 Syncthing
 - ✅ Music & Video player (`mpv`)
-  - 🟨 Can't hear sounds on full console mode though, is it even possible?
+  - 🔲 Can't hear sounds on full console mode though, is it even possible?
 - ✅ Calculator
-- 🟨 Emails
-- 🟨 Jira
-- 🟨 Slack
-- 🟨 YouTube: browse and watch
+- 🔲 Emails
+- 🔲 Jira
+- 🔲 Slack
+- 🔲 YouTube: browse and watch
 
 ## ⌨ Shortcuts
 
