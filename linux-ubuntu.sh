@@ -115,6 +115,11 @@ sudo chown -R $USER:www-data /var/www/
 sudo a2enmod rewrite
 sudo systemctl restart apache2
 
+# XDebug
+sudo apt update
+sudo apt install -y php-xdebug php8.3-xdebug
+
+
 
 # 🔵 Virtual hosts
 cd /etc/apache2/sites-available/
