@@ -78,6 +78,7 @@ espanso edit
 
 # 🔵 ZSH
 # 🔵 Firefox
+# 🔵 Github Desktop https://github.com/shiftkey/desktop/releases
 # 🔵 Cheese
 # 🔵 Redshift
 # 🔵 VLC Player
