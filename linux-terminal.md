@@ -41,6 +41,8 @@ _✅: Done; 🫳 Manual process; 🔲: Pending_
   - ✅ Screen brightness (`light`)
   - ✅ Keyboard brightness (`light`)
 - ✅ Colors/fonts (`kmscon`: 256 colors, scalable fonts)
+- ✅ Firewall (`ufw`)
+- ✅ Brute-force protection (`fail2ban`)
 
 ### The Basics
 
@@ -113,6 +115,40 @@ Windows:
 - Alias `vm`: Toggle mute
 - Interactive: `alsamixer`
 
+### Syncthing
+
+Syncthing runs as a user service and binds its web UI to `localhost:8384` only.
+To manage it from another machine, open an SSH tunnel from that machine:
+
+```sh
+ssh -nNT YOUR_HOSTNAME -L 8484:localhost:8384
+# then visit http://localhost:8484 in a browser on that machine
+```
+
+Useful alias to add on the other machine:
+```sh
+alias syncthing-writerdeck='ssh -nNT YOUR_HOSTNAME -L 8484:localhost:8384 & sleep 1 && open http://localhost:8484'
+```
+
+Service management (run on the writerdeck):
+- `systemctl --user status syncthing`: check if running
+- `systemctl --user restart syncthing`: restart
+- `systemctl --user stop syncthing`: stop
+
+### Firewall (UFW)
+
+- `sudo ufw status`: show rules and status
+- `sudo ufw allow PORT`: open a port
+- `sudo ufw deny PORT`: block a port
+- `sudo ufw delete allow PORT`: remove a rule
+
+### fail2ban
+
+- `sudo fail2ban-client status`: list active jails
+- `sudo fail2ban-client status sshd`: show SSH jail (banned IPs, hit counts)
+- `sudo fail2ban-client set sshd unbanip IP`: manually unban an IP
+- Log: `sudo tail -f /var/log/fail2ban.log`
+
 ### Graphical interface (emergency fallback)
 
 - Command `sudo startx`: Start graphical interface
@@ -130,12 +166,7 @@ One manual step that can't be scripted:
 Use the text-based installer. On the "Software selection" screen, deselect "Debian desktop environment" and "GNOME". You will boot straight into a tty.
 Leave the root password blank during install — this disables root and sets your user up with sudo instead.
 
-**Accessing Syncthing web UI from another machine**
-The script binds Syncthing to localhost only. To reach it from another machine, SSH port-forward:
-```sh
-ssh -nNT YOUR_HOSTNAME -L 8484:localhost:8384
-# then visit http://localhost:8484 on your other machine
-```
+**SSH**: password authentication is enabled, protected by fail2ban. No key setup needed to get started, though switching to key-only auth later is recommended for extra security.
 
 ### Script
 
@@ -188,7 +219,8 @@ sudo apt install -y \
   light \
   alsa-utils \
   curl \
-  git
+  git \
+  openssh-server
 
 
 # ── Group memberships ─────────────────────────
@@ -196,6 +228,52 @@ sudo apt install -y \
 # 'audio' allows amixer to control volume without sudo
 
 sudo usermod -aG video,audio $USER
+
+
+# ── SSH server ────────────────────────────────
+# Needed for Syncthing web UI tunneling from another machine.
+# Password auth is allowed; brute-force is handled by fail2ban below.
+# Root login is still disabled.
+
+sudo sed -i 's/^#*PermitRootLogin.*/PermitRootLogin no/' /etc/ssh/sshd_config
+sudo sed -i 's/^#*PasswordAuthentication.*/PasswordAuthentication yes/' /etc/ssh/sshd_config
+sudo systemctl enable ssh
+sudo systemctl start ssh
+
+
+# ── UFW (firewall) ────────────────────────────
+# Default: deny all incoming, allow all outgoing.
+# Opens only SSH and Syncthing sync ports.
+# --force skips the interactive confirmation prompt.
+
+sudo apt install -y ufw
+sudo ufw default deny incoming
+sudo ufw default allow outgoing
+sudo ufw allow ssh
+sudo ufw allow 22000/tcp   # Syncthing sync
+sudo ufw allow 22000/udp   # Syncthing sync
+sudo ufw allow 21027/udp   # Syncthing local discovery
+sudo ufw --force enable
+
+
+# ── fail2ban (brute-force protection) ─────────
+# Monitors auth logs and bans IPs after repeated failures.
+# jail.local overrides the defaults: 5 attempts in 10 min = 1h ban.
+
+sudo apt install -y fail2ban
+
+sudo tee /etc/fail2ban/jail.local > /dev/null << 'JAIL'
+[DEFAULT]
+bantime  = 1h
+findtime = 10m
+maxretry = 5
+
+[sshd]
+enabled = true
+JAIL
+
+sudo systemctl enable fail2ban
+sudo systemctl start fail2ban
 
 
 # ── Zsh as default shell ──────────────────────
@@ -288,6 +366,6 @@ EOF
 #   1. Log out and back in (applies: zsh as default shell, group memberships)
 #   2. Run the Powerlevel10k wizard: p10k configure
 #   3. Test audio: speaker-test -t wav -c 2
-#   4. Pair Syncthing devices via web UI: ssh -nNT THIS_HOST -L 8484:localhost:8384
+#   4. Pair Syncthing: ssh -nNT THIS_HOST -L 8484:localhost:8384, then visit localhost:8484
 # ─────────────────────────────────────────────
 ```
