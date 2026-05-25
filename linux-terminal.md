@@ -223,6 +223,21 @@ sudo apt install -y \
   openssh-server
 
 
+# ── WiFi handover to NetworkManager ──────────
+# The Debian installer writes interface config to /etc/network/interfaces,
+# which prevents NetworkManager from managing those interfaces.
+# We clear it (keeping only lo) so nmtui works after reboot.
+
+sudo tee /etc/network/interfaces > /dev/null << 'EOF'
+source /etc/network/interfaces.d/*
+
+auto lo
+iface lo inet loopback
+EOF
+
+sudo systemctl restart NetworkManager
+
+
 # ── Group memberships ─────────────────────────
 # 'video' allows light to control brightness without sudo
 # 'audio' allows amixer to control volume without sudo
