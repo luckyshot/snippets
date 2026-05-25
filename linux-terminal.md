@@ -1,222 +1,277 @@
 # Linux Terminal
 
-This document outlines the configuration tweaks needed to go full-terminal on a work laptop/computer. To use this, you must be comfortable with using the terminal and know the basic commands. There's no need to be a pro at shell scripting or anything like that. I've kept plugins and customizations to a minimum so you don't need to learn too many commands/hotkeys.
+Console-only setup for a work laptop. You must be comfortable with basic terminal commands. Plugins and customizations are kept to a minimum.
 
-- _**TO DO:** Migrate to Arch or another minimal distro for better battery life._
+**OS: Debian (Trixie), console-only install. No X11 or Wayland.**
 
 ## 🟩 Advantages
 
-- 💪 **Productivity**: The motivation for this is to increase productivity and creativity by removing distractions and having a clean, simple and minimal workspace. 
-- 🔋 **Battery**: It saves tons of battery life whenever you're out and about (I've gone from 3 hours to 12 hours on my laptop). Running Ubuntu 23.10 with KDE on a Thinkpad P14s consumes between 8-12W with 16W peaks; on terminal session with graphical in the back we get 6-9W with 11W peaks while on full-terminal mode (without graphical in the background) the consumption goes to 4-7W with 9W peaks.
+- 💪 **Productivity**: Removes distractions. Clean, minimal workspace.
+- 🔋 **Battery**: Significant savings vs a full desktop. On a ThinkPad P14s: Ubuntu+KDE consumed 8-12W; full console mode drops to 4-7W.
 
 ## 🟥 Drawbacks
 
-- Current browser (`w3m`) doesn't load JavaScript websites properly, so no web clients for Slack/Jira/Reddit/etc
-  - Check out [Carbonyl](https://github.com/fathyb/carbonyl) for Chromium running inside your terminal
-    - May consume more battery, but run JS and render pages better
-- Currently, terminal only has 8 colors 
+- Current browser (`w3m`) doesn't load JavaScript websites, so no web clients for Slack/Jira/Reddit/etc
+  - Check out [Carbonyl](https://github.com/fathyb/carbonyl) for Chromium inside the terminal (heavier, but runs JS)
 
 ## 🏁 Checklist
 
-As a functional work station we need, at a minimum:
-
-_✅: Scripted; 🫳 Non-automatic (manual process); 🔲: Pending_
+_✅: Done; 🫳 Manual process; 🔲: Pending_
 
 ### Device management
 
-- 🫳 Boot from console
+- ✅ Boot from console (Debian console-only install)
+- ✅ Auto-login on boot (kmscon systemd override)
+- ✅ tmux auto-launch on login
 - ✅ Window toggle/switcher/splitter (`tmux`)
 - ✅ Terminal improvements (`Oh My Zsh`)
   - ✅ Zsh
   - ✅ zsh-autosuggestions
   - ✅ dirhistory
-  - 🔲 zsh-syntax-highlighting
+  - ✅ zsh-syntax-highlighting
   - ✅ Powerlevel10k
 - ✅ System information
-  - ✅ Battery level (`tmux plugin`)
+  - ✅ Battery level (`acpi` in tmux status bar)
   - ✅ Clock (`tmux`)
 - ✅ WiFi management (`nmtui`)
 - ✅ Mouse support (`gpm`)
   - 🔲 Compatibility with micro+w3m
-- 🔲 Controls
-  - 🔲 Volume
-  - ✅ Screen brightness
-  - ✅ Keyboard brightness
+- ✅ Controls
+  - ✅ Volume (`amixer`)
+  - ✅ Screen brightness (`light`)
+  - ✅ Keyboard brightness (`light`)
+- ✅ Colors/fonts (`kmscon`: 256 colors, scalable fonts)
 
 ### The Basics
 
-- ✅ Text Editor/IDE (`micro`)
-  - 🔲 Move to neovim some day
+- ✅ Text Editor/IDE (`micro` + `nano`)
 - ✅ Web Browser (`w3m`)
 
 ### The Extras
 
 - 🫳 Syncthing
-- ✅ Music & Video player (`mpv`)
-  - 🔲 Can't hear sounds on full console mode though, is it even possible?
-- ✅ Calculator
+- ✅ Music & Video player (`mpv` via ALSA)
+- ✅ Calculator (`python3`)
 - 🔲 Emails
 - 🔲 Jira
 - 🔲 Slack
-- 🔲 YouTube: browse and watch
+- 🔲 YouTube (browse and watch)
 
 ## ⌨ Shortcuts
 
-Keyboard shortcuts that you will need to learn:
+### tmux
 
-- **tmux**
-  - Pane splitting
-    - `Ctrl+B %`: Split horizontally
-    - `Ctrl+B "`: Split vertically
-    - `Ctrl+B Arrow`: focus to another pane
-    - `Ctrl+D`: close focused pane
-  - Windows
-    - `Ctrl+B c`: new window
-    - `Ctrl+B p`: go to previous window
-    - `Ctrl+B 0-9`: go to window N
-  - Sessions
-    - _to do_
-  - **Zsh**
-    - `Alt+Left`: previous directory
-    - `Alt+Right`: next directory
-    - `Alt+Up`: parent directory
-    - `Alt+Down`: first child directory by alphabetical order
-- **w3m**
-  - `Shift+Q`: quit
-  - `Shift+B`: go back
-  - `Shift+T`: new tab
-  - `Shift+U`: new URL
-- **micro**
-  - Alias `m`: Micro shortcut
-- **mpv**
-  - Command `mpv {filename}`
-  - `9` `0`: Volume down/up 
-- **Graphical interface**
-  - Command `sudo startx`: start graphical interface
-  - Command: `sudo init 3`: end graphical interface
-  - `Ctrl+Alt+F1`-`F6`: switch between sessions
-  - `Ctrl+Alt+F7`: switch to graphical session
-- **WiFi**
-  - Command `nmtui`
-- **Brightness**
-  - Alias `b1`: Increase screen brightness by 10%
-  - Alias `b0`: Decrease screen brightness by 10%
-  - Alias `k1`: Turn keyboard light on
-  - Alias `k0`: Turn keyboard light off
-- **Graphical interface**
-  - Command `sudo startx`: Load graphical interface
-- **Calculator**
-  - Open `python3` and do your calculations in Python itself
+Pane splitting:
+- `Ctrl+B %`: Split horizontally
+- `Ctrl+B "`: Split vertically
+- `Ctrl+B Arrow`: Focus another pane
+- `Ctrl+D`: Close focused pane
+
+Windows:
+- `Ctrl+B c`: New window
+- `Ctrl+B p`: Previous window
+- `Ctrl+B 0-9`: Go to window N
+
+### Zsh
+
+- `Alt+Left`: Previous directory
+- `Alt+Right`: Next directory
+- `Alt+Up`: Parent directory
+- `Alt+Down`: First child directory (alphabetical)
+
+### w3m
+
+- `Shift+Q`: Quit
+- `Shift+B`: Go back
+- `Shift+T`: New tab
+- `Shift+U`: New URL
+
+### micro
+
+- Alias `m`: Launch micro
+
+### mpv
+
+- Command: `mpv {filename}`
+- `9` / `0`: Volume down/up
+
+### WiFi
+
+- Command: `nmtui`
+
+### Brightness
+
+- Alias `b1`: Increase screen brightness by 25%
+- Alias `b0`: Decrease screen brightness by 25%
+- Alias `k1`: Turn keyboard backlight on
+- Alias `k0`: Turn keyboard backlight off
+
+### Volume
+
+- Alias `v1`: Increase volume by 5%
+- Alias `v0`: Decrease volume by 5%
+- Alias `vm`: Toggle mute
+- Interactive: `alsamixer`
+
+### Graphical interface (emergency fallback)
+
+- Command `sudo startx`: Start graphical interface
+- Command `sudo init 3`: End graphical interface
+- `Ctrl+Alt+F1`-`F6`: Switch between sessions
+- `Ctrl+Alt+F7`: Switch to graphical session
 
 ## 🚧 Installation
 
-1. Install OS with a graphical interface
-2. Run these commands carefully one by one (it's not yet ready to simply run as-is)
+### Before running the script
+
+Two manual steps that can't be scripted:
+
+**1. Install Debian (console-only)**
+Use the text-based installer. On the "Software selection" screen, deselect "Debian desktop environment" and "GNOME". You will boot straight into a tty.
+Leave the root password blank during install — this disables root and sets your user up with sudo instead.
+
+**2. Access Syncthing web UI from another machine**
+If needed, SSH port-forward instead of exposing the UI on all interfaces:
+```sh
+ssh -nNT YOUR_HOSTNAME -L 8484:localhost:8384
+# then visit http://localhost:8484 on your other machine
+```
+
+### Script
 
 ```sh
-cd ~
+#!/bin/bash
+set -e
 
-# Download this file for reference
-curl https://raw.githubusercontent.com/luckyshot/snippets/main/linux-terminal.md >> ~/linux-terminal.md
+# ─────────────────────────────────────────────
+# DEBIAN TERMINAL SETUP
+# Run after a fresh console-only Debian install
+# ─────────────────────────────────────────────
 
-# Zsh
-## Install Zsh
-sudo apt install zsh
-## Make it default
+
+# ── System update ────────────────────────────
+
+sudo apt update && sudo apt upgrade -y
+
+
+# ── kmscon (256 colors + scalable fonts) ─────
+# Replaces the default tty. Supports 256 colors and Ctrl+/- zoom.
+# Needed for auto-login setup below.
+
+echo "deb http://deb.debian.org/debian/ trixie-backports main contrib non-free non-free-firmware" \
+  | sudo tee /etc/apt/sources.list.d/trixie-backports.list
+sudo apt update
+sudo apt install -t trixie-backports -y kmscon
+
+
+# ── Auto-login via kmscon ─────────────────────
+# Creates a systemd drop-in that logs in the current user automatically on tty1.
+
+sudo mkdir -p /etc/systemd/system/kmsconvt@tty1.service.d/
+sudo tee /etc/systemd/system/kmsconvt@tty1.service.d/autologin.conf > /dev/null << EOF
+[Service]
+ExecStart=
+ExecStart=/usr/bin/kmscon --login -- /bin/login -f $USER
+EOF
+sudo systemctl daemon-reload
+
+
+# ── Core packages ─────────────────────────────
+
+sudo apt install -y \
+  zsh \
+  tmux \
+  acpi \
+  w3m w3m-img \
+  network-manager \
+  gpm \
+  light \
+  alsa-utils \
+  curl \
+  git
+
+
+# ── Group memberships ─────────────────────────
+# 'video' allows light to control brightness without sudo
+# 'audio' allows amixer to control volume without sudo
+
+sudo usermod -aG video,audio $USER
+
+
+# ── Zsh as default shell ──────────────────────
+# NOTE: log out and back in after this for the change to take effect
+
 chsh -s $(which zsh)
 
-## You should now logout and log back in
 
-## Install Oh My Zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+# ── Oh My Zsh ─────────────────────────────────
+# RUNZSH=no and CHSH=no prevent it from restarting the shell mid-script
 
-## Install Zsh plugins/themes
-### Zsh Autosuggestions
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-### Install Powerlevel10k theme
-
-## Activate Zsh plugins/themes
-sed -i 's/plugins=(git)/plugins=(zsh-autosuggestions dirhistory git)/g' .zshrc
-sed -i 's/robbyrussell/powerlevel10k\/powerlevel10k/g' .zshrc
-
-## Reload .zshrc config
-exec zsh
-
-### You will probably be shown the Powerlevel10k wizard
+RUNZSH=no CHSH=no sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 
-# Install tmux
-echo 'Install tmux'
-sudo apt install -y tmux
+# ── Zsh plugins ───────────────────────────────
 
-## Install tmux Plugin Manager (https://github.com/tmux-plugins/tpm)
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-echo "# List of plugins" >> ~/.tmux.conf
-echo "set -g @plugin 'tmux-plugins/tpm'" >> ~/.tmux.conf
-echo "set -g @plugin 'tmux-plugins/tmux-sensible'" >> ~/.tmux.conf
-echo "set -g @plugin 'tmux-plugins/tmux-battery'" >> ~/.tmux.conf
+git clone https://github.com/zsh-users/zsh-autosuggestions \
+  ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
 
-echo "set -g status-right '#{battery_status_bg} Batt: #{battery_icon} #{battery_percentage} #{battery_remain} | %a %h-%d %H:%M '" >> ~/.tmux.conf
+git clone https://github.com/zsh-users/zsh-syntax-highlighting \
+  ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 
-echo "# Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)" >> ~/.tmux.conf
-echo "run '~/.tmux/plugins/tpm/tpm'" >> ~/.tmux.conf
-
-## Install requirements for tmux battery plugin
-sudo apt install -y acpi
-
-## Press `Ctrl+B I` (uppercase I) to download plugins
-
-## Reload tmux settings
-tmux source ~/.tmux.conf
+# Activate plugins and Powerlevel10k theme in .zshrc
+sed -i 's/plugins=(git)/plugins=(zsh-autosuggestions dirhistory zsh-syntax-highlighting git)/' ~/.zshrc
+sed -i 's/ZSH_THEME="robbyrussell"/ZSH_THEME="powerlevel10k\/powerlevel10k"/' ~/.zshrc
 
 
-# Install micro
-echo 'Install micro`
+# ── micro editor ─────────────────────────────
+
 curl https://getmic.ro | bash
 sudo mv micro /usr/bin
 
 
-# Install W3M
-echo 'Install W3M`
-sudo apt install -y w3m w3m-img
+# ── tmux config ───────────────────────────────
+# Battery % and clock in the status bar, no plugin manager needed
+
+cat >> ~/.tmux.conf << 'EOF'
+set-window-option -g status-right "#(acpi -b | grep -m1 -o -P '.{0,2}%') | %a %h-%d %H:%M "
+EOF
 
 
-# WiFi management
-# Required for nmtui
-sudo apt install -y network-manager
+# ── Aliases and tmux auto-launch ─────────────
+# tmux starts automatically on login, but only on tty1 and not inside an existing session
+
+cat >> ~/.zshrc << 'EOF'
+
+# ── Aliases ───────────────────────────────────
+
+alias lll='ls -lisah'
+alias m='micro'
+
+# Brightness (light — no sudo needed if in video group)
+alias b1='light -A 25'
+alias b0='light -U 25'
+alias k1='light -s sysfs/leds/tpacpi::kbd_backlight -S 1'
+alias k0='light -s sysfs/leds/tpacpi::kbd_backlight -S 0'
+
+# Volume (amixer — no sudo needed if in audio group)
+alias v1='amixer -q sset Master 5%+'
+alias v0='amixer -q sset Master 5%-'
+alias vm='amixer -q sset Master toggle'
+
+# ── tmux auto-launch on tty1 ──────────────────
+
+if [ -z "${TMUX}" ] && [ "$(tty)" = "/dev/pts/0" ]; then
+    exec tmux
+fi
+EOF
 
 
-# Mouse support
-sudo apt install -y gpm
-
-
-# Boot from console by default
-# sudo cp -n /etc/default/grub /etc/default/grub.orig
-# sudo mv /etc/default/grub.orig /etc/default/grub && sudo update-grub
-# TODO: https://askubuntu.com/questions/859630/how-to-start-ubuntu-in-console-mode
-
-# Allow user to startx
-# # WARNING: Read about the security implications here https://unix.stackexchange.com/q/478742
-# sudo nano /etc/X11/Xwrapper.config
-# # Then replace `allowed_user=console` with `allowed_users=anybody`
-
-# Syncthing
-# Install from graphical interface once
-
-
-# Brightness control
-sudo apt install brightnessctl
-
-
-
-
-# Aliases
-echo "alias lll='ls -lisah'" >> ~/.zshrc
-echo "alias m='micro'" >> ~/.zshrc
-echo "alias b1='sudo brightnessctl -c backlight set +25'" >> ~/.zshrc
-echo "alias b0='sudo brightnessctl -c backlight set 25-'" >> ~/.zshrc
-echo "alias k1='sudo brightnessctl -d tpacpi::kbd_backlight set 1'" >> ~/.zshrc
-echo "alias k0='sudo brightnessctl -d tpacpi::kbd_backlight set 0'" >> ~/.zshrc
-
-
+# ─────────────────────────────────────────────
+# DONE
+# Next steps:
+#   1. Log out and back in (applies: zsh as default shell, group memberships)
+#   2. Run the Powerlevel10k wizard: p10k configure
+#   3. Install Syncthing manually (needs a browser the first time)
+#   4. Test audio: speaker-test -t wav -c 2
+# ─────────────────────────────────────────────
 ```
