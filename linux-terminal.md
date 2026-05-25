@@ -49,7 +49,7 @@ _✅: Done; 🫳 Manual process; 🔲: Pending_
 
 ### The Extras
 
-- 🫳 Syncthing
+- ✅ Syncthing
 - ✅ Music & Video player (`mpv` via ALSA)
 - ✅ Calculator (`python3`)
 - 🔲 Emails
@@ -124,14 +124,14 @@ Windows:
 
 ### Before running the script
 
-Two manual steps that can't be scripted:
+One manual step that can't be scripted:
 
-**1. Install Debian (console-only)**
+**Install Debian (console-only)**
 Use the text-based installer. On the "Software selection" screen, deselect "Debian desktop environment" and "GNOME". You will boot straight into a tty.
 Leave the root password blank during install — this disables root and sets your user up with sudo instead.
 
-**2. Access Syncthing web UI from another machine**
-If needed, SSH port-forward instead of exposing the UI on all interfaces:
+**Accessing Syncthing web UI from another machine**
+The script binds Syncthing to localhost only. To reach it from another machine, SSH port-forward:
 ```sh
 ssh -nNT YOUR_HOSTNAME -L 8484:localhost:8384
 # then visit http://localhost:8484 on your other machine
@@ -237,6 +237,22 @@ set-window-option -g status-right "#(acpi -b | grep -m1 -o -P '.{0,2}%') | %a %h
 EOF
 
 
+# ── Syncthing ────────────────────────────────
+# Installs from the official apt repo to get the latest v2.x release.
+# Binds the web UI to localhost only — use SSH port-forwarding to access it remotely.
+
+sudo mkdir -p /etc/apt/keyrings
+sudo curl -L -o /etc/apt/keyrings/syncthing-archive-keyring.gpg https://syncthing.net/release-key.gpg
+echo "deb [signed-by=/etc/apt/keyrings/syncthing-archive-keyring.gpg] https://apt.syncthing.net/ syncthing stable-v2" \
+  | sudo tee /etc/apt/sources.list.d/syncthing.list
+sudo apt update
+sudo apt install -y syncthing apt-transport-https
+
+# Enable and start as a user service (runs under your account, not root)
+systemctl --user enable syncthing.service
+systemctl --user start syncthing.service
+
+
 # ── Aliases and tmux auto-launch ─────────────
 # tmux starts automatically on login, but only on tty1 and not inside an existing session
 
@@ -271,7 +287,7 @@ EOF
 # Next steps:
 #   1. Log out and back in (applies: zsh as default shell, group memberships)
 #   2. Run the Powerlevel10k wizard: p10k configure
-#   3. Install Syncthing manually (needs a browser the first time)
-#   4. Test audio: speaker-test -t wav -c 2
+#   3. Test audio: speaker-test -t wav -c 2
+#   4. Pair Syncthing devices via web UI: ssh -nNT THIS_HOST -L 8484:localhost:8384
 # ─────────────────────────────────────────────
 ```
