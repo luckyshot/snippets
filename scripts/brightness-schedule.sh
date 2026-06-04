@@ -28,3 +28,4 @@ elif [ "$t" -ge 600 ]; then
     bright 30
 else
     bright
+fi
