@@ -27,5 +27,5 @@ elif [ "$t" -ge 700 ]; then
 elif [ "$t" -ge 600 ]; then
     bright 30
 else
-    bright
+    bright 0
 fi
