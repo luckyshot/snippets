@@ -24,8 +24,8 @@ elif [ "$t" -ge 1000 ]; then
     bright 100
 elif [ "$t" -ge 900 ]; then
     bright 90
-elif [ "$t" -ge 800 ]; then
-    bright 30
+elif [ "$t" -ge 700 ]; then
+    bright 2
 else
     bright 0
 fi
